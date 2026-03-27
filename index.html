@@ -155,6 +155,32 @@
         }
         .btn-secondary:hover { border-color: rgba(255,255,255,.5); transform: scale(1.03); }
 
+        /* ── SEPARADORES ── */
+        .glow-divider {
+            width: 100%; height: 1px; position: relative;
+            background: rgba(255,255,255,.04);
+        }
+        .glow-divider::after {
+            content: '';
+            position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+            width: 300px; height: 3px;
+            background: radial-gradient(ellipse, rgba(83,74,183,.6) 0%, transparent 70%);
+            filter: blur(2px);
+        }
+
+        /* ── SCROLL ANIMATIONS ── */
+        .animate-on-scroll {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1; transform: translateY(0);
+        }
+        .animate-on-scroll.delay-1 { transition-delay: .1s; }
+        .animate-on-scroll.delay-2 { transition-delay: .2s; }
+        .animate-on-scroll.delay-3 { transition-delay: .3s; }
+        .animate-on-scroll.delay-4 { transition-delay: .4s; }
+
         /* ── SECTIONS COMMON ── */
         section { padding: 8rem 2rem; }
         .section-inner { max-width: 1200px; margin: 0 auto; }
@@ -501,9 +527,10 @@
 </section>
 
 <!-- TECNOLOGÍAS -->
+<div class="glow-divider"></div>
 <section class="tech-section">
-    <h2 class="section-title">Tus competidores ya usan estas herramientas. <span class="gradient">¿Y tú?</span></h2>
-    <p class="tech-subtitle">La tecnología detrás de nuestros resultados</p>
+    <h2 class="section-title animate-on-scroll">Tus competidores ya usan estas herramientas. <span class="gradient">¿Y tú?</span></h2>
+    <p class="tech-subtitle animate-on-scroll delay-1">La tecnología detrás de nuestros resultados</p>
     <div class="marquee-wrapper">
         <div class="marquee-track">
             <div class="tech-item"><div class="tech-icon" style="color:#D4A27F;">A</div><span>Anthropic</span></div>
@@ -533,28 +560,29 @@
 </section>
 
 <!-- PROCESO -->
+<div class="glow-divider"></div>
 <section class="proceso" id="proceso">
     <div class="section-inner">
-        <p class="section-label">Proceso</p>
-        <h2 class="section-title">Así trabajamos</h2>
-        <p class="section-subtitle centered">De la estrategia a los resultados en cada ciclo de admisión.</p>
+        <p class="section-label animate-on-scroll">Proceso</p>
+        <h2 class="section-title animate-on-scroll delay-1">Así trabajamos</h2>
+        <p class="section-subtitle centered animate-on-scroll delay-2">De la estrategia a los resultados en cada ciclo de admisión.</p>
         <div class="proceso-steps">
-            <div class="proceso-step">
+            <div class="proceso-step animate-on-scroll delay-1">
                 <div class="step-number">1</div>
                 <h3>Diagnóstico</h3>
                 <p>Analizamos tu institución, oferta educativa y competencia para entender tu posición en el mercado.</p>
             </div>
-            <div class="proceso-step">
+            <div class="proceso-step animate-on-scroll delay-2">
                 <div class="step-number">2</div>
                 <h3>Estrategia</h3>
                 <p>Diseñamos un plan de captación con objetivos claros por carrera y canal digital.</p>
             </div>
-            <div class="proceso-step">
+            <div class="proceso-step animate-on-scroll delay-3">
                 <div class="step-number">3</div>
                 <h3>Ejecución</h3>
                 <p>Lanzamos campañas, automatizaciones y contenido con nuestras herramientas de IA.</p>
             </div>
-            <div class="proceso-step">
+            <div class="proceso-step animate-on-scroll delay-4">
                 <div class="step-number">4</div>
                 <h3>Optimización</h3>
                 <p>Iteramos en tiempo real basándonos en datos para maximizar inscritos por ciclo.</p>
@@ -564,29 +592,30 @@
 </section>
 
 <!-- POR QUÉ SOF-IA -->
+<div class="glow-divider"></div>
 <section class="porque" id="nosotros">
     <div class="section-inner">
         <div class="porque-grid">
-            <div>
+            <div class="animate-on-scroll">
                 <p class="section-label">Por qué SOF-IA</p>
                 <h2 class="section-title">Resultados que hablan por sí solos</h2>
                 <p class="section-subtitle">No solo implementamos tecnología — generamos crecimiento real para instituciones educativas con estrategias medibles.</p>
             </div>
             <div class="porque-stats">
-                <div class="stat">
-                    <div class="stat-number">+150%</div>
+                <div class="stat animate-on-scroll delay-1">
+                    <div class="stat-number" data-target="150" data-prefix="+" data-suffix="%">+150%</div>
                     <div class="stat-label">Aumento en prospectos por ciclo</div>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">-40%</div>
+                <div class="stat animate-on-scroll delay-2">
+                    <div class="stat-number" data-target="40" data-prefix="-" data-suffix="%">-40%</div>
                     <div class="stat-label">Reducción en costo por inscrito</div>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">3x</div>
+                <div class="stat animate-on-scroll delay-3">
+                    <div class="stat-number" data-target="3" data-suffix="x">3x</div>
                     <div class="stat-label">Retorno de inversión promedio</div>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">24/7</div>
+                <div class="stat animate-on-scroll delay-4">
+                    <div class="stat-number" data-target="24" data-suffix="/7">24/7</div>
                     <div class="stat-label">Atención automatizada a prospectos</div>
                 </div>
             </div>
@@ -595,8 +624,9 @@
 </section>
 
 <!-- CTA -->
+<div class="glow-divider"></div>
 <section class="cta-section" id="contacto">
-    <div class="section-inner">
+    <div class="section-inner animate-on-scroll">
         <p class="section-label">Empieza hoy</p>
         <h2 class="section-title">¿Listo para llenar tus aulas con IA?</h2>
         <p class="section-subtitle centered">Agenda una llamada sin compromiso y descubre cómo podemos impulsar tu próximo ciclo de admisión.</p>
@@ -627,6 +657,44 @@
             document.getElementById('navLinks').classList.remove('active');
         });
     });
+
+    // Scroll animations (IntersectionObserver)
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    animateElements.forEach(el => observer.observe(el));
+
+    // Counter animation for stats
+    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.target);
+                const prefix = el.dataset.prefix || '';
+                const suffix = el.dataset.suffix || '';
+                let current = 0;
+                const duration = 1500;
+                const step = target / (duration / 16);
+                const counter = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(counter);
+                    }
+                    el.textContent = prefix + Math.floor(current) + suffix;
+                }, 16);
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    statNumbers.forEach(el => counterObserver.observe(el));
 
     // Sticky scroll effect
     const serviciosSection = document.querySelector('.servicios');
