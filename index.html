@@ -235,6 +235,67 @@
             .sticky-mockup { min-height: 300px; }
         }
 
+        /* ── TECNOLOGÍAS (Marquee) ── */
+        .tech-section {
+            padding: 6rem 2rem;
+            background: rgba(255,255,255,.02);
+            border-top: 1px solid rgba(255,255,255,.04);
+            border-bottom: 1px solid rgba(255,255,255,.04);
+            overflow: hidden;
+        }
+        .tech-section .section-title {
+            text-align: center; max-width: 700px; margin: 0 auto 1rem;
+        }
+        .tech-section .section-title .gradient {
+            background: linear-gradient(135deg, var(--purple-light), #A78BFA, var(--purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tech-subtitle {
+            text-align: center; color: var(--gray-400); font-size: 1rem;
+            font-weight: 300; margin-bottom: 3.5rem;
+        }
+        .marquee-wrapper {
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-track {
+            display: flex; gap: 3rem; align-items: center;
+            animation: marquee 30s linear infinite;
+            width: max-content;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .tech-item {
+            display: flex; align-items: center; gap: .6rem;
+            flex-shrink: 0; padding: .75rem 1.5rem;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 12px;
+            transition: background .3s, border-color .3s;
+        }
+        .tech-item:hover {
+            background: rgba(83,74,183,.1);
+            border-color: rgba(83,74,183,.3);
+        }
+        .tech-item span {
+            font-size: .95rem; font-weight: 500; color: rgba(255,255,255,.7);
+            white-space: nowrap;
+        }
+        .tech-icon {
+            width: 24px; height: 24px; border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: .85rem; font-weight: 700;
+        }
+        .tech-more {
+            text-align: center; margin-top: 2.5rem;
+            font-size: .85rem; color: var(--gray-400); font-weight: 300;
+        }
+
         /* ── PROCESO ── */
         .proceso { background: rgba(255,255,255,.02); }
         .proceso .section-inner > .section-label,
@@ -437,6 +498,38 @@
             </div>
         </div>
     </div>
+</section>
+
+<!-- TECNOLOGÍAS -->
+<section class="tech-section">
+    <h2 class="section-title">Tus competidores ya usan estas herramientas. <span class="gradient">¿Y tú?</span></h2>
+    <p class="tech-subtitle">La tecnología detrás de nuestros resultados</p>
+    <div class="marquee-wrapper">
+        <div class="marquee-track">
+            <div class="tech-item"><div class="tech-icon" style="color:#D4A27F;">A</div><span>Anthropic</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#10A37F;">G</div><span>OpenAI</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#4285F4;">G</div><span>Google Cloud</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#4285F4;">W</div><span>Google Workspace</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#EA4B71;">n</div><span>n8n</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#25D366;">W</div><span>WhatsApp Business</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#9B59B6;">M</div><span>Make</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#F6AD3C;">H</div><span>HighLevel</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#FF4A00;">Z</div><span>Zapier</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#2D7FF9;">U</div><span>UChat</span></div>
+            <!-- Duplicados para loop infinito -->
+            <div class="tech-item"><div class="tech-icon" style="color:#D4A27F;">A</div><span>Anthropic</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#10A37F;">G</div><span>OpenAI</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#4285F4;">G</div><span>Google Cloud</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#4285F4;">W</div><span>Google Workspace</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#EA4B71;">n</div><span>n8n</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#25D366;">W</div><span>WhatsApp Business</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#9B59B6;">M</div><span>Make</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#F6AD3C;">H</div><span>HighLevel</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#FF4A00;">Z</div><span>Zapier</span></div>
+            <div class="tech-item"><div class="tech-icon" style="color:#2D7FF9;">U</div><span>UChat</span></div>
+        </div>
+    </div>
+    <p class="tech-more">Y muchas otras más.</p>
 </section>
 
 <!-- PROCESO -->
