@@ -312,10 +312,8 @@
             font-size: .95rem; font-weight: 500; color: rgba(255,255,255,.7);
             white-space: nowrap;
         }
-        .tech-icon {
-            width: 24px; height: 24px; border-radius: 6px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: .85rem; font-weight: 700;
+        .tech-logo {
+            width: 24px; height: 24px; flex-shrink: 0;
         }
         .tech-more {
             text-align: center; margin-top: 2.5rem;
@@ -533,27 +531,63 @@
     <p class="tech-subtitle animate-on-scroll delay-1">La tecnología detrás de nuestros resultados</p>
     <div class="marquee-wrapper">
         <div class="marquee-track">
-            <div class="tech-item"><div class="tech-icon" style="color:#D4A27F;">A</div><span>Anthropic</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#10A37F;">G</div><span>OpenAI</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#4285F4;">G</div><span>Google Cloud</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#4285F4;">W</div><span>Google Workspace</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#EA4B71;">n</div><span>n8n</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#25D366;">W</div><span>WhatsApp Business</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#9B59B6;">M</div><span>Make</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#F6AD3C;">H</div><span>HighLevel</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#FF4A00;">Z</div><span>Zapier</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#2D7FF9;">U</div><span>UChat</span></div>
-            <!-- Duplicados para loop infinito -->
-            <div class="tech-item"><div class="tech-icon" style="color:#D4A27F;">A</div><span>Anthropic</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#10A37F;">G</div><span>OpenAI</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#4285F4;">G</div><span>Google Cloud</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#4285F4;">W</div><span>Google Workspace</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#EA4B71;">n</div><span>n8n</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#25D366;">W</div><span>WhatsApp Business</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#9B59B6;">M</div><span>Make</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#F6AD3C;">H</div><span>HighLevel</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#FF4A00;">Z</div><span>Zapier</span></div>
-            <div class="tech-item"><div class="tech-icon" style="color:#2D7FF9;">U</div><span>UChat</span></div>
+            <!-- Meta -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.89h-2.33v6.99C18.34 21.19 22 17.06 22 12.06c0-5.53-4.5-10.02-10-10.02z" fill="#1877F2"/></svg><span>Meta</span></div>
+            <!-- Google Ads -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><rect x="1" y="8" width="8" height="14" rx="4" fill="#FBBC04" transform="rotate(-25 5 15)"/><rect x="9" y="3" width="8" height="18" rx="4" fill="#4285F4" transform="rotate(-25 13 12)"/><circle cx="6" cy="18.5" r="3.2" fill="#34A853"/></svg><span>Google Ads</span></div>
+            <!-- TikTok Ads -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.19a8.16 8.16 0 004.76 1.52V7.26a4.82 4.82 0 01-1-.57z" fill="white"/></svg><span>TikTok Ads</span></div>
+            <!-- OpenAI -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M22.28 9.37a5.98 5.98 0 00-.51-4.92 6.05 6.05 0 00-6.52-2.91A5.98 5.98 0 0010.73 0a6.05 6.05 0 00-5.77 4.18 5.98 5.98 0 00-4 2.9 6.05 6.05 0 00.74 7.09 5.98 5.98 0 00.51 4.92 6.05 6.05 0 006.52 2.91A5.98 5.98 0 0013.27 24a6.05 6.05 0 005.77-4.18 5.98 5.98 0 004-2.9 6.05 6.05 0 00-.76-7.55zm-9.01 13.18a4.49 4.49 0 01-2.88-1.04l.14-.08 4.78-2.76a.78.78 0 00.39-.67v-6.74l2.02 1.17a.07.07 0 01.04.06v5.58a4.51 4.51 0 01-4.49 4.48z" fill="#10A37F"/></svg><span>OpenAI</span></div>
+            <!-- Anthropic -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M13.83 2H16.7l-4.83 20H8.99l4.84-20zm-5.32 0h2.87L6.55 22H3.68L8.51 2z" fill="#D4A27F"/></svg><span>Anthropic</span></div>
+            <!-- Make -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="4" fill="#6D00CC"/><circle cx="18" cy="12" r="4" fill="#6D00CC"/><circle cx="12" cy="5" r="4" fill="#9B59B6"/></svg><span>Make</span></div>
+            <!-- Zapier -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M15.54 8.46l2.83-2.83a1 1 0 000-1.41l-.59-.59a1 1 0 00-1.41 0L13.54 6.46 12 4.93 10.46 6.46 7.63 3.63a1 1 0 00-1.41 0l-.59.59a1 1 0 000 1.41L8.46 8.46 6.93 10H4.93v.84a1 1 0 00.29.71l.59.59a1 1 0 00.71.29H8.46l1.54 1.54-2.83 2.83a1 1 0 000 1.41l.59.59a1 1 0 001.41 0l2.83-2.83L13.54 17.54v1.94a1 1 0 00.29.71l.59.59a1 1 0 00.71.29h.84v-1.94l1.54-1.54 2.83 2.83a1 1 0 001.41 0l.59-.59a1 1 0 000-1.41l-2.83-2.83L21.07 14h1.94a1 1 0 00.71-.29l.59-.59a1 1 0 00.29-.71V11.57H21.07z" fill="#FF4A00"/><circle cx="12" cy="12" r="3" fill="#FF4A00"/></svg><span>Zapier</span></div>
+            <!-- n8n -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="3" stroke="#EA4B71" stroke-width="2" fill="none"/><circle cx="12" cy="6" r="3" stroke="#EA4B71" stroke-width="2" fill="none"/><circle cx="19" cy="12" r="3" stroke="#EA4B71" stroke-width="2" fill="none"/><circle cx="12" cy="18" r="3" stroke="#EA4B71" stroke-width="2" fill="none"/><line x1="7.5" y1="10.5" x2="9.5" y2="7.5" stroke="#EA4B71" stroke-width="1.5"/><line x1="14.5" y1="7.5" x2="16.5" y2="10.5" stroke="#EA4B71" stroke-width="1.5"/><line x1="7.5" y1="13.5" x2="9.5" y2="16.5" stroke="#EA4B71" stroke-width="1.5"/><line x1="14.5" y1="16.5" x2="16.5" y2="13.5" stroke="#EA4B71" stroke-width="1.5"/></svg><span>n8n</span></div>
+            <!-- HighLevel -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><rect x="7" y="8" width="3" height="12" rx="1.5" fill="#F6AD3C"/><rect x="12" y="4" width="3" height="16" rx="1.5" fill="#28C840"/><rect x="17" y="10" width="3" height="10" rx="1.5" fill="#4285F4"/></svg><span>HighLevel</span></div>
+            <!-- WhatsApp Business -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.27-.1-.46-.15-.66.14-.2.29-.76.93-.93 1.12-.17.2-.34.22-.63.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.49.1-.19.05-.37-.02-.51-.08-.15-.66-1.58-.9-2.16-.24-.57-.48-.49-.66-.5h-.56a1.07 1.07 0 00-.78.37c-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.19 3.01c.15.2 2.06 3.14 4.99 4.41.7.3 1.24.48 1.66.61.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.08-.12-.27-.19-.56-.34z" fill="#25D366"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.23-1.37A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.15a8.13 8.13 0 01-4.15-1.13l-.3-.18-3.1.81.83-3.02-.19-.31A8.13 8.13 0 0112 3.85a8.15 8.15 0 010 16.3z" fill="#25D366"/></svg><span>WhatsApp Business</span></div>
+            <!-- HubSpot -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="17" cy="7" r="2" fill="#FF7A59"/><path d="M15 8.5V12a3 3 0 11-2.12.88L10.5 10.5A2.5 2.5 0 118.74 7.5l2.38 2.38A3 3 0 0115 8.5z" fill="#FF7A59"/><circle cx="15" cy="15" r="3" stroke="#FF7A59" stroke-width="2" fill="none"/></svg><span>HubSpot</span></div>
+            <!-- Mailchimp -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M18.91 12.44c-.33-.14-.53.1-.78.2a2.08 2.08 0 01-.86.17c-.52 0-.85-.22-.97-.44a4.53 4.53 0 00-2.81-1.16c-1.47-.08-2.7.64-3.38 1.7-.26-.65-.74-1.12-1.42-1.3.5-.65.77-1.47.77-2.34 0-.42-.07-.82-.2-1.19.63-.28 1.04-.9 1.04-1.6a1.7 1.7 0 00-1.7-1.7 1.7 1.7 0 00-1.28.58c-.5-.2-1.04-.31-1.6-.31C3.41 5.05 1.5 7.32 1.5 10.2c0 4.07 3.13 6.7 7.14 7.57 1.51.33 3.78.5 5.6-.28 1.6-.68 2.73-2 3.17-3.02.39-.9.32-1.67-.5-2.03z" fill="#FFE01B"/><path d="M12.79 14.5a2.3 2.3 0 00-.52-1.42 3.4 3.4 0 012.56-1.1c.88.05 1.64.4 2.14.89-.34.55-1.07.84-1.07.84s.35.48 0 .82c-.24.23-.61.15-.61.15s.12.56-.32.78c-.35.18-.72-.02-.72-.02s-.16.56-.74.56c-.63 0-.72-.5-.72-.5z" fill="#231F20" opacity=".15"/></svg><span>Mailchimp</span></div>
+            <!-- Google Workspace -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M22 8.6L12 2 2 8.6V22h20V8.6z" fill="none" stroke="#4285F4" stroke-width="0"/><path d="M12 2L2 8.6V22h7V13h6v9h7V8.6L12 2z" fill="#4285F4" opacity=".3"/><path d="M2 8.6L12 14l10-5.4" stroke="#4285F4" stroke-width="2" fill="none"/><path d="M2 8.6V22h7V13l3 1.6L15 13v9h7V8.6L12 14 2 8.6z" fill="#4285F4"/></svg><span>Google Workspace</span></div>
+            <!-- Google Cloud -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M14.54 7.48l1.77-1.77.09-.75A8.94 8.94 0 0012 3.05a8.96 8.96 0 00-8.14 5.25l.65-.09 3.54-.58.27-.28A5.4 5.4 0 0112 5.59a5.38 5.38 0 012.54 1.89z" fill="#EA4335"/><path d="M20.08 8.3a8.93 8.93 0 00-2.72-4.34l-2.82 2.82a5.38 5.38 0 011.95 4.3v.54a2.69 2.69 0 010 5.38H12l-.54.55v3.23l.54.54h4.5a6.23 6.23 0 003.58-11.02z" fill="#4285F4"/><path d="M7.5 21.32h4.5v-4.32H7.5a2.66 2.66 0 01-1.11-.24l-.77.24-2.21 2.2-.19.62a6.19 6.19 0 004.28 1.5z" fill="#34A853"/><path d="M7.5 8.86a6.23 6.23 0 00-4.28 10.96l3.17-3.17a2.69 2.69 0 011.11-5.13 2.69 2.69 0 012.7 2.69l3.17-3.17A6.23 6.23 0 007.5 8.86z" fill="#FBBC05"/></svg><span>Google Cloud</span></div>
+            <!-- DUPLICADOS para loop infinito -->
+            <!-- Meta -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.89h-2.33v6.99C18.34 21.19 22 17.06 22 12.06c0-5.53-4.5-10.02-10-10.02z" fill="#1877F2"/></svg><span>Meta</span></div>
+            <!-- Google Ads -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><rect x="1" y="8" width="8" height="14" rx="4" fill="#FBBC04" transform="rotate(-25 5 15)"/><rect x="9" y="3" width="8" height="18" rx="4" fill="#4285F4" transform="rotate(-25 13 12)"/><circle cx="6" cy="18.5" r="3.2" fill="#34A853"/></svg><span>Google Ads</span></div>
+            <!-- TikTok Ads -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V9.19a8.16 8.16 0 004.76 1.52V7.26a4.82 4.82 0 01-1-.57z" fill="white"/></svg><span>TikTok Ads</span></div>
+            <!-- OpenAI -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M22.28 9.37a5.98 5.98 0 00-.51-4.92 6.05 6.05 0 00-6.52-2.91A5.98 5.98 0 0010.73 0a6.05 6.05 0 00-5.77 4.18 5.98 5.98 0 00-4 2.9 6.05 6.05 0 00.74 7.09 5.98 5.98 0 00.51 4.92 6.05 6.05 0 006.52 2.91A5.98 5.98 0 0013.27 24a6.05 6.05 0 005.77-4.18 5.98 5.98 0 004-2.9 6.05 6.05 0 00-.76-7.55zm-9.01 13.18a4.49 4.49 0 01-2.88-1.04l.14-.08 4.78-2.76a.78.78 0 00.39-.67v-6.74l2.02 1.17a.07.07 0 01.04.06v5.58a4.51 4.51 0 01-4.49 4.48z" fill="#10A37F"/></svg><span>OpenAI</span></div>
+            <!-- Anthropic -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M13.83 2H16.7l-4.83 20H8.99l4.84-20zm-5.32 0h2.87L6.55 22H3.68L8.51 2z" fill="#D4A27F"/></svg><span>Anthropic</span></div>
+            <!-- Make -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="4" fill="#6D00CC"/><circle cx="18" cy="12" r="4" fill="#6D00CC"/><circle cx="12" cy="5" r="4" fill="#9B59B6"/></svg><span>Make</span></div>
+            <!-- Zapier -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M15.54 8.46l2.83-2.83a1 1 0 000-1.41l-.59-.59a1 1 0 00-1.41 0L13.54 6.46 12 4.93 10.46 6.46 7.63 3.63a1 1 0 00-1.41 0l-.59.59a1 1 0 000 1.41L8.46 8.46 6.93 10H4.93v.84a1 1 0 00.29.71l.59.59a1 1 0 00.71.29H8.46l1.54 1.54-2.83 2.83a1 1 0 000 1.41l.59.59a1 1 0 001.41 0l2.83-2.83L13.54 17.54v1.94a1 1 0 00.29.71l.59.59a1 1 0 00.71.29h.84v-1.94l1.54-1.54 2.83 2.83a1 1 0 001.41 0l.59-.59a1 1 0 000-1.41l-2.83-2.83L21.07 14h1.94a1 1 0 00.71-.29l.59-.59a1 1 0 00.29-.71V11.57H21.07z" fill="#FF4A00"/><circle cx="12" cy="12" r="3" fill="#FF4A00"/></svg><span>Zapier</span></div>
+            <!-- n8n -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="3" stroke="#EA4B71" stroke-width="2" fill="none"/><circle cx="12" cy="6" r="3" stroke="#EA4B71" stroke-width="2" fill="none"/><circle cx="19" cy="12" r="3" stroke="#EA4B71" stroke-width="2" fill="none"/><circle cx="12" cy="18" r="3" stroke="#EA4B71" stroke-width="2" fill="none"/><line x1="7.5" y1="10.5" x2="9.5" y2="7.5" stroke="#EA4B71" stroke-width="1.5"/><line x1="14.5" y1="7.5" x2="16.5" y2="10.5" stroke="#EA4B71" stroke-width="1.5"/><line x1="7.5" y1="13.5" x2="9.5" y2="16.5" stroke="#EA4B71" stroke-width="1.5"/><line x1="14.5" y1="16.5" x2="16.5" y2="13.5" stroke="#EA4B71" stroke-width="1.5"/></svg><span>n8n</span></div>
+            <!-- HighLevel -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><rect x="7" y="8" width="3" height="12" rx="1.5" fill="#F6AD3C"/><rect x="12" y="4" width="3" height="16" rx="1.5" fill="#28C840"/><rect x="17" y="10" width="3" height="10" rx="1.5" fill="#4285F4"/></svg><span>HighLevel</span></div>
+            <!-- WhatsApp Business -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.27-.1-.46-.15-.66.14-.2.29-.76.93-.93 1.12-.17.2-.34.22-.63.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.49.1-.19.05-.37-.02-.51-.08-.15-.66-1.58-.9-2.16-.24-.57-.48-.49-.66-.5h-.56a1.07 1.07 0 00-.78.37c-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.19 3.01c.15.2 2.06 3.14 4.99 4.41.7.3 1.24.48 1.66.61.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.08-.12-.27-.19-.56-.34z" fill="#25D366"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.23-1.37A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.15a8.13 8.13 0 01-4.15-1.13l-.3-.18-3.1.81.83-3.02-.19-.31A8.13 8.13 0 0112 3.85a8.15 8.15 0 010 16.3z" fill="#25D366"/></svg><span>WhatsApp Business</span></div>
+            <!-- HubSpot -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="17" cy="7" r="2" fill="#FF7A59"/><path d="M15 8.5V12a3 3 0 11-2.12.88L10.5 10.5A2.5 2.5 0 118.74 7.5l2.38 2.38A3 3 0 0115 8.5z" fill="#FF7A59"/><circle cx="15" cy="15" r="3" stroke="#FF7A59" stroke-width="2" fill="none"/></svg><span>HubSpot</span></div>
+            <!-- Mailchimp -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M18.91 12.44c-.33-.14-.53.1-.78.2a2.08 2.08 0 01-.86.17c-.52 0-.85-.22-.97-.44a4.53 4.53 0 00-2.81-1.16c-1.47-.08-2.7.64-3.38 1.7-.26-.65-.74-1.12-1.42-1.3.5-.65.77-1.47.77-2.34 0-.42-.07-.82-.2-1.19.63-.28 1.04-.9 1.04-1.6a1.7 1.7 0 00-1.7-1.7 1.7 1.7 0 00-1.28.58c-.5-.2-1.04-.31-1.6-.31C3.41 5.05 1.5 7.32 1.5 10.2c0 4.07 3.13 6.7 7.14 7.57 1.51.33 3.78.5 5.6-.28 1.6-.68 2.73-2 3.17-3.02.39-.9.32-1.67-.5-2.03z" fill="#FFE01B"/></svg><span>Mailchimp</span></div>
+            <!-- Google Workspace -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M2 8.6L12 14l10-5.4" stroke="#4285F4" stroke-width="2" fill="none"/><path d="M2 8.6V22h7V13l3 1.6L15 13v9h7V8.6L12 14 2 8.6z" fill="#4285F4"/></svg><span>Google Workspace</span></div>
+            <!-- Google Cloud -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M14.54 7.48l1.77-1.77.09-.75A8.94 8.94 0 0012 3.05a8.96 8.96 0 00-8.14 5.25l.65-.09 3.54-.58.27-.28A5.4 5.4 0 0112 5.59a5.38 5.38 0 012.54 1.89z" fill="#EA4335"/><path d="M20.08 8.3a8.93 8.93 0 00-2.72-4.34l-2.82 2.82a5.38 5.38 0 011.95 4.3v.54a2.69 2.69 0 010 5.38H12l-.54.55v3.23l.54.54h4.5a6.23 6.23 0 003.58-11.02z" fill="#4285F4"/><path d="M7.5 21.32h4.5v-4.32H7.5a2.66 2.66 0 01-1.11-.24l-.77.24-2.21 2.2-.19.62a6.19 6.19 0 004.28 1.5z" fill="#34A853"/><path d="M7.5 8.86a6.23 6.23 0 00-4.28 10.96l3.17-3.17a2.69 2.69 0 011.11-5.13 2.69 2.69 0 012.7 2.69l3.17-3.17A6.23 6.23 0 007.5 8.86z" fill="#FBBC05"/></svg><span>Google Cloud</span></div>
         </div>
     </div>
     <p class="tech-more">Y muchas otras más.</p>
