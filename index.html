@@ -367,6 +367,74 @@
             .toast { max-width: 100%; }
         }
 
+        /* ── SOLUCIONES WEB ── */
+        .soluciones { background: var(--navy); }
+        .soluciones .section-inner > .section-label,
+        .soluciones .section-inner > .section-title,
+        .soluciones .section-inner > .section-subtitle {
+            text-align: center;
+        }
+        .soluciones-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 2rem; margin-top: 4rem;
+        }
+        .solucion-card {
+            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 24px; padding: 0;
+            overflow: hidden;
+            transition: border-color .3s, transform .3s;
+        }
+        .solucion-card:hover {
+            border-color: rgba(83,74,183,.3);
+            transform: translateY(-6px);
+        }
+        .solucion-preview {
+            width: 100%; height: 200px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        .solucion-preview svg {
+            width: 80%; height: 80%; opacity: .85;
+        }
+        .solucion-card:nth-child(1) .solucion-preview {
+            background: linear-gradient(135deg, rgba(83,74,183,.15), rgba(108,99,255,.05));
+        }
+        .solucion-card:nth-child(2) .solucion-preview {
+            background: linear-gradient(135deg, rgba(40,200,64,.1), rgba(83,74,183,.05));
+        }
+        .solucion-card:nth-child(3) .solucion-preview {
+            background: linear-gradient(135deg, rgba(108,99,255,.15), rgba(167,139,250,.05));
+        }
+        .solucion-body { padding: 2rem; }
+        .solucion-tag {
+            display: inline-block; padding: .25rem .75rem;
+            border-radius: 980px; font-size: .7rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        .solucion-card:nth-child(1) .solucion-tag { background: rgba(83,74,183,.2); color: var(--purple-light); }
+        .solucion-card:nth-child(2) .solucion-tag { background: rgba(40,200,64,.15); color: #28C840; }
+        .solucion-card:nth-child(3) .solucion-tag { background: rgba(108,99,255,.2); color: #A78BFA; }
+        .solucion-body h3 {
+            font-size: 1.3rem; font-weight: 600; margin-bottom: .75rem;
+        }
+        .solucion-body p {
+            font-size: .9rem; color: var(--gray-400); font-weight: 300; line-height: 1.6;
+        }
+        .solucion-features {
+            display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem;
+        }
+        .solucion-feat {
+            font-size: .7rem; padding: .3rem .7rem;
+            border-radius: 6px; background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.06);
+            color: rgba(255,255,255,.5); font-weight: 400;
+        }
+        @media (max-width: 968px) {
+            .soluciones-grid { grid-template-columns: 1fr; max-width: 500px; margin: 4rem auto 0; }
+        }
+
         /* ── PROCESO ── */
         .proceso { background: rgba(255,255,255,.02); }
         .proceso .section-inner > .section-label,
@@ -635,6 +703,137 @@
             <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M2 8.6L12 14l10-5.4" stroke="#4285F4" stroke-width="2" fill="none"/><path d="M2 8.6V22h7V13l3 1.6L15 13v9h7V8.6L12 14 2 8.6z" fill="#4285F4"/></svg><span>Google Workspace</span></div>
             <!-- Google Cloud -->
             <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M14.54 7.48l1.77-1.77.09-.75A8.94 8.94 0 0012 3.05a8.96 8.96 0 00-8.14 5.25l.65-.09 3.54-.58.27-.28A5.4 5.4 0 0112 5.59a5.38 5.38 0 012.54 1.89z" fill="#EA4335"/><path d="M20.08 8.3a8.93 8.93 0 00-2.72-4.34l-2.82 2.82a5.38 5.38 0 011.95 4.3v.54a2.69 2.69 0 010 5.38H12l-.54.55v3.23l.54.54h4.5a6.23 6.23 0 003.58-11.02z" fill="#4285F4"/><path d="M7.5 21.32h4.5v-4.32H7.5a2.66 2.66 0 01-1.11-.24l-.77.24-2.21 2.2-.19.62a6.19 6.19 0 004.28 1.5z" fill="#34A853"/><path d="M7.5 8.86a6.23 6.23 0 00-4.28 10.96l3.17-3.17a2.69 2.69 0 011.11-5.13 2.69 2.69 0 012.7 2.69l3.17-3.17A6.23 6.23 0 007.5 8.86z" fill="#FBBC05"/></svg><span>Google Cloud</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- SOLUCIONES WEB -->
+<div class="glow-divider"></div>
+<section class="soluciones">
+    <div class="section-inner">
+        <p class="section-label animate-on-scroll">Soluciones</p>
+        <h2 class="section-title animate-on-scroll delay-1">Lo que construimos para tu institución</h2>
+        <p class="section-subtitle centered animate-on-scroll delay-2">Desarrollo digital a la medida que trabaja en conjunto con tus campañas.</p>
+        <div class="soluciones-grid">
+            <!-- Landing Pages -->
+            <div class="solucion-card animate-on-scroll delay-1">
+                <div class="solucion-preview">
+                    <svg viewBox="0 0 300 200" fill="none">
+                        <rect x="20" y="10" width="260" height="180" rx="12" fill="#252244"/>
+                        <rect x="20" y="10" width="260" height="30" rx="12" fill="#1A1730"/>
+                        <rect x="20" y="35" width="260" height="5" fill="#1A1730"/>
+                        <circle cx="35" cy="25" r="4" fill="#FF5F57"/>
+                        <circle cx="48" cy="25" r="4" fill="#FEBC2E"/>
+                        <circle cx="61" cy="25" r="4" fill="#28C840"/>
+                        <rect x="40" y="55" width="120" height="8" rx="3" fill="rgba(255,255,255,.2)"/>
+                        <rect x="40" y="70" width="160" height="6" rx="2" fill="rgba(255,255,255,.08)"/>
+                        <rect x="40" y="82" width="140" height="6" rx="2" fill="rgba(255,255,255,.08)"/>
+                        <rect x="40" y="100" width="80" height="22" rx="11" fill="#534AB7"/>
+                        <rect x="190" y="50" width="70" height="80" rx="8" fill="rgba(83,74,183,.15)"/>
+                        <rect x="40" y="140" width="65" height="40" rx="6" fill="rgba(255,255,255,.04)"/>
+                        <rect x="115" y="140" width="65" height="40" rx="6" fill="rgba(255,255,255,.04)"/>
+                        <rect x="190" y="140" width="65" height="40" rx="6" fill="rgba(255,255,255,.04)"/>
+                    </svg>
+                </div>
+                <div class="solucion-body">
+                    <span class="solucion-tag">Captación</span>
+                    <h3>Landing Pages</h3>
+                    <p>Páginas de aterrizaje optimizadas para conversión, diseñadas específicamente para cada carrera o programa educativo.</p>
+                    <div class="solucion-features">
+                        <span class="solucion-feat">Alta conversión</span>
+                        <span class="solucion-feat">Responsive</span>
+                        <span class="solucion-feat">A/B Testing</span>
+                        <span class="solucion-feat">Formularios</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Sitios Web -->
+            <div class="solucion-card animate-on-scroll delay-2">
+                <div class="solucion-preview">
+                    <svg viewBox="0 0 300 200" fill="none">
+                        <rect x="20" y="10" width="260" height="180" rx="12" fill="#252244"/>
+                        <rect x="20" y="10" width="260" height="30" rx="12" fill="#1A1730"/>
+                        <rect x="20" y="35" width="260" height="5" fill="#1A1730"/>
+                        <circle cx="35" cy="25" r="4" fill="#FF5F57"/>
+                        <circle cx="48" cy="25" r="4" fill="#FEBC2E"/>
+                        <circle cx="61" cy="25" r="4" fill="#28C840"/>
+                        <rect x="35" y="50" width="40" height="6" rx="2" fill="rgba(40,200,64,.4)"/>
+                        <rect x="140" y="50" width="30" height="6" rx="2" fill="rgba(255,255,255,.1)"/>
+                        <rect x="180" y="50" width="30" height="6" rx="2" fill="rgba(255,255,255,.1)"/>
+                        <rect x="220" y="50" width="40" height="6" rx="2" fill="rgba(255,255,255,.1)"/>
+                        <rect x="35" y="70" width="230" height="60" rx="8" fill="rgba(40,200,64,.08)"/>
+                        <rect x="50" y="82" width="130" height="8" rx="3" fill="rgba(255,255,255,.2)"/>
+                        <rect x="50" y="96" width="100" height="6" rx="2" fill="rgba(255,255,255,.08)"/>
+                        <rect x="50" y="108" width="70" height="14" rx="7" fill="rgba(40,200,64,.3)"/>
+                        <rect x="35" y="140" width="72" height="45" rx="6" fill="rgba(255,255,255,.04)"/>
+                        <rect x="114" y="140" width="72" height="45" rx="6" fill="rgba(255,255,255,.04)"/>
+                        <rect x="193" y="140" width="72" height="45" rx="6" fill="rgba(255,255,255,.04)"/>
+                    </svg>
+                </div>
+                <div class="solucion-body">
+                    <span class="solucion-tag">Presencia</span>
+                    <h3>Sitios Web Profesionales</h3>
+                    <p>Sitios web modernos que reflejan la identidad de tu institución y están optimizados para posicionamiento y velocidad.</p>
+                    <div class="solucion-features">
+                        <span class="solucion-feat">SEO</span>
+                        <span class="solucion-feat">Rápidos</span>
+                        <span class="solucion-feat">Administrables</span>
+                        <span class="solucion-feat">Mobile-first</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Asistentes Virtuales -->
+            <div class="solucion-card animate-on-scroll delay-3">
+                <div class="solucion-preview">
+                    <svg viewBox="0 0 300 200" fill="none">
+                        <!-- Phone frame -->
+                        <rect x="95" y="5" width="110" height="190" rx="18" fill="#252244"/>
+                        <rect x="96" y="6" width="108" height="188" rx="17" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                        <rect x="125" y="10" width="50" height="10" rx="5" fill="#1A1730"/>
+                        <rect x="100" y="26" width="100" height="160" rx="2" fill="#1A1730"/>
+                        <!-- Chat bubbles -->
+                        <rect x="106" y="34" width="70" height="22" rx="8" fill="rgba(108,99,255,.25)"/>
+                        <rect x="110" y="40" width="45" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+                        <rect x="110" y="48" width="30" height="3" rx="1.5" fill="rgba(255,255,255,.1)"/>
+                        <rect x="132" y="64" width="62" height="22" rx="8" fill="rgba(255,255,255,.06)"/>
+                        <rect x="136" y="70" width="40" height="4" rx="2" fill="rgba(255,255,255,.2)"/>
+                        <rect x="136" y="78" width="28" height="3" rx="1.5" fill="rgba(255,255,255,.08)"/>
+                        <rect x="106" y="94" width="80" height="28" rx="8" fill="rgba(108,99,255,.25)"/>
+                        <rect x="110" y="100" width="55" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+                        <rect x="110" y="108" width="65" height="4" rx="2" fill="rgba(255,255,255,.2)"/>
+                        <rect x="110" y="116" width="35" height="3" rx="1.5" fill="rgba(255,255,255,.1)"/>
+                        <!-- Typing indicator -->
+                        <rect x="106" y="130" width="40" height="16" rx="8" fill="rgba(108,99,255,.15)"/>
+                        <circle cx="116" cy="138" r="2.5" fill="rgba(108,99,255,.5)"/>
+                        <circle cx="126" cy="138" r="2.5" fill="rgba(108,99,255,.4)"/>
+                        <circle cx="136" cy="138" r="2.5" fill="rgba(108,99,255,.3)"/>
+                        <!-- Input bar -->
+                        <rect x="104" y="155" width="76" height="22" rx="11" fill="#252244"/>
+                        <rect x="112" y="163" width="40" height="4" rx="2" fill="rgba(255,255,255,.1)"/>
+                        <circle cx="188" cy="166" r="8" fill="#534AB7"/>
+                        <!-- AI badge -->
+                        <rect x="30" y="70" width="55" height="24" rx="12" fill="rgba(108,99,255,.15)"/>
+                        <rect x="31" y="71" width="53" height="22" rx="11" stroke="rgba(108,99,255,.3)" stroke-width="1"/>
+                        <text x="57" y="86" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#A78BFA" font-weight="600">IA 24/7</text>
+                        <!-- Status -->
+                        <rect x="215" y="90" width="65" height="30" rx="10" fill="rgba(40,200,64,.1)"/>
+                        <circle cx="228" cy="105" r="4" fill="#28C840"/>
+                        <rect x="236" y="100" width="35" height="4" rx="2" fill="rgba(40,200,64,.3)"/>
+                        <rect x="236" y="108" width="25" height="3" rx="1.5" fill="rgba(255,255,255,.1)"/>
+                    </svg>
+                </div>
+                <div class="solucion-body">
+                    <span class="solucion-tag">Automatización</span>
+                    <h3>Asistentes Virtuales con IA</h3>
+                    <p>Chatbots inteligentes que atienden prospectos por WhatsApp y web las 24 horas, resolviendo dudas y agendando citas.</p>
+                    <div class="solucion-features">
+                        <span class="solucion-feat">WhatsApp</span>
+                        <span class="solucion-feat">Web chat</span>
+                        <span class="solucion-feat">24/7</span>
+                        <span class="solucion-feat">IA conversacional</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
