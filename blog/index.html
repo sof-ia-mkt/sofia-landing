@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | SOF-IA — Marketing Educativo con Inteligencia</title>
+    <meta name="description" content="Estrategias de marketing educativo, inteligencia artificial y captación digital para instituciones educativas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --navy: #14112E; --purple: #534AB7; --purple-light: #6C63FF; --white: #FFFFFF; --gray-200: #E8E8ED; --gray-400: #86868B; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Space Grotesk', sans-serif; background: var(--navy); color: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+        /* NAV */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(20,17,46,.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,.06); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { height: 36px; width: auto; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--gray-200); text-decoration: none; font-size: .875rem; font-weight: 400; transition: color .2s; }
+        .nav-links a:hover { color: var(--white); }
+        .nav-cta { background: var(--purple); color: var(--white) !important; padding: .6rem 1.5rem; border-radius: 980px; font-weight: 500; transition: background .2s; }
+        .nav-cta:hover { background: var(--purple-light); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
+
+        /* BLOG HERO */
+        .blog-hero { padding: 9rem 2rem 3rem; text-align: center; }
+        .blog-hero h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700;
+            letter-spacing: -.02em; margin-bottom: .75rem;
+        }
+        .blog-hero p { color: var(--gray-400); font-size: 1.1rem; font-weight: 300; max-width: 550px; margin: 0 auto 2rem; }
+
+        /* CATEGORIES */
+        .blog-cats { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+        .blog-cat {
+            padding: .4rem 1rem; border-radius: 980px; font-size: .8rem; font-weight: 500;
+            background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+            color: var(--gray-400); cursor: pointer; transition: all .2s; text-decoration: none;
+        }
+        .blog-cat:hover, .blog-cat.active { background: rgba(83,74,183,.2); border-color: rgba(83,74,183,.4); color: var(--purple-light); }
+
+        /* FEATURED ARTICLE */
+        .blog-featured { max-width: 1200px; margin: 0 auto 4rem; padding: 0 2rem; }
+        .featured-card {
+            display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem;
+            background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06);
+            border-radius: 24px; overflow: hidden;
+            transition: border-color .3s, transform .3s;
+            text-decoration: none; color: inherit;
+        }
+        .featured-card:hover { border-color: rgba(83,74,183,.3); transform: translateY(-4px); }
+        .featured-img {
+            min-height: 300px; position: relative;
+            background: linear-gradient(135deg, rgba(83,74,183,.2), rgba(108,99,255,.05));
+            display: flex; align-items: center; justify-content: center;
+        }
+        .featured-img-placeholder {
+            font-size: 4rem; opacity: .3;
+        }
+        .featured-body { padding: 2.5rem 2.5rem 2.5rem 0; display: flex; flex-direction: column; justify-content: center; }
+        .featured-tag {
+            display: inline-block; width: fit-content;
+            padding: .25rem .75rem; border-radius: 980px;
+            font-size: .7rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 1rem;
+            background: rgba(83,74,183,.2); color: var(--purple-light);
+        }
+        .featured-body h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: .75rem; line-height: 1.25; }
+        .featured-body p { color: var(--gray-400); font-size: .95rem; font-weight: 300; line-height: 1.6; margin-bottom: 1.5rem; }
+        .featured-meta { font-size: .75rem; color: rgba(255,255,255,.3); }
+
+        /* ARTICLES GRID */
+        .blog-grid-section { max-width: 1200px; margin: 0 auto; padding: 0 2rem 6rem; }
+        .blog-grid-title { font-size: 1.1rem; font-weight: 600; color: var(--gray-400); margin-bottom: 2rem; }
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .blog-card {
+            background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06);
+            border-radius: 20px; overflow: hidden;
+            transition: border-color .3s, transform .3s;
+            text-decoration: none; color: inherit;
+        }
+        .blog-card:hover { border-color: rgba(83,74,183,.3); transform: translateY(-4px); }
+        .blog-card-img {
+            height: 180px; position: relative;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .blog-card:nth-child(1) .blog-card-img { background: linear-gradient(135deg, rgba(83,74,183,.15), rgba(108,99,255,.05)); }
+        .blog-card:nth-child(2) .blog-card-img { background: linear-gradient(135deg, rgba(40,200,64,.1), rgba(83,74,183,.05)); }
+        .blog-card:nth-child(3) .blog-card-img { background: linear-gradient(135deg, rgba(234,75,113,.1), rgba(83,74,183,.05)); }
+        .blog-card:nth-child(4) .blog-card-img { background: linear-gradient(135deg, rgba(254,188,46,.1), rgba(83,74,183,.05)); }
+        .blog-card:nth-child(5) .blog-card-img { background: linear-gradient(135deg, rgba(108,99,255,.15), rgba(167,139,250,.05)); }
+        .blog-card:nth-child(6) .blog-card-img { background: linear-gradient(135deg, rgba(40,200,64,.15), rgba(83,74,183,.05)); }
+        .blog-card-img-placeholder { font-size: 2.5rem; opacity: .3; }
+        .blog-card-body { padding: 1.5rem; }
+        .blog-card-tag {
+            display: inline-block; padding: .2rem .6rem; border-radius: 980px;
+            font-size: .65rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: .75rem;
+            background: rgba(83,74,183,.15); color: var(--purple-light);
+        }
+        .blog-card-body h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: .5rem; line-height: 1.3; }
+        .blog-card-body p { font-size: .85rem; color: var(--gray-400); font-weight: 300; line-height: 1.5; margin-bottom: 1rem; }
+        .blog-card-meta { font-size: .7rem; color: rgba(255,255,255,.25); }
+
+        /* FOOTER */
+        footer { padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,.06); }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+        .footer-logo { height: 28px; opacity: .6; }
+        footer p { font-size: .8rem; color: var(--gray-400); }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a { color: var(--gray-400); text-decoration: none; font-size: .8rem; transition: color .2s; }
+        .footer-links a:hover { color: var(--white); }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .featured-card { grid-template-columns: 1fr; }
+            .featured-body { padding: 2rem; }
+            .blog-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="../"><img src="../logo_blanco.svg" alt="SOF-IA" class="nav-logo"></a>
+        <div class="nav-links">
+            <a href="../#servicios">Servicios</a>
+            <a href="../#soluciones">Soluciones</a>
+            <a href="../#proceso">Proceso</a>
+            <a href="./">Blog</a>
+            <a href="../contacto/" class="nav-cta">Contacto</a>
+        </div>
+        <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<!-- BLOG HERO -->
+<section class="blog-hero">
+    <h1>Blog</h1>
+    <p>Estrategias, herramientas y tendencias en marketing educativo e inteligencia artificial.</p>
+    <div class="blog-cats">
+        <a class="blog-cat active" href="#">Todos</a>
+        <a class="blog-cat" href="#">Marketing Educativo</a>
+        <a class="blog-cat" href="#">Inteligencia Artificial</a>
+        <a class="blog-cat" href="#">Captación</a>
+        <a class="blog-cat" href="#">Automatización</a>
+    </div>
+</section>
+
+<!-- FEATURED ARTICLE -->
+<div class="blog-featured">
+    <a href="por-que-tu-universidad-necesita-ia-en-2026/" class="featured-card">
+        <div class="featured-img">
+            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" style="opacity:.15">
+                <path d="M12 2a7 7 0 017 7v3l2 2v1H3v-1l2-2V9a7 7 0 017-7z" fill="#6C63FF"/>
+                <circle cx="12" cy="9" r="3" fill="#1E1B37"/>
+                <path d="M9 21a3 3 0 006 0" stroke="#6C63FF" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+        <div class="featured-body">
+            <span class="featured-tag">Inteligencia Artificial</span>
+            <h2>Por qué tu universidad necesita IA en 2026</h2>
+            <p>Las instituciones educativas que no adopten inteligencia artificial en sus procesos de captación y comunicación van a quedarse atrás. Descubre por qué este es el año para dar el salto.</p>
+            <span class="featured-meta">27 de marzo, 2026 · 5 min de lectura</span>
+        </div>
+    </a>
+</div>
+
+<!-- ARTICLES GRID -->
+<div class="blog-grid-section">
+    <p class="blog-grid-title">Artículos recientes</p>
+    <div class="blog-grid">
+        <a href="5-errores-captacion-digital-escuelas/" class="blog-card">
+            <div class="blog-card-img">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><circle cx="12" cy="12" r="10" stroke="#6C63FF" stroke-width="2"/><path d="M15 9l-6 6M9 9l6 6" stroke="#6C63FF" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="blog-card-body">
+                <span class="blog-card-tag">Captación</span>
+                <h3>5 errores de captación digital que cometen las escuelas</h3>
+                <p>Errores comunes que hacen que pierdas prospectos y cómo evitarlos con una estrategia digital bien ejecutada.</p>
+                <span class="blog-card-meta">26 de marzo, 2026 · 4 min</span>
+            </div>
+        </a>
+        <a href="como-reducir-costo-por-inscrito/" class="blog-card">
+            <div class="blog-card-img">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><polyline points="4 16 8 12 12 14 16 8 20 10" stroke="#28C840" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </div>
+            <div class="blog-card-body">
+                <span class="blog-card-tag" style="background:rgba(40,200,64,.15);color:#28C840;">Marketing Educativo</span>
+                <h3>Cómo reducir tu costo por inscrito con automatización</h3>
+                <p>Estrategias probadas para optimizar cada peso invertido en publicidad digital y generar más inscritos.</p>
+                <span class="blog-card-meta">25 de marzo, 2026 · 6 min</span>
+            </div>
+        </a>
+        <a href="chatbots-whatsapp-instituciones-educativas/" class="blog-card">
+            <div class="blog-card-img">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><path d="M21 12a9 9 0 01-9 9m0 0a9 9 0 01-9-9m9 9v-4m-9-5a9 9 0 019-9m0 0V7m9 5H17M7 12H3" stroke="#EA4B71" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="blog-card-body">
+                <span class="blog-card-tag" style="background:rgba(234,75,113,.15);color:#EA4B71;">Automatización</span>
+                <h3>Chatbots en WhatsApp para instituciones educativas</h3>
+                <p>Cómo un asistente virtual puede atender prospectos las 24 horas y aumentar tus conversiones.</p>
+                <span class="blog-card-meta">24 de marzo, 2026 · 5 min</span>
+            </div>
+        </a>
+        <a href="meta-ads-vs-google-ads-universidades/" class="blog-card">
+            <div class="blog-card-img">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#FBBC04" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="#FBBC04" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="blog-card-body">
+                <span class="blog-card-tag" style="background:rgba(254,188,46,.15);color:#FBBC04;">Captación</span>
+                <h3>Meta Ads vs Google Ads: ¿cuál funciona mejor para universidades?</h3>
+                <p>Comparamos ambas plataformas para que sepas dónde invertir tu presupuesto de admisiones.</p>
+                <span class="blog-card-meta">23 de marzo, 2026 · 7 min</span>
+            </div>
+        </a>
+        <a href="landing-pages-que-convierten-educacion/" class="blog-card">
+            <div class="blog-card-img">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#A78BFA" stroke-width="2"/><path d="M7 8h10M7 12h6M7 16h8" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="blog-card-body">
+                <span class="blog-card-tag" style="background:rgba(167,139,250,.15);color:#A78BFA;">Marketing Educativo</span>
+                <h3>Anatomía de una landing page que convierte en educación</h3>
+                <p>Los elementos esenciales que toda página de captación educativa debe tener para maximizar inscritos.</p>
+                <span class="blog-card-meta">22 de marzo, 2026 · 5 min</span>
+            </div>
+        </a>
+        <a href="crm-educativo-por-que-necesitas-uno/" class="blog-card">
+            <div class="blog-card-img">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#28C840" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="#28C840" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#28C840" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="blog-card-body">
+                <span class="blog-card-tag" style="background:rgba(40,200,64,.15);color:#28C840;">Automatización</span>
+                <h3>CRM educativo: por qué tu institución necesita uno</h3>
+                <p>Si todavía manejas prospectos en Excel, estás perdiendo inscritos. Descubre cómo un CRM cambia el juego.</p>
+                <span class="blog-card-meta">21 de marzo, 2026 · 4 min</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <img src="../logo_blanco.svg" alt="SOF-IA" class="footer-logo">
+        <p>&copy; 2026 SOF-IA. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('.blog-cat').forEach(cat => {
+        cat.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelectorAll('.blog-cat').forEach(c => c.classList.remove('active'));
+            cat.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
