@@ -174,7 +174,7 @@
         .section-subtitle.centered { margin: 0 auto; text-align: center; }
 
         /* ── SERVICIOS (Sticky Scroll) ── */
-        .servicios { min-height: 400vh; position: relative; padding: 0; }
+        .servicios { min-height: 600vh; position: relative; padding: 0; }
         .sticky-container {
             position: sticky; top: 0; height: 100vh;
             display: flex; align-items: center; justify-content: center;
@@ -212,20 +212,27 @@
             background: var(--purple-light);
             box-shadow: 0 0 10px rgba(108,99,255,.4);
         }
-        .sticky-mockup { position: relative; min-height: 360px; }
-        .sticky-mockup-img {
-            position: absolute; top: 0; left: 0; width: 100%; height: auto;
-            border-radius: 16px; opacity: 0; transform: scale(.95);
+        .sticky-mockup { position: relative; min-height: 420px; }
+        .sticky-mockup-slide {
+            position: absolute; top: 0; left: 0; width: 100%;
+            opacity: 0; transform: scale(.95);
             transition: opacity .4s ease, transform .4s ease;
+        }
+        .sticky-mockup-slide.active { opacity: 1; transform: scale(1); }
+        .sticky-mockup-label {
+            font-size: .75rem; font-weight: 600; color: var(--purple-light);
+            text-transform: uppercase; letter-spacing: 2px;
+            margin-bottom: .75rem; text-align: center;
+        }
+        .sticky-mockup-slide img {
+            width: 100%; height: auto; border-radius: 16px;
             filter: drop-shadow(0 20px 60px rgba(0,0,0,.4));
         }
-        .sticky-mockup-img.active { opacity: 1; transform: scale(1); }
 
         @media (max-width: 768px) {
             .sticky-layout { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
             .sticky-dots { justify-content: center; }
-            .sticky-mockup { min-height: 260px; }
-            .sticky-mockup-img { position: relative; }
+            .sticky-mockup { min-height: 300px; }
         }
 
         /* ── PROCESO ── */
@@ -384,19 +391,49 @@
                         <h3>Formularios Inteligentes</h3>
                         <p>Captura la información correcta en el momento indicado para calificar prospectos desde el primer contacto.</p>
                     </div>
+                    <div class="sticky-feature" data-index="4">
+                        <h3>Email Marketing Automatizado</h3>
+                        <p>Secuencias de correos que nutren a tus prospectos automáticamente desde el primer contacto hasta la inscripción.</p>
+                    </div>
+                    <div class="sticky-feature" data-index="5">
+                        <h3>Reportes y Analítica</h3>
+                        <p>Dashboards en tiempo real que miden cada peso invertido, por carrera y por canal. Decisiones basadas en datos, no en intuición.</p>
+                    </div>
                 </div>
                 <div class="sticky-dots">
                     <div class="sticky-dot active" data-index="0"></div>
                     <div class="sticky-dot" data-index="1"></div>
                     <div class="sticky-dot" data-index="2"></div>
                     <div class="sticky-dot" data-index="3"></div>
+                    <div class="sticky-dot" data-index="4"></div>
+                    <div class="sticky-dot" data-index="5"></div>
                 </div>
             </div>
             <div class="sticky-mockup">
-                <img src="mockup-ads.svg" alt="Campañas Publicitarias" class="sticky-mockup-img active" data-index="0">
-                <img src="mockup-landing.svg" alt="Landing Pages" class="sticky-mockup-img" data-index="1">
-                <img src="mockup-crm.svg" alt="Integración CRM" class="sticky-mockup-img" data-index="2">
-                <img src="mockup-forms.svg" alt="Formularios Inteligentes" class="sticky-mockup-img" data-index="3">
+                <div class="sticky-mockup-slide active" data-index="0">
+                    <p class="sticky-mockup-label">Meta & Google Ads</p>
+                    <img src="mockup-ads.svg" alt="Campañas Publicitarias">
+                </div>
+                <div class="sticky-mockup-slide" data-index="1">
+                    <p class="sticky-mockup-label">Página de captación</p>
+                    <img src="mockup-landing.svg" alt="Landing Pages">
+                </div>
+                <div class="sticky-mockup-slide" data-index="2">
+                    <p class="sticky-mockup-label">Pipeline de prospectos</p>
+                    <img src="mockup-crm.svg" alt="Integración CRM">
+                </div>
+                <div class="sticky-mockup-slide" data-index="3">
+                    <p class="sticky-mockup-label">Captura inteligente</p>
+                    <img src="mockup-forms.svg" alt="Formularios Inteligentes">
+                </div>
+                <div class="sticky-mockup-slide" data-index="4">
+                    <p class="sticky-mockup-label">Flujos automatizados</p>
+                    <img src="mockup-email.svg" alt="Email Marketing">
+                </div>
+                <div class="sticky-mockup-slide" data-index="5">
+                    <p class="sticky-mockup-label">Dashboard de resultados</p>
+                    <img src="mockup-analytics.svg" alt="Reportes y Analítica">
+                </div>
             </div>
         </div>
     </div>
@@ -502,16 +539,17 @@
     const serviciosSection = document.querySelector('.servicios');
     const stickyFeatures = document.querySelectorAll('.sticky-feature');
     const stickyDots = document.querySelectorAll('.sticky-dot');
-    const stickyMockups = document.querySelectorAll('.sticky-mockup-img');
+    const stickySlides = document.querySelectorAll('.sticky-mockup-slide');
+    const totalFeatures = 6;
 
     window.addEventListener('scroll', () => {
         if (!serviciosSection) return;
         const rect = serviciosSection.getBoundingClientRect();
         const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
-        const index = Math.min(3, Math.floor(progress * 4));
+        const index = Math.min(totalFeatures - 1, Math.floor(progress * totalFeatures));
         stickyFeatures.forEach((f, i) => f.classList.toggle('active', i === index));
         stickyDots.forEach((d, i) => d.classList.toggle('active', i === index));
-        stickyMockups.forEach((m, i) => m.classList.toggle('active', i === index));
+        stickySlides.forEach((m, i) => m.classList.toggle('active', i === index));
     });
 </script>
 
