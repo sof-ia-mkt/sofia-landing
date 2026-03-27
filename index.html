@@ -173,39 +173,59 @@
         }
         .section-subtitle.centered { margin: 0 auto; text-align: center; }
 
-        /* ── SERVICIOS ── */
-        .servicios { background: var(--navy); }
-        .servicios .section-inner > .section-label,
-        .servicios .section-inner > .section-title,
-        .servicios .section-inner > .section-subtitle {
-            text-align: center;
-        }
-        .servicios-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem; margin-top: 4rem;
-        }
-        .servicio-card {
-            background: rgba(255,255,255,.03);
-            border: 1px solid rgba(255,255,255,.06);
-            border-radius: 20px; padding: 2.5rem;
-            transition: background .3s, border-color .3s, transform .3s;
-        }
-        .servicio-card:hover {
-            background: rgba(83,74,183,.08);
-            border-color: rgba(83,74,183,.3);
-            transform: translateY(-4px);
-        }
-        .servicio-icon {
-            width: 48px; height: 48px; border-radius: 12px;
-            background: rgba(83,74,183,.15);
+        /* ── SERVICIOS (Sticky Scroll) ── */
+        .servicios { min-height: 400vh; position: relative; padding: 0; }
+        .sticky-container {
+            position: sticky; top: 0; height: 100vh;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; margin-bottom: 1.5rem;
+            overflow: hidden;
         }
-        .servicio-card h3 {
-            font-size: 1.25rem; font-weight: 600; margin-bottom: .75rem;
+        .sticky-layout {
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: center; width: 100%;
         }
-        .servicio-card p {
-            font-size: .95rem; color: var(--gray-400); font-weight: 300; line-height: 1.6;
+        .sticky-text { position: relative; }
+        .sticky-text .section-label { margin-bottom: 1rem; }
+        .sticky-text .section-title { margin-bottom: 2rem; }
+        .sticky-features { position: relative; min-height: 120px; }
+        .sticky-feature {
+            position: absolute; top: 0; left: 0; width: 100%;
+            opacity: 0; transform: translateY(20px);
+            transition: opacity .4s ease, transform .4s ease;
+        }
+        .sticky-feature.active { opacity: 1; transform: translateY(0); }
+        .sticky-feature h3 {
+            font-size: 1.4rem; font-weight: 600; margin-bottom: .75rem;
+        }
+        .sticky-feature p {
+            font-size: 1rem; color: var(--gray-400); font-weight: 300; line-height: 1.6;
+        }
+        .sticky-dots {
+            display: flex; gap: .5rem; margin-top: 7rem;
+        }
+        .sticky-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: rgba(255,255,255,.15); transition: all .3s;
+        }
+        .sticky-dot.active {
+            background: var(--purple-light);
+            box-shadow: 0 0 10px rgba(108,99,255,.4);
+        }
+        .sticky-mockup { position: relative; min-height: 360px; }
+        .sticky-mockup-img {
+            position: absolute; top: 0; left: 0; width: 100%; height: auto;
+            border-radius: 16px; opacity: 0; transform: scale(.95);
+            transition: opacity .4s ease, transform .4s ease;
+            filter: drop-shadow(0 20px 60px rgba(0,0,0,.4));
+        }
+        .sticky-mockup-img.active { opacity: 1; transform: scale(1); }
+
+        @media (max-width: 768px) {
+            .sticky-layout { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .sticky-dots { justify-content: center; }
+            .sticky-mockup { min-height: 260px; }
+            .sticky-mockup-img { position: relative; }
         }
 
         /* ── PROCESO ── */
@@ -331,9 +351,8 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <img src="logo_blanco.svg" alt="SOF-IA" class="hero-logo">
-        <span class="hero-badge">Marketing Educativo con IA</span>
-        <h1>Más alumnos para tu institución con <span class="gradient">Inteligencia Artificial</span></h1>
-        <p>Captamos, convertimos y fidelizamos estudiantes para universidades e instituciones educativas usando tecnología de IA.</p>
+        <h1>Llenamos tus aulas con <span class="gradient">publicidad inteligente</span></h1>
+        <p>Diseñamos, lanzamos y optimizamos tu estrategia de captación digital de principio a fin.</p>
         <div class="hero-buttons">
             <a href="#contacto" class="btn-primary">Agenda una llamada</a>
             <a href="#servicios" class="btn-secondary">Conoce más</a>
@@ -341,42 +360,43 @@
     </div>
 </section>
 
-<!-- SERVICIOS -->
+<!-- SERVICIOS (Sticky Scroll) -->
 <section class="servicios" id="servicios">
-    <div class="section-inner">
-        <p class="section-label">Servicios</p>
-        <h2 class="section-title">Soluciones que llenan aulas</h2>
-        <p class="section-subtitle centered">Combinamos estrategia educativa con inteligencia artificial para que tu institución crezca.</p>
-        <div class="servicios-grid">
-            <div class="servicio-card">
-                <div class="servicio-icon">🎓</div>
-                <h3>Captación de Alumnos</h3>
-                <p>Campañas de admisión en Meta, Google y TikTok optimizadas con IA para reducir tu costo por inscrito.</p>
+    <div class="sticky-container">
+        <div class="sticky-layout">
+            <div class="sticky-text">
+                <p class="section-label">Lo que hacemos</p>
+                <h2 class="section-title">Tu captación digital, resuelta</h2>
+                <div class="sticky-features">
+                    <div class="sticky-feature active" data-index="0">
+                        <h3>Campañas Publicitarias</h3>
+                        <p>Meta, Google y TikTok Ads optimizadas con IA para que cada peso invertido traiga prospectos calificados a tu institución.</p>
+                    </div>
+                    <div class="sticky-feature" data-index="1">
+                        <h3>Landing Pages</h3>
+                        <p>Páginas de captación diseñadas para convertir visitantes en prospectos interesados en tu oferta educativa.</p>
+                    </div>
+                    <div class="sticky-feature" data-index="2">
+                        <h3>Integración CRM</h3>
+                        <p>Todos tus leads organizados, con seguimiento automático y sin que se te escape ningún prospecto.</p>
+                    </div>
+                    <div class="sticky-feature" data-index="3">
+                        <h3>Formularios Inteligentes</h3>
+                        <p>Captura la información correcta en el momento indicado para calificar prospectos desde el primer contacto.</p>
+                    </div>
+                </div>
+                <div class="sticky-dots">
+                    <div class="sticky-dot active" data-index="0"></div>
+                    <div class="sticky-dot" data-index="1"></div>
+                    <div class="sticky-dot" data-index="2"></div>
+                    <div class="sticky-dot" data-index="3"></div>
+                </div>
             </div>
-            <div class="servicio-card">
-                <div class="servicio-icon">🤖</div>
-                <h3>Automatización con IA</h3>
-                <p>Chatbots y agentes inteligentes que atienden prospectos 24/7 y los guían hasta la inscripción.</p>
-            </div>
-            <div class="servicio-card">
-                <div class="servicio-icon">📊</div>
-                <h3>Analítica Educativa</h3>
-                <p>Dashboards que miden desde el primer clic hasta la matrícula. Datos claros para decisiones inteligentes.</p>
-            </div>
-            <div class="servicio-card">
-                <div class="servicio-icon">✍️</div>
-                <h3>Contenido con IA</h3>
-                <p>Creación de contenido que conecta con estudiantes y padres de familia asistido por inteligencia artificial.</p>
-            </div>
-            <div class="servicio-card">
-                <div class="servicio-icon">🌐</div>
-                <h3>Landing Pages y Web</h3>
-                <p>Páginas de captación optimizadas para conversión que reflejan la identidad de tu institución.</p>
-            </div>
-            <div class="servicio-card">
-                <div class="servicio-icon">📈</div>
-                <h3>Estrategia Digital</h3>
-                <p>Planes de marketing personalizados para cada ciclo de admisión, basados en datos y tendencias.</p>
+            <div class="sticky-mockup">
+                <img src="mockup-ads.svg" alt="Campañas Publicitarias" class="sticky-mockup-img active" data-index="0">
+                <img src="mockup-landing.svg" alt="Landing Pages" class="sticky-mockup-img" data-index="1">
+                <img src="mockup-crm.svg" alt="Integración CRM" class="sticky-mockup-img" data-index="2">
+                <img src="mockup-forms.svg" alt="Formularios Inteligentes" class="sticky-mockup-img" data-index="3">
             </div>
         </div>
     </div>
@@ -476,6 +496,22 @@
         link.addEventListener('click', () => {
             document.getElementById('navLinks').classList.remove('active');
         });
+    });
+
+    // Sticky scroll effect
+    const serviciosSection = document.querySelector('.servicios');
+    const stickyFeatures = document.querySelectorAll('.sticky-feature');
+    const stickyDots = document.querySelectorAll('.sticky-dot');
+    const stickyMockups = document.querySelectorAll('.sticky-mockup-img');
+
+    window.addEventListener('scroll', () => {
+        if (!serviciosSection) return;
+        const rect = serviciosSection.getBoundingClientRect();
+        const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
+        const index = Math.min(3, Math.floor(progress * 4));
+        stickyFeatures.forEach((f, i) => f.classList.toggle('active', i === index));
+        stickyDots.forEach((d, i) => d.classList.toggle('active', i === index));
+        stickyMockups.forEach((m, i) => m.classList.toggle('active', i === index));
     });
 </script>
 
