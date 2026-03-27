@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOF-IA | Marketing con Inteligencia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #14112E;
+            --purple: #534AB7;
+            --purple-light: #6C63FF;
+            --white: #FFFFFF;
+            --gray-100: #F7F7F8;
+            --gray-200: #E8E8ED;
+            --gray-400: #86868B;
+            --gray-600: #424245;
+            --gray-800: #1D1D1F;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--white);
+            background: var(--navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(20, 17, 46, .85);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,.06);
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            padding: 0 2rem;
+            height: 64px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { height: 36px; width: auto; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a {
+            color: var(--gray-200); text-decoration: none; font-size: .875rem;
+            font-weight: 400; transition: color .2s;
+        }
+        .nav-links a:hover { color: var(--white); }
+        .nav-cta {
+            background: var(--purple); color: var(--white);
+            padding: .6rem 1.5rem; border-radius: 980px;
+            font-size: .875rem; font-weight: 500;
+            text-decoration: none; transition: background .2s, transform .2s;
+        }
+        .nav-cta:hover { background: var(--purple-light); transform: scale(1.03); }
+
+        .hamburger {
+            display: none; background: none; border: none; cursor: pointer;
+            flex-direction: column; gap: 5px; padding: 4px;
+        }
+        .hamburger span {
+            display: block; width: 22px; height: 2px;
+            background: var(--white); border-radius: 2px; transition: .3s;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 6rem;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: -40%; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(83,74,183,.3) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; }
+        .hero-logo {
+            display: block;
+            width: clamp(220px, 40vw, 360px); height: auto;
+            margin: 0 auto 2.5rem;
+            opacity: 0;
+            animation: logoReveal 1.2s cubic-bezier(.16,1,.3,1) .2s forwards;
+            filter: drop-shadow(0 0 40px rgba(83,74,183,.3));
+        }
+        @keyframes logoReveal {
+            0% { opacity: 0; transform: scale(.85) translateY(20px); filter: drop-shadow(0 0 0 rgba(83,74,183,0)); }
+            60% { opacity: 1; transform: scale(1.02) translateY(-2px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: drop-shadow(0 0 40px rgba(83,74,183,.3)); }
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: .4rem 1rem; border-radius: 980px;
+            background: rgba(83,74,183,.2);
+            border: 1px solid rgba(83,74,183,.4);
+            font-size: .8rem; font-weight: 500; color: var(--purple-light);
+            margin-bottom: 2rem; letter-spacing: .5px;
+            opacity: 0; animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .6s forwards;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700; line-height: 1.08;
+            letter-spacing: -.03em;
+            margin-bottom: 1.5rem;
+            opacity: 0; animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .8s forwards;
+        }
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--purple-light), #A78BFA, var(--purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 1.25rem; color: var(--gray-400);
+            font-weight: 300; max-width: 600px; margin: 0 auto 3rem;
+            line-height: 1.5;
+            opacity: 0; animation: fadeUp .8s cubic-bezier(.16,1,.3,1) 1s forwards;
+        }
+        .hero-buttons {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+            opacity: 0; animation: fadeUp .8s cubic-bezier(.16,1,.3,1) 1.2s forwards;
+        }
+        .btn-primary {
+            background: var(--purple); color: var(--white);
+            padding: .9rem 2.5rem; border-radius: 980px;
+            font-size: 1rem; font-weight: 500;
+            text-decoration: none; border: none; cursor: pointer;
+            transition: background .2s, transform .2s;
+        }
+        .btn-primary:hover { background: var(--purple-light); transform: scale(1.03); }
+        .btn-secondary {
+            background: transparent; color: var(--white);
+            padding: .9rem 2.5rem; border-radius: 980px;
+            font-size: 1rem; font-weight: 500;
+            text-decoration: none; border: 1px solid rgba(255,255,255,.2);
+            transition: border-color .2s, transform .2s;
+        }
+        .btn-secondary:hover { border-color: rgba(255,255,255,.5); transform: scale(1.03); }
+
+        /* ── SECTIONS COMMON ── */
+        section { padding: 8rem 2rem; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            font-size: .8rem; font-weight: 600; color: var(--purple-light);
+            text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;
+        }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700; letter-spacing: -.02em;
+            line-height: 1.15; margin-bottom: 1.5rem;
+        }
+        .section-subtitle {
+            font-size: 1.125rem; color: var(--gray-400); font-weight: 300;
+            max-width: 600px; line-height: 1.5;
+        }
+        .section-subtitle.centered { margin: 0 auto; text-align: center; }
+
+        /* ── SERVICIOS ── */
+        .servicios { background: var(--navy); }
+        .servicios .section-inner > .section-label,
+        .servicios .section-inner > .section-title,
+        .servicios .section-inner > .section-subtitle {
+            text-align: center;
+        }
+        .servicios-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem; margin-top: 4rem;
+        }
+        .servicio-card {
+            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 20px; padding: 2.5rem;
+            transition: background .3s, border-color .3s, transform .3s;
+        }
+        .servicio-card:hover {
+            background: rgba(83,74,183,.08);
+            border-color: rgba(83,74,183,.3);
+            transform: translateY(-4px);
+        }
+        .servicio-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            background: rgba(83,74,183,.15);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; margin-bottom: 1.5rem;
+        }
+        .servicio-card h3 {
+            font-size: 1.25rem; font-weight: 600; margin-bottom: .75rem;
+        }
+        .servicio-card p {
+            font-size: .95rem; color: var(--gray-400); font-weight: 300; line-height: 1.6;
+        }
+
+        /* ── PROCESO ── */
+        .proceso { background: rgba(255,255,255,.02); }
+        .proceso .section-inner > .section-label,
+        .proceso .section-inner > .section-title,
+        .proceso .section-inner > .section-subtitle {
+            text-align: center;
+        }
+        .proceso-steps {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 2rem; margin-top: 4rem; position: relative;
+        }
+        .proceso-step { text-align: center; position: relative; }
+        .step-number {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple), var(--purple-light));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+        .proceso-step h3 {
+            font-size: 1.1rem; font-weight: 600; margin-bottom: .5rem;
+        }
+        .proceso-step p {
+            font-size: .9rem; color: var(--gray-400); font-weight: 300;
+        }
+
+        /* ── POR QUÉ SOF-IA ── */
+        .porque { background: var(--navy); }
+        .porque-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: center; margin-top: 4rem;
+        }
+        .porque-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .stat {
+            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 16px; padding: 2rem; text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem; font-weight: 700;
+            background: linear-gradient(135deg, var(--purple-light), #A78BFA);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label { font-size: .85rem; color: var(--gray-400); margin-top: .5rem; }
+
+        /* ── CTA ── */
+        .cta-section {
+            padding: 8rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(83,74,183,.1) 0%, var(--navy) 100%);
+        }
+        .cta-section .section-title { max-width: 700px; margin: 0 auto 1rem; }
+        .cta-section .section-subtitle { text-align: center; margin: 0 auto 3rem; }
+
+        /* ── FOOTER ── */
+        footer {
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255,255,255,.06);
+        }
+        .footer-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 1rem;
+        }
+        .footer-logo { height: 28px; opacity: .6; }
+        footer p { font-size: .8rem; color: var(--gray-400); }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a {
+            color: var(--gray-400); text-decoration: none; font-size: .8rem;
+            transition: color .2s;
+        }
+        .footer-links a:hover { color: var(--white); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 968px) {
+            .servicios-grid { grid-template-columns: 1fr 1fr; }
+            .proceso-steps { grid-template-columns: 1fr 1fr; }
+            .porque-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .nav-links.active {
+                display: flex; flex-direction: column;
+                position: absolute; top: 64px; left: 0; right: 0;
+                background: rgba(20,17,46,.98);
+                backdrop-filter: blur(20px);
+                padding: 2rem;
+                border-bottom: 1px solid rgba(255,255,255,.06);
+            }
+            .servicios-grid { grid-template-columns: 1fr; }
+            .proceso-steps { grid-template-columns: 1fr; gap: 3rem; }
+            section { padding: 5rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <img src="logo_blanco.svg" alt="SOF-IA" class="nav-logo">
+        <div class="nav-links" id="navLinks">
+            <a href="#servicios">Servicios</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto" class="nav-cta">Contacto</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <img src="logo_blanco.svg" alt="SOF-IA" class="hero-logo">
+        <span class="hero-badge">Agencia de Inteligencia Artificial</span>
+        <h1>Tu marketing potenciado con <span class="gradient">Inteligencia Artificial</span></h1>
+        <p>Automatizamos, optimizamos y escalamos tu estrategia digital con tecnología de IA para que crezcas más rápido.</p>
+        <div class="hero-buttons">
+            <a href="#contacto" class="btn-primary">Agenda una llamada</a>
+            <a href="#servicios" class="btn-secondary">Conoce más</a>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+    <div class="section-inner">
+        <p class="section-label">Servicios</p>
+        <h2 class="section-title">Soluciones que transforman resultados</h2>
+        <p class="section-subtitle centered">Combinamos creatividad con inteligencia artificial para llevar tu negocio al siguiente nivel.</p>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <div class="servicio-icon">🤖</div>
+                <h3>Automatización con IA</h3>
+                <p>Chatbots, flujos automatizados y agentes inteligentes que trabajan por ti las 24 horas.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">📊</div>
+                <h3>Análisis de Datos</h3>
+                <p>Dashboards predictivos y reportes inteligentes que convierten datos en decisiones.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">🎯</div>
+                <h3>Publicidad Digital</h3>
+                <p>Campañas optimizadas con IA en Meta, Google y TikTok para maximizar tu ROAS.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">✍️</div>
+                <h3>Contenido con IA</h3>
+                <p>Creación de contenido visual y escrito asistido por inteligencia artificial.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">🌐</div>
+                <h3>Desarrollo Web</h3>
+                <p>Sitios rápidos, responsivos y optimizados para conversión con las últimas tecnologías.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">📈</div>
+                <h3>Estrategia Digital</h3>
+                <p>Planes de marketing personalizados basados en datos y tendencias del mercado.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso" id="proceso">
+    <div class="section-inner">
+        <p class="section-label">Proceso</p>
+        <h2 class="section-title">Así trabajamos</h2>
+        <p class="section-subtitle centered">Un proceso claro y eficiente para obtener resultados reales.</p>
+        <div class="proceso-steps">
+            <div class="proceso-step">
+                <div class="step-number">1</div>
+                <h3>Diagnóstico</h3>
+                <p>Analizamos tu negocio, audiencia y competencia para entender el panorama completo.</p>
+            </div>
+            <div class="proceso-step">
+                <div class="step-number">2</div>
+                <h3>Estrategia</h3>
+                <p>Diseñamos un plan personalizado con objetivos claros y KPIs medibles.</p>
+            </div>
+            <div class="proceso-step">
+                <div class="step-number">3</div>
+                <h3>Ejecución</h3>
+                <p>Implementamos las soluciones con nuestras herramientas de IA y equipo creativo.</p>
+            </div>
+            <div class="proceso-step">
+                <div class="step-number">4</div>
+                <h3>Optimización</h3>
+                <p>Iteramos constantemente basándonos en datos para mejorar los resultados.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- POR QUÉ SOF-IA -->
+<section class="porque" id="nosotros">
+    <div class="section-inner">
+        <div class="porque-grid">
+            <div>
+                <p class="section-label">Por qué SOF-IA</p>
+                <h2 class="section-title">Resultados que hablan por sí solos</h2>
+                <p class="section-subtitle">No solo implementamos tecnología — generamos crecimiento real para nuestros clientes con estrategias medibles y escalables.</p>
+            </div>
+            <div class="porque-stats">
+                <div class="stat">
+                    <div class="stat-number">+150%</div>
+                    <div class="stat-label">Aumento promedio en conversiones</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">-40%</div>
+                    <div class="stat-label">Reducción en costo por lead</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3x</div>
+                    <div class="stat-label">Retorno de inversión promedio</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Automatizaciones activas</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contacto">
+    <div class="section-inner">
+        <p class="section-label">Empieza hoy</p>
+        <h2 class="section-title">¿Listo para escalar tu negocio con IA?</h2>
+        <p class="section-subtitle centered">Agenda una llamada sin compromiso y descubre cómo podemos ayudarte.</p>
+        <a href="#" class="btn-primary">Agenda tu llamada gratuita</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <img src="logo_blanco.svg" alt="SOF-IA" class="footer-logo">
+        <p>&copy; 2026 SOF-IA. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('navLinks').classList.toggle('active');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('navLinks').classList.remove('active');
+        });
+    });
+</script>
+
+</body>
+</html>
