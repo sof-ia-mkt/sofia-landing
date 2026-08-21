@@ -1,8 +1,8 @@
 <svg width="1200" height="550" viewBox="0 0 460 210" xmlns="http://www.w3.org/2000/svg">
-  <text x="40" y="142" font-family="'Trebuchet MS', Arial, sans-serif" font-size="100" fill="#14112E" font-weight="200" letter-spacing="-3">sof-</text>
-  <rect x="208" y="30" width="140" height="140" rx="12" fill="#14112E"/>
+  <text x="40" y="142" font-family="'Trebuchet MS', Arial, sans-serif" font-size="100" fill="#0A0A0A" font-weight="200" letter-spacing="-3">sof-</text>
+  <rect x="208" y="30" width="140" height="140" rx="12" fill="#0A0A0A"/>
   <text x="278" y="100" text-anchor="middle" dominant-baseline="central" font-family="'Trebuchet MS', Arial, sans-serif" font-size="62" fill="white" font-weight="900" letter-spacing="2">IA</text>
-  <circle cx="348" cy="30" r="10" fill="white" stroke="#14112E" stroke-width="2"/>
-  <rect x="40" y="162" width="308" height="3" rx="1.5" fill="#534AB7"/>
-  <text x="40" y="193" font-family="'Trebuchet MS', Arial, sans-serif" font-size="19" fill="#14112E" font-weight="400" letter-spacing="1.5">Marketing Educativo con Inteligencia</text>
+  <circle cx="348" cy="30" r="10" fill="white" stroke="#0A0A0A" stroke-width="2"/>
+  <rect x="40" y="162" width="308" height="3" rx="1.5" fill="#0A0A0A"/>
+  <text x="40" y="193" font-family="'Trebuchet MS', Arial, sans-serif" font-size="19" fill="#0A0A0A" font-weight="400" letter-spacing="1.5">Marketing Educativo con Inteligencia</text>
 </svg>

@@ -15,15 +15,15 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --navy: #14112E; --purple: #534AB7; --purple-light: #6C63FF; --white: #FFFFFF; --gray-200: #E8E8ED; --gray-400: #86868B; }
+        :root { --navy: #0A0A0A; --purple: #FFFFFF; --purple-light: #D4D4D4; --white: #FFFFFF; --gray-200: #E8E8ED; --gray-400: #86868B; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Space Grotesk', sans-serif; background: var(--navy); color: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
         /* NAV */
-        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(20,17,46,.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,.06); }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,.06); }
         .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
         .nav-logo { height: 36px; width: auto; }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
@@ -49,7 +49,7 @@
             background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
             color: var(--gray-400); cursor: pointer; transition: all .2s; text-decoration: none;
         }
-        .blog-cat:hover, .blog-cat.active { background: rgba(83,74,183,.2); border-color: rgba(83,74,183,.4); color: var(--purple-light); }
+        .blog-cat:hover, .blog-cat.active { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4); color: var(--purple-light); }
 
         /* FEATURED ARTICLE */
         .blog-featured { max-width: 1200px; margin: 0 auto 4rem; padding: 0 2rem; }
@@ -60,10 +60,10 @@
             transition: border-color .3s, transform .3s;
             text-decoration: none; color: inherit;
         }
-        .featured-card:hover { border-color: rgba(83,74,183,.3); transform: translateY(-4px); }
+        .featured-card:hover { border-color: rgba(255,255,255,.3); transform: translateY(-4px); }
         .featured-img {
             min-height: 300px; position: relative;
-            background: linear-gradient(135deg, rgba(83,74,183,.2), rgba(108,99,255,.05));
+            background: linear-gradient(135deg, rgba(255,255,255,.1), rgba(255,255,255,.05));
             display: flex; align-items: center; justify-content: center;
         }
         .featured-img-placeholder {
@@ -75,7 +75,7 @@
             padding: .25rem .75rem; border-radius: 980px;
             font-size: .7rem; font-weight: 600; text-transform: uppercase;
             letter-spacing: 1px; margin-bottom: 1rem;
-            background: rgba(83,74,183,.2); color: var(--purple-light);
+            background: rgba(255,255,255,.1); color: var(--purple-light);
         }
         .featured-body h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: .75rem; line-height: 1.25; }
         .featured-body p { color: var(--gray-400); font-size: .95rem; font-weight: 300; line-height: 1.6; margin-bottom: 1.5rem; }
@@ -91,24 +91,24 @@
             transition: border-color .3s, transform .3s;
             text-decoration: none; color: inherit;
         }
-        .blog-card:hover { border-color: rgba(83,74,183,.3); transform: translateY(-4px); }
+        .blog-card:hover { border-color: rgba(255,255,255,.3); transform: translateY(-4px); }
         .blog-card-img {
             height: 180px; position: relative;
             display: flex; align-items: center; justify-content: center;
         }
-        .blog-card:nth-child(1) .blog-card-img { background: linear-gradient(135deg, rgba(83,74,183,.15), rgba(108,99,255,.05)); }
-        .blog-card:nth-child(2) .blog-card-img { background: linear-gradient(135deg, rgba(40,200,64,.1), rgba(83,74,183,.05)); }
-        .blog-card:nth-child(3) .blog-card-img { background: linear-gradient(135deg, rgba(234,75,113,.1), rgba(83,74,183,.05)); }
-        .blog-card:nth-child(4) .blog-card-img { background: linear-gradient(135deg, rgba(254,188,46,.1), rgba(83,74,183,.05)); }
-        .blog-card:nth-child(5) .blog-card-img { background: linear-gradient(135deg, rgba(108,99,255,.15), rgba(167,139,250,.05)); }
-        .blog-card:nth-child(6) .blog-card-img { background: linear-gradient(135deg, rgba(40,200,64,.15), rgba(83,74,183,.05)); }
+        .blog-card:nth-child(1) .blog-card-img { background: linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.05)); }
+        .blog-card:nth-child(2) .blog-card-img { background: linear-gradient(135deg, rgba(255,255,255,.1), rgba(255,255,255,.05)); }
+        .blog-card:nth-child(3) .blog-card-img { background: linear-gradient(135deg, rgba(234,75,113,.1), rgba(255,255,255,.05)); }
+        .blog-card:nth-child(4) .blog-card-img { background: linear-gradient(135deg, rgba(254,188,46,.1), rgba(255,255,255,.05)); }
+        .blog-card:nth-child(5) .blog-card-img { background: linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.05)); }
+        .blog-card:nth-child(6) .blog-card-img { background: linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.05)); }
         .blog-card-img-placeholder { font-size: 2.5rem; opacity: .3; }
         .blog-card-body { padding: 1.5rem; }
         .blog-card-tag {
             display: inline-block; padding: .2rem .6rem; border-radius: 980px;
             font-size: .65rem; font-weight: 600; text-transform: uppercase;
             letter-spacing: 1px; margin-bottom: .75rem;
-            background: rgba(83,74,183,.15); color: var(--purple-light);
+            background: rgba(255,255,255,.15); color: var(--purple-light);
         }
         .blog-card-body h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: .5rem; line-height: 1.3; }
         .blog-card-body p { font-size: .85rem; color: var(--gray-400); font-weight: 300; line-height: 1.5; margin-bottom: 1rem; }
@@ -170,9 +170,9 @@
     <a href="por-que-tu-universidad-necesita-ia-en-2026/" class="featured-card">
         <div class="featured-img">
             <svg width="120" height="120" viewBox="0 0 24 24" fill="none" style="opacity:.15">
-                <path d="M12 2a7 7 0 017 7v3l2 2v1H3v-1l2-2V9a7 7 0 017-7z" fill="#6C63FF"/>
-                <circle cx="12" cy="9" r="3" fill="#1E1B37"/>
-                <path d="M9 21a3 3 0 006 0" stroke="#6C63FF" stroke-width="2" fill="none"/>
+                <path d="M12 2a7 7 0 017 7v3l2 2v1H3v-1l2-2V9a7 7 0 017-7z" fill="#FFFFFF"/>
+                <circle cx="12" cy="9" r="3" fill="#0F0F0F"/>
+                <path d="M9 21a3 3 0 006 0" stroke="#FFFFFF" stroke-width="2" fill="none"/>
             </svg>
         </div>
         <div class="featured-body">
@@ -190,7 +190,7 @@
     <div class="blog-grid">
         <a href="5-errores-captacion-digital-escuelas/" class="blog-card">
             <div class="blog-card-img">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><circle cx="12" cy="12" r="10" stroke="#6C63FF" stroke-width="2"/><path d="M15 9l-6 6M9 9l6 6" stroke="#6C63FF" stroke-width="2" stroke-linecap="round"/></svg>
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-width="2"/><path d="M15 9l-6 6M9 9l6 6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>
             </div>
             <div class="blog-card-body">
                 <span class="blog-card-tag">Captación</span>
@@ -201,10 +201,10 @@
         </a>
         <a href="como-reducir-costo-por-inscrito/" class="blog-card">
             <div class="blog-card-img">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><polyline points="4 16 8 12 12 14 16 8 20 10" stroke="#28C840" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><polyline points="4 16 8 12 12 14 16 8 20 10" stroke="#D6D6D6" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
             </div>
             <div class="blog-card-body">
-                <span class="blog-card-tag" style="background:rgba(40,200,64,.15);color:#28C840;">Marketing Educativo</span>
+                <span class="blog-card-tag" style="background:rgba(255,255,255,.15);color:#D6D6D6;">Marketing Educativo</span>
                 <h3>Cómo reducir tu costo por inscrito con automatización</h3>
                 <p>Estrategias probadas para optimizar cada peso invertido en publicidad digital y generar más inscritos.</p>
                 <span class="blog-card-meta">25 de marzo, 2026 · 6 min</span>
@@ -212,10 +212,10 @@
         </a>
         <a href="chatbots-whatsapp-instituciones-educativas/" class="blog-card">
             <div class="blog-card-img">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><path d="M21 12a9 9 0 01-9 9m0 0a9 9 0 01-9-9m9 9v-4m-9-5a9 9 0 019-9m0 0V7m9 5H17M7 12H3" stroke="#EA4B71" stroke-width="2" stroke-linecap="round"/></svg>
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><path d="M21 12a9 9 0 01-9 9m0 0a9 9 0 01-9-9m9 9v-4m-9-5a9 9 0 019-9m0 0V7m9 5H17M7 12H3" stroke="#E8E8E8" stroke-width="2" stroke-linecap="round"/></svg>
             </div>
             <div class="blog-card-body">
-                <span class="blog-card-tag" style="background:rgba(234,75,113,.15);color:#EA4B71;">Automatización</span>
+                <span class="blog-card-tag" style="background:rgba(234,75,113,.15);color:#E8E8E8;">Automatización</span>
                 <h3>Chatbots en WhatsApp para instituciones educativas</h3>
                 <p>Cómo un asistente virtual puede atender prospectos las 24 horas y aumentar tus conversiones.</p>
                 <span class="blog-card-meta">24 de marzo, 2026 · 5 min</span>
@@ -234,10 +234,10 @@
         </a>
         <a href="landing-pages-que-convierten-educacion/" class="blog-card">
             <div class="blog-card-img">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#A78BFA" stroke-width="2"/><path d="M7 8h10M7 12h6M7 16h8" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/></svg>
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#C9C9C9" stroke-width="2"/><path d="M7 8h10M7 12h6M7 16h8" stroke="#C9C9C9" stroke-width="2" stroke-linecap="round"/></svg>
             </div>
             <div class="blog-card-body">
-                <span class="blog-card-tag" style="background:rgba(167,139,250,.15);color:#A78BFA;">Marketing Educativo</span>
+                <span class="blog-card-tag" style="background:rgba(255,255,255,.15);color:#C9C9C9;">Marketing Educativo</span>
                 <h3>Anatomía de una landing page que convierte en educación</h3>
                 <p>Los elementos esenciales que toda página de captación educativa debe tener para maximizar inscritos.</p>
                 <span class="blog-card-meta">22 de marzo, 2026 · 5 min</span>
@@ -245,10 +245,10 @@
         </a>
         <a href="crm-educativo-por-que-necesitas-uno/" class="blog-card">
             <div class="blog-card-img">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#28C840" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="#28C840" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#28C840" stroke-width="2" stroke-linecap="round"/></svg>
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#D6D6D6" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="#D6D6D6" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#D6D6D6" stroke-width="2" stroke-linecap="round"/></svg>
             </div>
             <div class="blog-card-body">
-                <span class="blog-card-tag" style="background:rgba(40,200,64,.15);color:#28C840;">Automatización</span>
+                <span class="blog-card-tag" style="background:rgba(255,255,255,.15);color:#D6D6D6;">Automatización</span>
                 <h3>CRM educativo: por qué tu institución necesita uno</h3>
                 <p>Si todavía manejas prospectos en Excel, estás perdiendo inscritos. Descubre cómo un CRM cambia el juego.</p>
                 <span class="blog-card-meta">21 de marzo, 2026 · 4 min</span>

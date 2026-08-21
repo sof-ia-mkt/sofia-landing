@@ -1,81 +1,81 @@
 <svg width="500" height="360" viewBox="0 0 500 360" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Window frame -->
-  <rect width="500" height="360" rx="16" fill="#1E1B37"/>
+  <rect width="500" height="360" rx="16" fill="#0F0F0F"/>
   <rect x="1" y="1" width="498" height="358" rx="15" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
   <!-- Title bar -->
-  <rect x="0" y="0" width="500" height="40" rx="16" fill="#252244"/>
-  <rect x="0" y="20" width="500" height="20" fill="#252244"/>
-  <circle cx="20" cy="20" r="5" fill="#FF5F57"/>
-  <circle cx="36" cy="20" r="5" fill="#FEBC2E"/>
-  <circle cx="52" cy="20" r="5" fill="#28C840"/>
+  <rect x="0" y="0" width="500" height="40" rx="16" fill="#1A1A1A"/>
+  <rect x="0" y="20" width="500" height="20" fill="#1A1A1A"/>
+  <circle cx="20" cy="20" r="5" fill="#5A5A5A"/>
+  <circle cx="36" cy="20" r="5" fill="#7E7E7E"/>
+  <circle cx="52" cy="20" r="5" fill="#D6D6D6"/>
   <text x="250" y="24" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">Automatización de Email</text>
   <!-- Sidebar -->
-  <rect x="0" y="40" width="130" height="320" fill="#1A1730"/>
+  <rect x="0" y="40" width="130" height="320" fill="#111111"/>
   <text x="16" y="62" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.3)" font-weight="600">FLUJOS ACTIVOS</text>
   <!-- Flow items -->
-  <rect x="12" y="74" width="106" height="36" rx="8" fill="rgba(83,74,183,0.15)"/>
-  <rect x="12" y="75" width="106" height="34" rx="7" stroke="rgba(83,74,183,0.3)" stroke-width="1"/>
-  <circle cx="26" cy="92" r="5" fill="#28C840"/>
+  <rect x="12" y="74" width="106" height="36" rx="8" fill="rgba(255,255,255,0.15)"/>
+  <rect x="12" y="75" width="106" height="34" rx="7" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <circle cx="26" cy="92" r="5" fill="#D6D6D6"/>
   <rect x="36" y="85" width="65" height="5" rx="2.5" fill="rgba(255,255,255,0.25)"/>
   <rect x="36" y="94" width="45" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
   <rect x="12" y="118" width="106" height="36" rx="8" fill="rgba(255,255,255,0.03)"/>
-  <circle cx="26" cy="136" r="5" fill="#28C840"/>
+  <circle cx="26" cy="136" r="5" fill="#D6D6D6"/>
   <rect x="36" y="129" width="70" height="5" rx="2.5" fill="rgba(255,255,255,0.15)"/>
   <rect x="36" y="138" width="50" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
   <rect x="12" y="162" width="106" height="36" rx="8" fill="rgba(255,255,255,0.03)"/>
-  <circle cx="26" cy="180" r="5" fill="#FEBC2E"/>
+  <circle cx="26" cy="180" r="5" fill="#7E7E7E"/>
   <rect x="36" y="173" width="60" height="5" rx="2.5" fill="rgba(255,255,255,0.15)"/>
   <rect x="36" y="182" width="55" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
   <rect x="12" y="206" width="106" height="36" rx="8" fill="rgba(255,255,255,0.03)"/>
-  <circle cx="26" cy="224" r="5" fill="#28C840"/>
+  <circle cx="26" cy="224" r="5" fill="#D6D6D6"/>
   <rect x="36" y="217" width="68" height="5" rx="2.5" fill="rgba(255,255,255,0.15)"/>
   <rect x="36" y="226" width="48" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
   <!-- Flow diagram area -->
   <!-- Trigger -->
-  <rect x="155" y="58" width="130" height="44" rx="10" fill="#252244"/>
-  <rect x="156" y="59" width="128" height="42" rx="9" stroke="rgba(83,74,183,0.3)" stroke-width="1"/>
+  <rect x="155" y="58" width="130" height="44" rx="10" fill="#1A1A1A"/>
+  <rect x="156" y="59" width="128" height="42" rx="9" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
   <text x="220" y="76" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.3)">TRIGGER</text>
   <text x="220" y="90" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Nuevo prospecto</text>
   <!-- Arrow -->
-  <line x1="220" y1="102" x2="220" y2="122" stroke="rgba(83,74,183,0.4)" stroke-width="2"/>
-  <polygon points="215,118 220,126 225,118" fill="rgba(83,74,183,0.4)"/>
+  <line x1="220" y1="102" x2="220" y2="122" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <polygon points="215,118 220,126 225,118" fill="rgba(255,255,255,0.4)"/>
   <!-- Email 1 -->
-  <rect x="155" y="126" width="130" height="44" rx="10" fill="#252244"/>
+  <rect x="155" y="126" width="130" height="44" rx="10" fill="#1A1A1A"/>
   <text x="220" y="144" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.3)">EMAIL 1 — Inmediato</text>
   <text x="220" y="158" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Bienvenida + Info</text>
   <!-- Arrow -->
-  <line x1="220" y1="170" x2="220" y2="190" stroke="rgba(83,74,183,0.4)" stroke-width="2"/>
-  <polygon points="215,186 220,194 225,186" fill="rgba(83,74,183,0.4)"/>
+  <line x1="220" y1="170" x2="220" y2="190" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <polygon points="215,186 220,194 225,186" fill="rgba(255,255,255,0.4)"/>
   <!-- Wait -->
   <rect x="175" y="194" width="90" height="28" rx="14" fill="rgba(254,188,46,0.15)"/>
   <text x="220" y="212" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(254,188,46,0.7)">Esperar 2 días</text>
   <!-- Arrow -->
-  <line x1="220" y1="222" x2="220" y2="242" stroke="rgba(83,74,183,0.4)" stroke-width="2"/>
-  <polygon points="215,238 220,246 225,238" fill="rgba(83,74,183,0.4)"/>
+  <line x1="220" y1="222" x2="220" y2="242" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <polygon points="215,238 220,246 225,238" fill="rgba(255,255,255,0.4)"/>
   <!-- Email 2 -->
-  <rect x="155" y="246" width="130" height="44" rx="10" fill="#252244"/>
+  <rect x="155" y="246" width="130" height="44" rx="10" fill="#1A1A1A"/>
   <text x="220" y="264" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.3)">EMAIL 2 — Seguimiento</text>
   <text x="220" y="278" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.6)">Testimoniales</text>
   <!-- Stats panel right -->
-  <rect x="310" y="58" width="170" height="232" rx="12" fill="#252244"/>
+  <rect x="310" y="58" width="170" height="232" rx="12" fill="#1A1A1A"/>
   <text x="324" y="80" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" font-weight="600">Métricas del flujo</text>
   <!-- Open rate -->
   <text x="324" y="108" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.3)">Tasa de apertura</text>
   <rect x="324" y="114" width="140" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
-  <rect x="324" y="114" width="98" height="8" rx="4" fill="rgba(83,74,183,0.5)"/>
+  <rect x="324" y="114" width="98" height="8" rx="4" fill="rgba(255,255,255,0.5)"/>
   <text x="430" y="122" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">68%</text>
   <!-- Click rate -->
   <text x="324" y="146" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.3)">Tasa de clic</text>
   <rect x="324" y="152" width="140" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
-  <rect x="324" y="152" width="56" height="8" rx="4" fill="rgba(108,99,255,0.5)"/>
+  <rect x="324" y="152" width="56" height="8" rx="4" fill="rgba(255,255,255,0.5)"/>
   <text x="430" y="160" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">38%</text>
   <!-- Conversion -->
   <text x="324" y="184" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.3)">Conversión a inscrito</text>
   <rect x="324" y="190" width="140" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
-  <rect x="324" y="190" width="28" height="8" rx="4" fill="rgba(40,200,64,0.5)"/>
+  <rect x="324" y="190" width="28" height="8" rx="4" fill="rgba(255,255,255,0.5)"/>
   <text x="430" y="198" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">18%</text>
   <!-- Emails sent -->
   <text x="324" y="230" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.3)">Emails enviados</text>
-  <text x="324" y="252" font-family="sans-serif" font-size="22" fill="#6C63FF" font-weight="700">3,842</text>
-  <text x="324" y="272" font-family="sans-serif" font-size="9" fill="rgba(40,200,64,0.6)">↑ 24% vs ciclo anterior</text>
+  <text x="324" y="252" font-family="sans-serif" font-size="22" fill="#FFFFFF" font-weight="700">3,842</text>
+  <text x="324" y="272" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">↑ 24% vs ciclo anterior</text>
 </svg>
