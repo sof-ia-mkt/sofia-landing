@@ -136,7 +136,14 @@
         .icon-moon { display: none; }
         html[data-theme="light"] .icon-sun { display: none; }
         html[data-theme="light"] .icon-moon { display: block; }
-</style>
+
+        .nav-links.active {
+            display: flex; flex-direction: column;
+            position: absolute; top: 64px; left: 0; right: 0;
+            background: var(--nav-bg-solid); backdrop-filter: blur(20px);
+            padding: 2rem; border-bottom: 1px solid var(--w06, rgba(128,128,128,.2));
+        }
+    </style>
     <script>
         (function(){ try { if (localStorage.getItem('sofia-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch(e){} })();
         function toggleTheme(){
@@ -159,7 +166,7 @@
             <a href="../../#soluciones">Soluciones</a>
             <a href="../../#proceso">Proceso</a>
             <a href="../">Blog</a>
-            <a href="../../contacto/" class="nav-cta">Contacto</a>
+            <a href="https://wa.me/526632308574?text=Hola%2C%20me%20interesa%20una%20plataforma%20para%20mi%20instituci%C3%B3n%20educativa" target="_blank" rel="noopener" class="nav-cta">Contáctanos</a>
         </div>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -242,29 +249,7 @@
     <div class="article-cta-box">
         <h3>¿Quieres implementar esto en tu institución?</h3>
         <p>Agenda un diagnóstico gratuito por videollamada y descubre cómo la IA puede impulsar tu próximo ciclo de admisión.</p>
-        <a href="../../#contacto" class="btn-primary">Agendar diagnóstico gratuito</a>
-    </div>
-</div>
-
-<!-- RELATED -->
-<div class="related">
-    <h3>Artículos relacionados</h3>
-    <div class="related-grid">
-        <a href="../5-errores-captacion-digital-escuelas/" class="related-card">
-            <span class="related-card-tag">Captación</span>
-            <h4>5 errores de captación digital que cometen las escuelas</h4>
-            <p>26 de marzo, 2026 · 4 min</p>
-        </a>
-        <a href="../como-reducir-costo-por-inscrito/" class="related-card">
-            <span class="related-card-tag">Marketing Educativo</span>
-            <h4>Cómo reducir tu costo por inscrito con automatización</h4>
-            <p>25 de marzo, 2026 · 6 min</p>
-        </a>
-        <a href="../chatbots-whatsapp-instituciones-educativas/" class="related-card">
-            <span class="related-card-tag">Automatización</span>
-            <h4>Chatbots en WhatsApp para instituciones educativas</h4>
-            <p>24 de marzo, 2026 · 5 min</p>
-        </a>
+        <a href="https://wa.me/526632308574?text=Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20instituci%C3%B3n" target="_blank" rel="noopener" class="btn-primary">Agendar diagnóstico gratuito</a>
     </div>
 </div>
 
@@ -273,10 +258,24 @@
         <img src="../../logo_blanco.svg" alt="SOF-IA" class="footer-logo">
         <p>&copy; 2026 SOF-IA. Todos los derechos reservados.</p>
         <div class="footer-links">
-            <a href="#">Privacidad</a>
-            <a href="#">Términos</a>
         </div>
     </div>
 </footer>
+<script>
+    (function(){
+        var h = document.querySelector('.hamburger'), n = document.querySelector('.nav-links');
+        if (!h || !n) return;
+        if (!n.id) n.id = 'navLinks';
+        h.setAttribute('aria-controls', n.id);
+        h.setAttribute('aria-expanded', 'false');
+        h.addEventListener('click', function(){
+            var abierto = n.classList.toggle('active');
+            h.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+        });
+        n.querySelectorAll('a').forEach(function(a){
+            a.addEventListener('click', function(){ n.classList.remove('active'); h.setAttribute('aria-expanded','false'); });
+        });
+    })();
+</script>
 </body>
 </html>

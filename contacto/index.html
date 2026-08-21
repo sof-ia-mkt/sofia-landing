@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | SOF-IA Marketing Educativo Tijuana</title>
-    <meta name="description" content="Contáctanos para hablar sobre cómo captar más alumnos para tu institución educativa en Tijuana y Baja California con estrategias de marketing con IA.">
-    <meta name="robots" content="index, follow">
+    <title>Contacto | SOF-IA — Software e IA para Universidades</title>
+    <meta name="description" content="Escríbenos por WhatsApp: plataformas de software e IA para universidades — admisiones, retención de alumnos, asignación docente y captación digital.">
+    <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://sofiaeducacion.mx/contacto/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sofiaeducacion.mx/contacto/">
-    <meta property="og:title" content="Contacto | SOF-IA Marketing Educativo Tijuana">
-    <meta property="og:description" content="Contáctanos para hablar sobre cómo captar más alumnos para tu institución educativa.">
+    <meta property="og:title" content="Contacto | SOF-IA — Software e IA para Universidades">
+    <meta property="og:description" content="Escríbenos por WhatsApp: plataformas de software e IA para universidades.">
     <meta property="og:image" content="https://sofiaeducacion.mx/og-image.png">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,7 +73,14 @@
         .icon-moon { display: none; }
         html[data-theme="light"] .icon-sun { display: none; }
         html[data-theme="light"] .icon-moon { display: block; }
-</style>
+
+        .nav-links.active {
+            display: flex; flex-direction: column;
+            position: absolute; top: 64px; left: 0; right: 0;
+            background: var(--nav-bg-solid); backdrop-filter: blur(20px);
+            padding: 2rem; border-bottom: 1px solid var(--w06, rgba(128,128,128,.2));
+        }
+    </style>
     <script>
         (function(){ try { if (localStorage.getItem('sofia-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch(e){} })();
         function toggleTheme(){
@@ -95,7 +102,7 @@
             <a href="../#soluciones">Soluciones</a>
             <a href="../#proceso">Proceso</a>
             <a href="../blog/">Blog</a>
-            <a href="./" class="nav-cta">Contacto</a>
+            <a href="https://wa.me/526632308574?text=Hola%2C%20me%20interesa%20una%20plataforma%20para%20mi%20instituci%C3%B3n%20educativa" target="_blank" rel="noopener" class="nav-cta">Contáctanos</a>
         </div>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -112,8 +119,8 @@
 
 <div class="coming-soon">
     <div class="coming-soon-box">
-        <p>Estamos preparando esta sección. Mientras tanto, puedes contactarnos directamente por WhatsApp o a través del formulario en nuestra página principal.</p>
-        <a href="../#contacto" class="back-link">← Ir al formulario de contacto</a>
+        <p>Estamos preparando esta sección. Mientras tanto, escríbenos directamente por WhatsApp — respondemos en minutos.</p>
+        <a href="https://wa.me/526632308574?text=Hola%2C%20me%20interesa%20una%20plataforma%20para%20mi%20instituci%C3%B3n%20educativa" target="_blank" rel="noopener" class="back-link">Escríbenos por WhatsApp →</a>
     </div>
 </div>
 
@@ -122,10 +129,24 @@
         <img src="../logo_blanco.svg" alt="SOF-IA" class="footer-logo">
         <p>&copy; 2026 SOF-IA. Todos los derechos reservados.</p>
         <div class="footer-links">
-            <a href="#">Privacidad</a>
-            <a href="#">Términos</a>
         </div>
     </div>
 </footer>
+<script>
+    (function(){
+        var h = document.querySelector('.hamburger'), n = document.querySelector('.nav-links');
+        if (!h || !n) return;
+        if (!n.id) n.id = 'navLinks';
+        h.setAttribute('aria-controls', n.id);
+        h.setAttribute('aria-expanded', 'false');
+        h.addEventListener('click', function(){
+            var abierto = n.classList.toggle('active');
+            h.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+        });
+        n.querySelectorAll('a').forEach(function(a){
+            a.addEventListener('click', function(){ n.classList.remove('active'); h.setAttribute('aria-expanded','false'); });
+        });
+    })();
+</script>
 </body>
 </html>

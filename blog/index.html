@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | SOF-IA — Marketing Educativo con Inteligencia</title>
-    <meta name="description" content="Estrategias de marketing educativo, inteligencia artificial y captación digital para instituciones educativas en Tijuana y Baja California.">
+    <title>Blog | SOF-IA — Software e IA para Universidades</title>
+    <meta name="description" content="Ideas sobre software, IA y operación universitaria: admisiones, retención de alumnos, asignación docente y captación digital.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sofiaeducacion.mx/blog/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sofiaeducacion.mx/blog/">
-    <meta property="og:title" content="Blog | SOF-IA — Marketing Educativo con Inteligencia">
-    <meta property="og:description" content="Estrategias de marketing educativo, inteligencia artificial y captación digital para instituciones educativas en Tijuana y Baja California.">
+    <meta property="og:title" content="Blog | SOF-IA — Software e IA para Universidades">
+    <meta property="og:description" content="Ideas sobre software, IA y operación universitaria: admisiones, retención de alumnos, asignación docente y captación digital.">
     <meta property="og:image" content="https://sofiaeducacion.mx/og-image.png">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -159,7 +159,14 @@
         .icon-moon { display: none; }
         html[data-theme="light"] .icon-sun { display: none; }
         html[data-theme="light"] .icon-moon { display: block; }
-</style>
+
+        .nav-links.active {
+            display: flex; flex-direction: column;
+            position: absolute; top: 64px; left: 0; right: 0;
+            background: var(--nav-bg-solid); backdrop-filter: blur(20px);
+            padding: 2rem; border-bottom: 1px solid var(--w06, rgba(128,128,128,.2));
+        }
+    </style>
     <script>
         (function(){ try { if (localStorage.getItem('sofia-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch(e){} })();
         function toggleTheme(){
@@ -182,7 +189,7 @@
             <a href="../#soluciones">Soluciones</a>
             <a href="../#proceso">Proceso</a>
             <a href="./">Blog</a>
-            <a href="../contacto/" class="nav-cta">Contacto</a>
+            <a href="https://wa.me/526632308574?text=Hola%2C%20me%20interesa%20una%20plataforma%20para%20mi%20instituci%C3%B3n%20educativa" target="_blank" rel="noopener" class="nav-cta">Contáctanos</a>
         </div>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -195,14 +202,7 @@
 <!-- BLOG HERO -->
 <section class="blog-hero">
     <h1>Blog</h1>
-    <p>Estrategias, herramientas y tendencias en marketing educativo e inteligencia artificial.</p>
-    <div class="blog-cats">
-        <a class="blog-cat active" href="#">Todos</a>
-        <a class="blog-cat" href="#">Marketing Educativo</a>
-        <a class="blog-cat" href="#">Inteligencia Artificial</a>
-        <a class="blog-cat" href="#">Captación</a>
-        <a class="blog-cat" href="#">Automatización</a>
-    </div>
+    <p>Ideas y tendencias sobre software, IA y operación universitaria.</p>
 </section>
 
 <!-- FEATURED ARTICLE -->
@@ -224,86 +224,11 @@
     </a>
 </div>
 
-<!-- ARTICLES GRID -->
-<div class="blog-grid-section">
-    <p class="blog-grid-title">Artículos recientes</p>
-    <div class="blog-grid">
-        <a href="5-errores-captacion-digital-escuelas/" class="blog-card">
-            <div class="blog-card-img">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-width="2"/><path d="M15 9l-6 6M9 9l6 6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <div class="blog-card-body">
-                <span class="blog-card-tag">Captación</span>
-                <h3>5 errores de captación digital que cometen las escuelas</h3>
-                <p>Errores comunes que hacen que pierdas prospectos y cómo evitarlos con una estrategia digital bien ejecutada.</p>
-                <span class="blog-card-meta">26 de marzo, 2026 · 4 min</span>
-            </div>
-        </a>
-        <a href="como-reducir-costo-por-inscrito/" class="blog-card">
-            <div class="blog-card-img">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><polyline points="4 16 8 12 12 14 16 8 20 10" stroke="#D6D6D6" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-            </div>
-            <div class="blog-card-body">
-                <span class="blog-card-tag" style="background:rgba(255,255,255,.15);color:#D6D6D6;">Marketing Educativo</span>
-                <h3>Cómo reducir tu costo por inscrito con automatización</h3>
-                <p>Estrategias probadas para optimizar cada peso invertido en publicidad digital y generar más inscritos.</p>
-                <span class="blog-card-meta">25 de marzo, 2026 · 6 min</span>
-            </div>
-        </a>
-        <a href="chatbots-whatsapp-instituciones-educativas/" class="blog-card">
-            <div class="blog-card-img">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><path d="M21 12a9 9 0 01-9 9m0 0a9 9 0 01-9-9m9 9v-4m-9-5a9 9 0 019-9m0 0V7m9 5H17M7 12H3" stroke="#E8E8E8" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <div class="blog-card-body">
-                <span class="blog-card-tag" style="background:rgba(234,75,113,.15);color:#E8E8E8;">Automatización</span>
-                <h3>Chatbots en WhatsApp para instituciones educativas</h3>
-                <p>Cómo un asistente virtual puede atender prospectos las 24 horas y aumentar tus conversiones.</p>
-                <span class="blog-card-meta">24 de marzo, 2026 · 5 min</span>
-            </div>
-        </a>
-        <a href="meta-ads-vs-google-ads-universidades/" class="blog-card">
-            <div class="blog-card-img">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#FBBC04" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="#FBBC04" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <div class="blog-card-body">
-                <span class="blog-card-tag" style="background:rgba(254,188,46,.15);color:#FBBC04;">Captación</span>
-                <h3>Meta Ads vs Google Ads: ¿cuál funciona mejor para universidades?</h3>
-                <p>Comparamos ambas plataformas para que sepas dónde invertir tu presupuesto de admisiones.</p>
-                <span class="blog-card-meta">23 de marzo, 2026 · 7 min</span>
-            </div>
-        </a>
-        <a href="landing-pages-que-convierten-educacion/" class="blog-card">
-            <div class="blog-card-img">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#C9C9C9" stroke-width="2"/><path d="M7 8h10M7 12h6M7 16h8" stroke="#C9C9C9" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <div class="blog-card-body">
-                <span class="blog-card-tag" style="background:rgba(255,255,255,.15);color:#C9C9C9;">Marketing Educativo</span>
-                <h3>Anatomía de una landing page que convierte en educación</h3>
-                <p>Los elementos esenciales que toda página de captación educativa debe tener para maximizar inscritos.</p>
-                <span class="blog-card-meta">22 de marzo, 2026 · 5 min</span>
-            </div>
-        </a>
-        <a href="crm-educativo-por-que-necesitas-uno/" class="blog-card">
-            <div class="blog-card-img">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" style="opacity:.15"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#D6D6D6" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="#D6D6D6" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#D6D6D6" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <div class="blog-card-body">
-                <span class="blog-card-tag" style="background:rgba(255,255,255,.15);color:#D6D6D6;">Automatización</span>
-                <h3>CRM educativo: por qué tu institución necesita uno</h3>
-                <p>Si todavía manejas prospectos en Excel, estás perdiendo inscritos. Descubre cómo un CRM cambia el juego.</p>
-                <span class="blog-card-meta">21 de marzo, 2026 · 4 min</span>
-            </div>
-        </a>
-    </div>
-</div>
-
 <footer>
     <div class="footer-inner">
         <img src="../logo_blanco.svg" alt="SOF-IA" class="footer-logo">
         <p>&copy; 2026 SOF-IA. Todos los derechos reservados.</p>
         <div class="footer-links">
-            <a href="#">Privacidad</a>
-            <a href="#">Términos</a>
         </div>
     </div>
 </footer>
@@ -316,6 +241,22 @@
             cat.classList.add('active');
         });
     });
+</script>
+<script>
+    (function(){
+        var h = document.querySelector('.hamburger'), n = document.querySelector('.nav-links');
+        if (!h || !n) return;
+        if (!n.id) n.id = 'navLinks';
+        h.setAttribute('aria-controls', n.id);
+        h.setAttribute('aria-expanded', 'false');
+        h.addEventListener('click', function(){
+            var abierto = n.classList.toggle('active');
+            h.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+        });
+        n.querySelectorAll('a').forEach(function(a){
+            a.addEventListener('click', function(){ n.classList.remove('active'); h.setAttribute('aria-expanded','false'); });
+        });
+    })();
 </script>
 </body>
 </html>
