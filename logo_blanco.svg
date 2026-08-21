@@ -4,5 +4,5 @@
   <text x="278" y="100" text-anchor="middle" dominant-baseline="central" font-family="'Trebuchet MS', Arial, sans-serif" font-size="62" fill="white" font-weight="900" letter-spacing="2">IA</text>
   <circle cx="348" cy="30" r="10" fill="white"/>
   <rect x="40" y="162" width="308" height="3" rx="1.5" fill="#FFFFFF"/>
-  <text x="40" y="193" font-family="'Trebuchet MS', Arial, sans-serif" font-size="19" fill="white" font-weight="400" letter-spacing="1.5">Marketing Educativo con Inteligencia</text>
+  <text x="40" y="192" font-family="'Trebuchet MS', Arial, sans-serif" font-size="16" fill="white" font-weight="600" textLength="308" lengthAdjust="spacingAndGlyphs">SOFTWARE E IA PARA UNIVERSIDADES</text>
 </svg>
