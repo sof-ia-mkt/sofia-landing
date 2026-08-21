@@ -4,38 +4,38 @@
     <meta charset="UTF-8">
     <meta name="theme-color" content="#0A0A0A">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOF-IA | Agencia de Marketing Educativo en Tijuana</title>
-    <meta name="description" content="Agencia de marketing educativo en Tijuana especializada en captación de alumnos con IA. Meta Ads, Google Ads, landing pages y automatización para universidades e instituciones educativas en Baja California.">
-    <meta name="keywords" content="marketing educativo Tijuana, captación de alumnos, agencia marketing universidades, Google Ads educación, Meta Ads instituciones educativas, Baja California">
+    <title>SOF-IA | Software e IA para Universidades</title>
+    <meta name="description" content="Construimos el software que tu universidad opera todos los días: CRM de admisiones con IA en WhatsApp, torre de control de retención estudiantil, asignación docente automatizada y captación digital. Tijuana, Baja California.">
+    <meta name="keywords" content="software para universidades, CRM admisiones universitarias, retención estudiantil, deserción escolar, asignación docente, WhatsApp IA educación, plataformas educativas Tijuana, Baja California">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sofiaeducacion.mx/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sofiaeducacion.mx/">
-    <meta property="og:title" content="SOF-IA | Agencia de Marketing Educativo en Tijuana">
-    <meta property="og:description" content="Captación de alumnos con inteligencia artificial. Meta Ads, Google Ads y automatización para universidades e instituciones educativas en Tijuana y Baja California.">
+    <meta property="og:title" content="SOF-IA | Software e IA para Universidades">
+    <meta property="og:description" content="CRM de admisiones con IA en WhatsApp, torre de control de retención, asignación docente automatizada y captación digital. Plataformas en producción en universidades de Baja California.">
     <meta property="og:image" content="https://sofiaeducacion.mx/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_MX">
-    <meta property="og:site_name" content="SOF-IA Marketing Educativo">
+    <meta property="og:site_name" content="SOF-IA">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SOF-IA | Agencia de Marketing Educativo en Tijuana">
-    <meta name="twitter:description" content="Captación de alumnos con inteligencia artificial. Meta Ads, Google Ads y automatización para universidades en Tijuana.">
+    <meta name="twitter:title" content="SOF-IA | Software e IA para Universidades">
+    <meta name="twitter:description" content="Plataformas con IA que las universidades operan todos los días: admisiones, retención, asignación docente y captación.">
     <meta name="twitter:image" content="https://sofiaeducacion.mx/og-image.png">
 
     <!-- Schema JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MarketingAgency",
-      "name": "SOF-IA Marketing Educativo",
+      "@type": "ProfessionalService",
+      "name": "SOF-IA",
       "url": "https://sofiaeducacion.mx",
       "logo": "https://sofiaeducacion.mx/logo_blanco.svg",
-      "description": "Agencia de marketing educativo en Tijuana especializada en captación de alumnos con inteligencia artificial.",
+      "description": "Estudio de software en Tijuana que construye plataformas con IA para universidades: CRM de admisiones, retención estudiantil, asignación docente y captación digital.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Tijuana",
@@ -46,7 +46,7 @@
         "@type": "State",
         "name": "Baja California"
       },
-      "serviceType": ["Marketing Educativo", "Google Ads", "Meta Ads", "Automatización de Marketing", "Captación de Alumnos"],
+      "serviceType": ["Software para Universidades", "CRM de Admisiones", "Retención Estudiantil", "Asignación Docente", "Captación Digital", "Automatización con IA"],
       "sameAs": []
     }
     </script>
@@ -716,6 +716,149 @@
         }
         html[data-theme="light"] .toast { box-shadow: 0 8px 32px rgba(0,0,0,.12); }
 
+
+        /* ── STATS STRIP ── */
+        .stats-strip {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem; max-width: 950px; margin: 3.5rem auto 1rem;
+            text-align: center;
+        }
+        .stat-item { display: flex; flex-direction: column; gap: .4rem; }
+        .stat-number {
+            font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700;
+            letter-spacing: -.02em;
+            background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label { font-size: .75rem; color: var(--gray-400); line-height: 1.45; }
+        @media (max-width: 768px) { .stats-strip { grid-template-columns: repeat(2, 1fr); } }
+
+        /* ── DEMOS ANIMADAS ── */
+        .demo-card {
+            background: var(--toast-bg); border: 1px solid var(--w08);
+            border-radius: 16px; overflow: hidden; text-align: left;
+            box-shadow: 0 20px 60px rgba(0,0,0,.35);
+            font-size: .72rem; color: var(--white);
+        }
+        html[data-theme="light"] .demo-card { box-shadow: 0 20px 60px rgba(0,0,0,.1); }
+        .demo-chrome { display: flex; align-items: center; gap: .35rem; padding: .55rem .8rem; border-bottom: 1px solid var(--w06); }
+        .demo-chrome i { width: 8px; height: 8px; border-radius: 50%; background: var(--w15); display: block; }
+        .demo-chrome span { margin-left: .4rem; color: var(--gray-400); font-size: .62rem; letter-spacing: .5px; text-transform: uppercase; }
+        .demo-body { padding: .9rem; }
+
+        /* Chat / CRM */
+        .demo-chat .demo-body { display: flex; flex-direction: column; gap: .5rem; min-height: 250px; }
+        .chat-bubble { max-width: 80%; padding: .5rem .7rem; border-radius: 12px; line-height: 1.45; opacity: 0; }
+        .chat-in { background: var(--w06); align-self: flex-start; border-bottom-left-radius: 4px; }
+        .chat-out { background: var(--w12); align-self: flex-end; border-bottom-right-radius: 4px; }
+        .chat-meta { font-size: .56rem; color: var(--gray-400); margin-top: .25rem; }
+        .chat-system { align-self: center; font-size: .58rem; color: var(--gray-400); background: var(--w04); border: 1px solid var(--w08); padding: .28rem .65rem; border-radius: 980px; opacity: 0; }
+        .chat-typing { display: inline-flex; gap: 3px; padding: .55rem .7rem; background: var(--w06); border-radius: 12px; border-bottom-left-radius: 4px; align-self: flex-start; opacity: 0; overflow: hidden; }
+        .chat-typing i { width: 5px; height: 5px; border-radius: 50%; background: var(--gray-400); display: block; animation: typingDot 1s infinite; }
+        .chat-typing i:nth-child(2) { animation-delay: .15s; }
+        .chat-typing i:nth-child(3) { animation-delay: .3s; }
+        @keyframes typingDot { 0%,60%,100% { transform: translateY(0); opacity: .4; } 30% { transform: translateY(-3px); opacity: 1; } }
+        @keyframes bubbleIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes typingShow { 0% { opacity: 0; max-height: 40px; } 12% { opacity: 1; } 80% { opacity: 1; max-height: 40px; } 100% { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; margin: 0; } }
+        .active .chat-a1 { animation: bubbleIn .4s ease .3s forwards; }
+        .active .chat-t1 { animation: typingShow 1.6s ease .9s forwards; }
+        .active .chat-a2 { animation: bubbleIn .4s ease 2.6s forwards; }
+        .active .chat-a3 { animation: bubbleIn .4s ease 3.5s forwards; }
+        .active .chat-sys { animation: bubbleIn .4s ease 4.4s forwards; }
+
+        /* Torre de control */
+        .kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-bottom: .7rem; }
+        .kpi-box { background: var(--w04); border: 1px solid var(--w06); border-radius: 10px; padding: .5rem .6rem; }
+        .kpi-box b { display: block; font-size: 1.05rem; letter-spacing: -.02em; margin-top: .1rem; }
+        .kpi-box small { color: var(--gray-400); font-size: .55rem; text-transform: uppercase; letter-spacing: .8px; }
+        .kpi-bar { height: 4px; background: var(--w08); border-radius: 2px; margin-top: .45rem; overflow: hidden; }
+        .kpi-bar i { display: block; height: 100%; width: 0; background: var(--white); border-radius: 2px; }
+        .active .kpi-bar i { animation: fillBar 1.2s cubic-bezier(.16,1,.3,1) .4s forwards; }
+        @keyframes fillBar { to { width: 95%; } }
+        .risk-row { display: flex; align-items: center; gap: .55rem; padding: .5rem .6rem; border: 1px solid var(--w06); background: var(--w02); border-radius: 10px; margin-bottom: .45rem; opacity: 0; }
+        .risk-txt { flex: 1; line-height: 1.35; }
+        .risk-txt b { font-size: .68rem; }
+        .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--white); flex-shrink: 0; animation: dotPulse 1.6s infinite; }
+        .risk-dot-mid { width: 8px; height: 8px; border-radius: 50%; background: var(--w3, rgba(128,128,128,.6)); flex-shrink: 0; }
+        .risk-dot-ok { width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--w3, rgba(128,128,128,.6)); flex-shrink: 0; }
+        @keyframes dotPulse { 0%,100% { box-shadow: 0 0 0 0 var(--w3); } 50% { box-shadow: 0 0 0 5px transparent; } }
+        .risk-chip { font-size: .52rem; font-weight: 600; letter-spacing: .5px; padding: .18rem .5rem; border-radius: 980px; flex-shrink: 0; }
+        .chip-hoy { background: var(--white); color: var(--accent-contrast); }
+        .chip-sem { background: var(--w08); color: var(--white); }
+        .chip-ok { color: var(--gray-400); border: 1px solid var(--w08); }
+        .active .risk-1 { animation: bubbleIn .4s ease .7s forwards; }
+        .active .risk-2 { animation: bubbleIn .4s ease 1s forwards; }
+        .active .risk-3 { animation: bubbleIn .4s ease 1.3s forwards; }
+
+        /* Asignación docente */
+        .asig-row { display: grid; grid-template-columns: 1.2fr .7fr 1.4fr; gap: .4rem; padding: .42rem .55rem; border-bottom: 1px solid var(--w04); align-items: center; }
+        .asig-head { color: var(--gray-400); font-size: .55rem; text-transform: uppercase; letter-spacing: .8px; }
+        .asig-row span:nth-child(2) { color: var(--gray-400); }
+        .asig-name { opacity: 0; color: var(--white); }
+        .active .asig-n1 { animation: bubbleIn .35s ease .5s forwards; }
+        .active .asig-n2 { animation: bubbleIn .35s ease .85s forwards; }
+        .active .asig-n3 { animation: bubbleIn .35s ease 1.2s forwards; }
+        .asig-foot { display: flex; justify-content: space-between; align-items: center; margin-top: .8rem; padding: 0 .2rem; }
+        .alert-badge { font-size: .62rem; color: var(--gray-400); display: flex; align-items: center; gap: .4rem; }
+        .alert-num { position: relative; display: inline-block; min-width: 2.2em; height: 1.4em; }
+        .alert-num span { position: absolute; left: 0; top: 0; font-size: .95rem; font-weight: 700; color: var(--white); }
+        .alert-new { opacity: 0; }
+        .active .alert-old { animation: alertOut .4s ease 1.7s forwards; }
+        .active .alert-new { animation: bubbleIn .4s ease 2s forwards; }
+        @keyframes alertOut { to { opacity: 0; transform: translateY(-6px); } }
+        .donut-wrap { position: relative; width: 64px; text-align: center; }
+        .donut { width: 52px; height: 52px; transform: rotate(-90deg); }
+        .donut-bg { fill: none; stroke: var(--w08); stroke-width: 4; }
+        .donut-arc { fill: none; stroke: var(--white); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 100.5; stroke-dashoffset: 100.5; }
+        .active .donut-arc { animation: donutFill 1.4s cubic-bezier(.16,1,.3,1) .8s forwards; }
+        @keyframes donutFill { to { stroke-dashoffset: 6; } }
+        .donut-txt { position: absolute; top: 17px; left: 0; right: 12px; font-size: .62rem; font-weight: 700; }
+        .donut-label { display: block; font-size: .52rem; color: var(--gray-400); margin-top: -0.2rem; margin-right: 12px; }
+
+        /* Captación */
+        .cap-flow { display: flex; align-items: stretch; gap: .3rem; margin-bottom: .8rem; }
+        .cap-node { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; border: 1px solid var(--w06); border-radius: 10px; padding: .5rem .25rem; font-size: .56rem; color: var(--gray-400); background: var(--w02); opacity: .45; line-height: 1.3; }
+        .cap-arrow { color: var(--gray-400); align-self: center; font-size: .7rem; }
+        @keyframes nodeOn { to { opacity: 1; border-color: var(--w3); color: var(--white); background: var(--w06); } }
+        .active .cap-1 { animation: nodeOn .4s ease .3s forwards; }
+        .active .cap-2 { animation: nodeOn .4s ease .9s forwards; }
+        .active .cap-3 { animation: nodeOn .4s ease 1.5s forwards; }
+        .active .cap-4 { animation: nodeOn .4s ease 2.1s forwards; }
+        .cap-lead { border: 1px solid var(--w08); background: var(--w04); border-radius: 12px; padding: .65rem .75rem; opacity: 0; }
+        .cap-lead b { font-size: .72rem; }
+        .active .cap-lead { animation: bubbleIn .5s ease 2.7s forwards; }
+        .cap-check { display: flex; gap: .35rem; align-items: center; margin-top: .45rem; color: var(--gray-400); font-size: .6rem; opacity: 0; }
+        .active .cap-ck1 { animation: bubbleIn .4s ease 3.3s forwards; }
+        .active .cap-ck2 { animation: bubbleIn .4s ease 3.8s forwards; }
+
+        /* ── WHATSAPP SIMULADO ── */
+        .wa-sim {
+            position: absolute; bottom: 74px; right: 0;
+            width: min(320px, calc(100vw - 2rem));
+            background: var(--toast-bg); border: 1px solid var(--w08);
+            border-radius: 16px; overflow: hidden;
+            box-shadow: 0 16px 50px rgba(0,0,0,.35);
+            animation: bubbleIn .4s ease;
+        }
+        html[data-theme="light"] .wa-sim { box-shadow: 0 16px 50px rgba(0,0,0,.15); }
+        .wa-sim-header { display: flex; align-items: center; gap: .6rem; padding: .7rem .9rem; border-bottom: 1px solid var(--w06); }
+        .wa-sim-avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--white); color: var(--accent-contrast); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .8rem; flex-shrink: 0; }
+        .wa-sim-header b { display: block; font-size: .8rem; }
+        .wa-sim-header small { color: var(--gray-400); font-size: .62rem; }
+        .wa-sim-close { margin-left: auto; background: none; border: none; color: var(--gray-400); font-size: 1.2rem; cursor: pointer; line-height: 1; padding: .2rem .4rem; }
+        .wa-sim-close:hover { color: var(--white); }
+        .wa-sim-body { padding: .8rem .9rem; display: flex; flex-direction: column; gap: .5rem; min-height: 40px; max-height: 220px; overflow-y: auto; }
+        .wa-sim-bubble { max-width: 85%; padding: .5rem .7rem; border-radius: 12px; font-size: .74rem; line-height: 1.45; animation: bubbleIn .3s ease; }
+        .wa-sim-in { background: var(--w06); align-self: flex-start; border-bottom-left-radius: 4px; }
+        .wa-sim-out { background: var(--w12); align-self: flex-end; border-bottom-right-radius: 4px; }
+        .wa-sim-typing { display: inline-flex; gap: 3px; }
+        .wa-sim-typing i { width: 5px; height: 5px; border-radius: 50%; background: var(--gray-400); display: block; animation: typingDot 1s infinite; }
+        .wa-sim-typing i:nth-child(2) { animation-delay: .15s; }
+        .wa-sim-typing i:nth-child(3) { animation-delay: .3s; }
+        .wa-sim-cta { display: block; text-align: center; margin: 0 .9rem .9rem; padding: .6rem; border-radius: 980px; background: var(--purple); color: var(--accent-contrast); font-size: .78rem; font-weight: 600; text-decoration: none; }
+        @media (max-width: 768px) { .wa-sim { bottom: 70px; } }
+
         /* ── THEME TOGGLE ── */
         .nav-inner { gap: 1rem; }
         .nav-links { margin-left: auto; }
@@ -755,7 +898,7 @@
             <a href="#soluciones">Soluciones</a>
             <a href="#proceso">Proceso</a>
             <a href="blog/">Blog</a>
-            <a href="https://wa.me/526632308574?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios" target="_blank" rel="noopener" class="nav-cta">Contáctanos</a>
+            <a href="https://wa.me/526632308574?text=Hola%2C%20me%20interesa%20una%20plataforma%20para%20mi%20instituci%C3%B3n%20educativa" target="_blank" rel="noopener" class="nav-cta">Contáctanos</a>
         </div>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -775,10 +918,11 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <img src="logo_blanco.svg" alt="SOF-IA" class="hero-logo">
-        <h1>Llenamos tus aulas con <span class="gradient">publicidad inteligente</span></h1>
-        <p>Diseñamos, lanzamos y optimizamos tu estrategia de captación digital de principio a fin.</p>
+        <div class="hero-badge">Plataformas en producción en universidades de Baja California</div>
+        <h1>El sistema operativo de <span class="gradient">tu universidad</span></h1>
+        <p>Construimos el software que tu institución usa todos los días: admisiones con IA por WhatsApp, retención de alumnos, asignación docente y captación digital. Sin Excel, sin leads perdidos.</p>
         <div class="hero-buttons">
-            <a href="https://wa.me/526632308574?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios" target="_blank" rel="noopener" class="btn-primary">Contáctanos</a>
+            <a href="https://wa.me/526632308574?text=Hola%2C%20me%20interesa%20una%20plataforma%20para%20mi%20instituci%C3%B3n%20educativa" target="_blank" rel="noopener" class="btn-primary">Contáctanos</a>
             <a href="#servicios" class="btn-secondary">Conoce más</a>
         </div>
     </div>
@@ -791,32 +935,24 @@
     <div class="sticky-container">
         <div class="sticky-layout">
             <div class="sticky-text">
-                <p class="section-label">Lo que hacemos</p>
-                <h2 class="section-title">Tu captación digital, resuelta</h2>
+                <p class="section-label">Nuestras plataformas</p>
+                <h2 class="section-title">Software que tu equipo usa todos los días</h2>
                 <div class="sticky-features">
                     <div class="sticky-feature active" data-index="0">
-                        <h3>Campañas Publicitarias</h3>
-                        <p>Meta y Google Ads optimizadas con IA para que cada peso invertido traiga prospectos calificados a tu institución.</p>
+                        <h3>CRM de Admisiones con IA</h3>
+                        <p>SOFIA, tu asistente con IA, atiende WhatsApp 24/7: responde dudas, cotiza y transfiere al asesor en turno con menos carga. Embudo completo del primer mensaje a la inscripción.</p>
                     </div>
                     <div class="sticky-feature" data-index="1">
-                        <h3>Landing Pages</h3>
-                        <p>Páginas de captación diseñadas para convertir visitantes en prospectos interesados en tu oferta educativa.</p>
+                        <h3>Torre de Control de Retención</h3>
+                        <p>Detecta al alumno en riesgo de deserción semanas antes: faltas, adeudos y señales tempranas se convierten en una cola de llamadas priorizada por urgencia.</p>
                     </div>
                     <div class="sticky-feature" data-index="2">
-                        <h3>Integración CRM</h3>
-                        <p>Todos tus leads organizados, con seguimiento automático y sin que se te escape ningún prospecto.</p>
+                        <h3>Asignación Docente con IA</h3>
+                        <p>La IA lee los CVs de tu planta docente, propone la carga completa del cuatrimestre y vigila choques de horario, sobrecargas y el reglamento institucional.</p>
                     </div>
                     <div class="sticky-feature" data-index="3">
-                        <h3>Formularios Inteligentes</h3>
-                        <p>Captura la información correcta en el momento indicado para calificar prospectos desde el primer contacto.</p>
-                    </div>
-                    <div class="sticky-feature" data-index="4">
-                        <h3>Email Marketing Automatizado</h3>
-                        <p>Secuencias de correos que nutren a tus prospectos automáticamente desde el primer contacto hasta la inscripción.</p>
-                    </div>
-                    <div class="sticky-feature" data-index="5">
-                        <h3>Reportes y Analítica</h3>
-                        <p>Dashboards en tiempo real que miden cada peso invertido, por carrera y por canal. Decisiones basadas en datos, no en intuición.</p>
+                        <h3>Captación Digital Integrada</h3>
+                        <p>Sitios, landings de campaña y formularios conectados al CRM: cada lead queda registrado, atribuido a su anuncio y recibe un WhatsApp de bienvenida en segundos.</p>
                     </div>
                 </div>
                 <div class="sticky-dots">
@@ -824,34 +960,77 @@
                     <div class="sticky-dot" data-index="1"></div>
                     <div class="sticky-dot" data-index="2"></div>
                     <div class="sticky-dot" data-index="3"></div>
-                    <div class="sticky-dot" data-index="4"></div>
-                    <div class="sticky-dot" data-index="5"></div>
                 </div>
             </div>
             <div class="sticky-mockup">
                 <div class="sticky-mockup-slide active" data-index="0">
-                    <p class="sticky-mockup-label">Meta & Google Ads</p>
-                    <img src="mockup-ads.svg" alt="Campañas Publicitarias">
+                    <p class="sticky-mockup-label">Bandeja WhatsApp · CRM</p>
+                    <div class="demo-card demo-chat">
+                        <div class="demo-chrome"><i></i><i></i><i></i><span>Admisiones — SOFIA activa</span></div>
+                        <div class="demo-body">
+                            <div class="chat-bubble chat-in chat-a1">Hola, ¿qué costo tiene Ingeniería Industrial? 🙂</div>
+                            <div class="chat-typing chat-t1"><i></i><i></i><i></i></div>
+                            <div class="chat-bubble chat-out chat-a2">¡Hola! Con gusto te comparto los planes y horarios disponibles. ¿Te gustaría agendar una visita al campus?<div class="chat-meta">SOFIA · IA</div></div>
+                            <div class="chat-bubble chat-in chat-a3">Sí, ¿puede ser el sábado?</div>
+                            <div class="chat-system chat-sys">→ Transferido a asesora en turno · motivo: cita</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="sticky-mockup-slide" data-index="1">
-                    <p class="sticky-mockup-label">Página de captación</p>
-                    <img src="mockup-landing.svg" alt="Landing Pages">
+                    <p class="sticky-mockup-label">Torre de Control · Retención</p>
+                    <div class="demo-card demo-torre">
+                        <div class="demo-chrome"><i></i><i></i><i></i><span>Retención del ciclo</span></div>
+                        <div class="demo-body">
+                            <div class="kpi-row">
+                                <div class="kpi-box"><small>Retención</small><b>95.2%</b><div class="kpi-bar"><i></i></div></div>
+                                <div class="kpi-box"><small>En riesgo</small><b>14</b></div>
+                                <div class="kpi-box"><small>En juego</small><b>$2.4M</b></div>
+                            </div>
+                            <div class="risk-row risk-1"><span class="pulse-dot"></span><div class="risk-txt"><b>Dejó de venir y dejó de pagar</b><br>Faltó a sus últimas 4 clases</div><span class="risk-chip chip-hoy">HOY</span></div>
+                            <div class="risk-row risk-2"><span class="risk-dot-mid"></span><div class="risk-txt"><b>1 colegiatura vencida</b><br>Sabatino · 2° cuatrimestre</div><span class="risk-chip chip-sem">SEMANA</span></div>
+                            <div class="risk-row risk-3"><span class="risk-dot-ok"></span><div class="risk-txt"><b>Contactado — se compromete a regresar</b><br>Convenio de pago ofrecido</div><span class="risk-chip chip-ok">✓</span></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="sticky-mockup-slide" data-index="2">
-                    <p class="sticky-mockup-label">Pipeline de prospectos</p>
-                    <img src="mockup-crm.svg" alt="Integración CRM">
+                    <p class="sticky-mockup-label">Asignación Docente · IA</p>
+                    <div class="demo-card demo-asig">
+                        <div class="demo-chrome"><i></i><i></i><i></i><span>Ciclo Sep — Dic · 4 campus</span></div>
+                        <div class="demo-body">
+                            <div class="asig-row asig-head"><span>Materia</span><span>Grupo</span><span>Docente</span></div>
+                            <div class="asig-row"><span>Cálculo Diferencial</span><span>MEC_G19</span><span class="asig-name asig-n1">R. Fuentes · +40 ya la impartió</span></div>
+                            <div class="asig-row"><span>Automatización</span><span>IND_G07</span><span class="asig-name asig-n2">L. Méndez · +50 la solicitó</span></div>
+                            <div class="asig-row"><span>Derecho Fiscal</span><span>DER_G03</span><span class="asig-name asig-n3">A. Robles · +25 CV afín</span></div>
+                            <div class="asig-foot">
+                                <div class="alert-badge">Alertas <span class="alert-num"><span class="alert-old">440</span><span class="alert-new">12</span></span></div>
+                                <div class="donut-wrap">
+                                    <svg viewBox="0 0 40 40" class="donut"><circle cx="20" cy="20" r="16" class="donut-bg"/><circle cx="20" cy="20" r="16" class="donut-arc"/></svg>
+                                    <span class="donut-txt">94%</span>
+                                    <span class="donut-label">cobertura</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="sticky-mockup-slide" data-index="3">
-                    <p class="sticky-mockup-label">Captura inteligente</p>
-                    <img src="mockup-forms.svg" alt="Formularios Inteligentes">
-                </div>
-                <div class="sticky-mockup-slide" data-index="4">
-                    <p class="sticky-mockup-label">Flujos automatizados</p>
-                    <img src="mockup-email.svg" alt="Email Marketing">
-                </div>
-                <div class="sticky-mockup-slide" data-index="5">
-                    <p class="sticky-mockup-label">Dashboard de resultados</p>
-                    <img src="mockup-analytics.svg" alt="Reportes y Analítica">
+                    <p class="sticky-mockup-label">Pipeline de captación</p>
+                    <div class="demo-card demo-cap">
+                        <div class="demo-chrome"><i></i><i></i><i></i><span>Del anuncio a la inscripción</span></div>
+                        <div class="demo-body">
+                            <div class="cap-flow">
+                                <div class="cap-node cap-1">Anuncio<br>Meta</div><span class="cap-arrow">→</span>
+                                <div class="cap-node cap-2">Landing<br>por carrera</div><span class="cap-arrow">→</span>
+                                <div class="cap-node cap-3">CRM<br>consolidado</div><span class="cap-arrow">→</span>
+                                <div class="cap-node cap-4">WhatsApp<br>automático</div>
+                            </div>
+                            <div class="cap-lead">
+                                <b>Nuevo prospecto · Ing. Mecatrónica</b>
+                                <div class="chat-meta">Atribuido a su anuncio · UTMs completas · cupón generado</div>
+                                <div class="cap-check cap-ck1">✓ Registrado en el CRM — aunque el sistema externo falle</div>
+                                <div class="cap-check cap-ck2">✓ WhatsApp de bienvenida enviado en segundos</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -861,62 +1040,34 @@
 <!-- TECNOLOGÍAS -->
 <div class="glow-divider"></div>
 <section class="tech-section">
-    <h2 class="section-title animate-on-scroll">Tus competidores ya usan estas herramientas. <span class="gradient">¿Y tú?</span></h2>
-    <p class="tech-subtitle animate-on-scroll delay-1">La tecnología detrás de nuestros resultados</p>
+    <h2 class="section-title animate-on-scroll">Tu operación merece más que <span class="gradient">hojas de Excel</span></h2>
+    <p class="tech-subtitle animate-on-scroll delay-1">El stack con el que construimos plataformas confiables, en producción</p>
     <div class="marquee-wrapper">
         <div class="marquee-track">
-            <!-- Meta -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.89h-2.33v6.99C18.34 21.19 22 17.06 22 12.06c0-5.53-4.5-10.02-10-10.02z" fill="#1877F2"/></svg><span>Meta</span></div>
-            <!-- Google Ads -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><rect x="1" y="8" width="8" height="14" rx="4" fill="#FBBC04" transform="rotate(-25 5 15)"/><rect x="9" y="3" width="8" height="18" rx="4" fill="#4285F4" transform="rotate(-25 13 12)"/><circle cx="6" cy="18.5" r="3.2" fill="#34A853"/></svg><span>Google Ads</span></div>
-            <!-- OpenAI -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M22.28 9.37a5.98 5.98 0 00-.51-4.92 6.05 6.05 0 00-6.52-2.91A5.98 5.98 0 0010.73 0a6.05 6.05 0 00-5.77 4.18 5.98 5.98 0 00-4 2.9 6.05 6.05 0 00.74 7.09 5.98 5.98 0 00.51 4.92 6.05 6.05 0 006.52 2.91A5.98 5.98 0 0013.27 24a6.05 6.05 0 005.77-4.18 5.98 5.98 0 004-2.9 6.05 6.05 0 00-.76-7.55zm-9.01 13.18a4.49 4.49 0 01-2.88-1.04l.14-.08 4.78-2.76a.78.78 0 00.39-.67v-6.74l2.02 1.17a.07.07 0 01.04.06v5.58a4.51 4.51 0 01-4.49 4.48z" fill="#10A37F"/></svg><span>OpenAI</span></div>
-            <!-- Anthropic -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M13.83 2H16.7l-4.83 20H8.99l4.84-20zm-5.32 0h2.87L6.55 22H3.68L8.51 2z" fill="#D4A27F"/></svg><span>Anthropic</span></div>
-            <!-- Make -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="4" fill="#6D00CC"/><circle cx="18" cy="12" r="4" fill="#6D00CC"/><circle cx="12" cy="5" r="4" fill="#9B59B6"/></svg><span>Make</span></div>
-            <!-- Zapier -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M15.54 8.46l2.83-2.83a1 1 0 000-1.41l-.59-.59a1 1 0 00-1.41 0L13.54 6.46 12 4.93 10.46 6.46 7.63 3.63a1 1 0 00-1.41 0l-.59.59a1 1 0 000 1.41L8.46 8.46 6.93 10H4.93v.84a1 1 0 00.29.71l.59.59a1 1 0 00.71.29H8.46l1.54 1.54-2.83 2.83a1 1 0 000 1.41l.59.59a1 1 0 001.41 0l2.83-2.83L13.54 17.54v1.94a1 1 0 00.29.71l.59.59a1 1 0 00.71.29h.84v-1.94l1.54-1.54 2.83 2.83a1 1 0 001.41 0l.59-.59a1 1 0 000-1.41l-2.83-2.83L21.07 14h1.94a1 1 0 00.71-.29l.59-.59a1 1 0 00.29-.71V11.57H21.07z" fill="#FF4A00"/><circle cx="12" cy="12" r="3" fill="#FF4A00"/></svg><span>Zapier</span></div>
-            <!-- n8n -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="3" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="12" cy="6" r="3" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="19" cy="12" r="3" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="12" cy="18" r="3" stroke="#E8E8E8" stroke-width="2" fill="none"/><line x1="7.5" y1="10.5" x2="9.5" y2="7.5" stroke="#E8E8E8" stroke-width="1.5"/><line x1="14.5" y1="7.5" x2="16.5" y2="10.5" stroke="#E8E8E8" stroke-width="1.5"/><line x1="7.5" y1="13.5" x2="9.5" y2="16.5" stroke="#E8E8E8" stroke-width="1.5"/><line x1="14.5" y1="16.5" x2="16.5" y2="13.5" stroke="#E8E8E8" stroke-width="1.5"/></svg><span>n8n</span></div>
-            <!-- HighLevel -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><rect x="7" y="8" width="3" height="12" rx="1.5" fill="#F6AD3C"/><rect x="12" y="4" width="3" height="16" rx="1.5" fill="#D6D6D6"/><rect x="17" y="10" width="3" height="10" rx="1.5" fill="#4285F4"/></svg><span>HighLevel</span></div>
-            <!-- WhatsApp Business -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><path d="M9 8.5v7M9 8.5l6.5 8.6" stroke="#E8E8E8" stroke-width="1.6" stroke-linecap="round"/><path d="M15 8.5v5" stroke="#E8E8E8" stroke-width="1.6" stroke-linecap="round"/></svg><span>Next.js</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="1.8" fill="#E8E8E8"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#E8E8E8" stroke-width="1.3" fill="none"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#E8E8E8" stroke-width="1.3" fill="none" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#E8E8E8" stroke-width="1.3" fill="none" transform="rotate(120 12 12)"/></svg><span>React</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" fill="#E8E8E8"/><text x="12" y="16.5" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#111111">TS</text></svg><span>TypeScript</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7v8l9-12h-7V2z" fill="#E8E8E8"/></svg><span>Supabase</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="#E8E8E8" stroke-width="1.6" fill="none"/></svg><span>PostgreSQL</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M13.83 2H16.7l-4.83 20H8.99l4.84-20zm-5.32 0h2.87L6.55 22H3.68L8.51 2z" fill="#D4A27F"/></svg><span>Claude · Anthropic</span></div>
             <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.27-.1-.46-.15-.66.14-.2.29-.76.93-.93 1.12-.17.2-.34.22-.63.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.49.1-.19.05-.37-.02-.51-.08-.15-.66-1.58-.9-2.16-.24-.57-.48-.49-.66-.5h-.56a1.07 1.07 0 00-.78.37c-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.19 3.01c.15.2 2.06 3.14 4.99 4.41.7.3 1.24.48 1.66.61.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.08-.12-.27-.19-.56-.34z" fill="#25D366"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.23-1.37A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.15a8.13 8.13 0 01-4.15-1.13l-.3-.18-3.1.81.83-3.02-.19-.31A8.13 8.13 0 0112 3.85a8.15 8.15 0 010 16.3z" fill="#25D366"/></svg><span>WhatsApp Business</span></div>
-            <!-- HubSpot -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="17" cy="7" r="2" fill="#DADADA"/><path d="M15 8.5V12a3 3 0 11-2.12.88L10.5 10.5A2.5 2.5 0 118.74 7.5l2.38 2.38A3 3 0 0115 8.5z" fill="#DADADA"/><circle cx="15" cy="15" r="3" stroke="#DADADA" stroke-width="2" fill="none"/></svg><span>HubSpot</span></div>
-            <!-- Mailchimp -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M18.91 12.44c-.33-.14-.53.1-.78.2a2.08 2.08 0 01-.86.17c-.52 0-.85-.22-.97-.44a4.53 4.53 0 00-2.81-1.16c-1.47-.08-2.7.64-3.38 1.7-.26-.65-.74-1.12-1.42-1.3.5-.65.77-1.47.77-2.34 0-.42-.07-.82-.2-1.19.63-.28 1.04-.9 1.04-1.6a1.7 1.7 0 00-1.7-1.7 1.7 1.7 0 00-1.28.58c-.5-.2-1.04-.31-1.6-.31C3.41 5.05 1.5 7.32 1.5 10.2c0 4.07 3.13 6.7 7.14 7.57 1.51.33 3.78.5 5.6-.28 1.6-.68 2.73-2 3.17-3.02.39-.9.32-1.67-.5-2.03z" fill="#FFE01B"/><path d="M12.79 14.5a2.3 2.3 0 00-.52-1.42 3.4 3.4 0 012.56-1.1c.88.05 1.64.4 2.14.89-.34.55-1.07.84-1.07.84s.35.48 0 .82c-.24.23-.61.15-.61.15s.12.56-.32.78c-.35.18-.72-.02-.72-.02s-.16.56-.74.56c-.63 0-.72-.5-.72-.5z" fill="#231F20" opacity=".15"/></svg><span>Mailchimp</span></div>
-            <!-- Google Workspace -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M22 8.6L12 2 2 8.6V22h20V8.6z" fill="none" stroke="#4285F4" stroke-width="0"/><path d="M12 2L2 8.6V22h7V13h6v9h7V8.6L12 2z" fill="#4285F4" opacity=".3"/><path d="M2 8.6L12 14l10-5.4" stroke="#4285F4" stroke-width="2" fill="none"/><path d="M2 8.6V22h7V13l3 1.6L15 13v9h7V8.6L12 14 2 8.6z" fill="#4285F4"/></svg><span>Google Workspace</span></div>
-            <!-- Google Cloud -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.89h-2.33v6.99C18.34 21.19 22 17.06 22 12.06c0-5.53-4.5-10.02-10-10.02z" fill="#1877F2"/></svg><span>Meta Ads API</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M12 4l9 16H3l9-16z" fill="#E8E8E8"/></svg><span>Vercel</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><path d="M15.5 8.5c-.6-1.2-1.9-1.9-3.4-1.9-2 0-3.4 1.1-3.4 2.8 0 3.6 7 2 7 5.3 0 1.8-1.5 2.9-3.6 2.9-1.7 0-3.1-.8-3.7-2.1" stroke="#E8E8E8" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg><span>Sanity CMS</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><circle cx="18" cy="18" r="3" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><path d="M6 9v4a5 5 0 005 5h4" stroke="#E8E8E8" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M13 16l2 2-2 2" stroke="#E8E8E8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GitHub Actions</span></div>
             <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M14.54 7.48l1.77-1.77.09-.75A8.94 8.94 0 0012 3.05a8.96 8.96 0 00-8.14 5.25l.65-.09 3.54-.58.27-.28A5.4 5.4 0 0112 5.59a5.38 5.38 0 012.54 1.89z" fill="#EA4335"/><path d="M20.08 8.3a8.93 8.93 0 00-2.72-4.34l-2.82 2.82a5.38 5.38 0 011.95 4.3v.54a2.69 2.69 0 010 5.38H12l-.54.55v3.23l.54.54h4.5a6.23 6.23 0 003.58-11.02z" fill="#4285F4"/><path d="M7.5 21.32h4.5v-4.32H7.5a2.66 2.66 0 01-1.11-.24l-.77.24-2.21 2.2-.19.62a6.19 6.19 0 004.28 1.5z" fill="#34A853"/><path d="M7.5 8.86a6.23 6.23 0 00-4.28 10.96l3.17-3.17a2.69 2.69 0 011.11-5.13 2.69 2.69 0 012.7 2.69l3.17-3.17A6.23 6.23 0 007.5 8.86z" fill="#FBBC05"/></svg><span>Google Cloud</span></div>
-            <!-- DUPLICADOS para loop infinito -->
-            <!-- Meta -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.89h-2.33v6.99C18.34 21.19 22 17.06 22 12.06c0-5.53-4.5-10.02-10-10.02z" fill="#1877F2"/></svg><span>Meta</span></div>
-            <!-- Google Ads -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><rect x="1" y="8" width="8" height="14" rx="4" fill="#FBBC04" transform="rotate(-25 5 15)"/><rect x="9" y="3" width="8" height="18" rx="4" fill="#4285F4" transform="rotate(-25 13 12)"/><circle cx="6" cy="18.5" r="3.2" fill="#34A853"/></svg><span>Google Ads</span></div>
-            <!-- OpenAI -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M22.28 9.37a5.98 5.98 0 00-.51-4.92 6.05 6.05 0 00-6.52-2.91A5.98 5.98 0 0010.73 0a6.05 6.05 0 00-5.77 4.18 5.98 5.98 0 00-4 2.9 6.05 6.05 0 00.74 7.09 5.98 5.98 0 00.51 4.92 6.05 6.05 0 006.52 2.91A5.98 5.98 0 0013.27 24a6.05 6.05 0 005.77-4.18 5.98 5.98 0 004-2.9 6.05 6.05 0 00-.76-7.55zm-9.01 13.18a4.49 4.49 0 01-2.88-1.04l.14-.08 4.78-2.76a.78.78 0 00.39-.67v-6.74l2.02 1.17a.07.07 0 01.04.06v5.58a4.51 4.51 0 01-4.49 4.48z" fill="#10A37F"/></svg><span>OpenAI</span></div>
-            <!-- Anthropic -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M13.83 2H16.7l-4.83 20H8.99l4.84-20zm-5.32 0h2.87L6.55 22H3.68L8.51 2z" fill="#D4A27F"/></svg><span>Anthropic</span></div>
-            <!-- Make -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="4" fill="#6D00CC"/><circle cx="18" cy="12" r="4" fill="#6D00CC"/><circle cx="12" cy="5" r="4" fill="#9B59B6"/></svg><span>Make</span></div>
-            <!-- Zapier -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M15.54 8.46l2.83-2.83a1 1 0 000-1.41l-.59-.59a1 1 0 00-1.41 0L13.54 6.46 12 4.93 10.46 6.46 7.63 3.63a1 1 0 00-1.41 0l-.59.59a1 1 0 000 1.41L8.46 8.46 6.93 10H4.93v.84a1 1 0 00.29.71l.59.59a1 1 0 00.71.29H8.46l1.54 1.54-2.83 2.83a1 1 0 000 1.41l.59.59a1 1 0 001.41 0l2.83-2.83L13.54 17.54v1.94a1 1 0 00.29.71l.59.59a1 1 0 00.71.29h.84v-1.94l1.54-1.54 2.83 2.83a1 1 0 001.41 0l.59-.59a1 1 0 000-1.41l-2.83-2.83L21.07 14h1.94a1 1 0 00.71-.29l.59-.59a1 1 0 00.29-.71V11.57H21.07z" fill="#FF4A00"/><circle cx="12" cy="12" r="3" fill="#FF4A00"/></svg><span>Zapier</span></div>
-            <!-- n8n -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="3" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="12" cy="6" r="3" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="19" cy="12" r="3" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="12" cy="18" r="3" stroke="#E8E8E8" stroke-width="2" fill="none"/><line x1="7.5" y1="10.5" x2="9.5" y2="7.5" stroke="#E8E8E8" stroke-width="1.5"/><line x1="14.5" y1="7.5" x2="16.5" y2="10.5" stroke="#E8E8E8" stroke-width="1.5"/><line x1="7.5" y1="13.5" x2="9.5" y2="16.5" stroke="#E8E8E8" stroke-width="1.5"/><line x1="14.5" y1="16.5" x2="16.5" y2="13.5" stroke="#E8E8E8" stroke-width="1.5"/></svg><span>n8n</span></div>
-            <!-- HighLevel -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><rect x="7" y="8" width="3" height="12" rx="1.5" fill="#F6AD3C"/><rect x="12" y="4" width="3" height="16" rx="1.5" fill="#D6D6D6"/><rect x="17" y="10" width="3" height="10" rx="1.5" fill="#4285F4"/></svg><span>HighLevel</span></div>
-            <!-- WhatsApp Business -->
+            <!-- duplicados para loop -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><path d="M9 8.5v7M9 8.5l6.5 8.6" stroke="#E8E8E8" stroke-width="1.6" stroke-linecap="round"/><path d="M15 8.5v5" stroke="#E8E8E8" stroke-width="1.6" stroke-linecap="round"/></svg><span>Next.js</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="1.8" fill="#E8E8E8"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#E8E8E8" stroke-width="1.3" fill="none"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#E8E8E8" stroke-width="1.3" fill="none" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#E8E8E8" stroke-width="1.3" fill="none" transform="rotate(120 12 12)"/></svg><span>React</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" fill="#E8E8E8"/><text x="12" y="16.5" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="700" fill="#111111">TS</text></svg><span>TypeScript</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7v8l9-12h-7V2z" fill="#E8E8E8"/></svg><span>Supabase</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="8" ry="3" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" stroke="#E8E8E8" stroke-width="1.6" fill="none"/></svg><span>PostgreSQL</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M13.83 2H16.7l-4.83 20H8.99l4.84-20zm-5.32 0h2.87L6.55 22H3.68L8.51 2z" fill="#D4A27F"/></svg><span>Claude · Anthropic</span></div>
             <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.27-.1-.46-.15-.66.14-.2.29-.76.93-.93 1.12-.17.2-.34.22-.63.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.49.1-.19.05-.37-.02-.51-.08-.15-.66-1.58-.9-2.16-.24-.57-.48-.49-.66-.5h-.56a1.07 1.07 0 00-.78.37c-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.19 3.01c.15.2 2.06 3.14 4.99 4.41.7.3 1.24.48 1.66.61.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.08-.12-.27-.19-.56-.34z" fill="#25D366"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.23-1.37A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.15a8.13 8.13 0 01-4.15-1.13l-.3-.18-3.1.81.83-3.02-.19-.31A8.13 8.13 0 0112 3.85a8.15 8.15 0 010 16.3z" fill="#25D366"/></svg><span>WhatsApp Business</span></div>
-            <!-- HubSpot -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="17" cy="7" r="2" fill="#DADADA"/><path d="M15 8.5V12a3 3 0 11-2.12.88L10.5 10.5A2.5 2.5 0 118.74 7.5l2.38 2.38A3 3 0 0115 8.5z" fill="#DADADA"/><circle cx="15" cy="15" r="3" stroke="#DADADA" stroke-width="2" fill="none"/></svg><span>HubSpot</span></div>
-            <!-- Mailchimp -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M18.91 12.44c-.33-.14-.53.1-.78.2a2.08 2.08 0 01-.86.17c-.52 0-.85-.22-.97-.44a4.53 4.53 0 00-2.81-1.16c-1.47-.08-2.7.64-3.38 1.7-.26-.65-.74-1.12-1.42-1.3.5-.65.77-1.47.77-2.34 0-.42-.07-.82-.2-1.19.63-.28 1.04-.9 1.04-1.6a1.7 1.7 0 00-1.7-1.7 1.7 1.7 0 00-1.28.58c-.5-.2-1.04-.31-1.6-.31C3.41 5.05 1.5 7.32 1.5 10.2c0 4.07 3.13 6.7 7.14 7.57 1.51.33 3.78.5 5.6-.28 1.6-.68 2.73-2 3.17-3.02.39-.9.32-1.67-.5-2.03z" fill="#FFE01B"/></svg><span>Mailchimp</span></div>
-            <!-- Google Workspace -->
-            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M2 8.6L12 14l10-5.4" stroke="#4285F4" stroke-width="2" fill="none"/><path d="M2 8.6V22h7V13l3 1.6L15 13v9h7V8.6L12 14 2 8.6z" fill="#4285F4"/></svg><span>Google Workspace</span></div>
-            <!-- Google Cloud -->
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.89h-2.33v6.99C18.34 21.19 22 17.06 22 12.06c0-5.53-4.5-10.02-10-10.02z" fill="#1877F2"/></svg><span>Meta Ads API</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M12 4l9 16H3l9-16z" fill="#E8E8E8"/></svg><span>Vercel</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><path d="M15.5 8.5c-.6-1.2-1.9-1.9-3.4-1.9-2 0-3.4 1.1-3.4 2.8 0 3.6 7 2 7 5.3 0 1.8-1.5 2.9-3.6 2.9-1.7 0-3.1-.8-3.7-2.1" stroke="#E8E8E8" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg><span>Sanity CMS</span></div>
+            <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><circle cx="18" cy="18" r="3" stroke="#E8E8E8" stroke-width="1.6" fill="none"/><path d="M6 9v4a5 5 0 005 5h4" stroke="#E8E8E8" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M13 16l2 2-2 2" stroke="#E8E8E8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GitHub Actions</span></div>
             <div class="tech-item"><svg class="tech-logo" viewBox="0 0 24 24" fill="none"><path d="M14.54 7.48l1.77-1.77.09-.75A8.94 8.94 0 0012 3.05a8.96 8.96 0 00-8.14 5.25l.65-.09 3.54-.58.27-.28A5.4 5.4 0 0112 5.59a5.38 5.38 0 012.54 1.89z" fill="#EA4335"/><path d="M20.08 8.3a8.93 8.93 0 00-2.72-4.34l-2.82 2.82a5.38 5.38 0 011.95 4.3v.54a2.69 2.69 0 010 5.38H12l-.54.55v3.23l.54.54h4.5a6.23 6.23 0 003.58-11.02z" fill="#4285F4"/><path d="M7.5 21.32h4.5v-4.32H7.5a2.66 2.66 0 01-1.11-.24l-.77.24-2.21 2.2-.19.62a6.19 6.19 0 004.28 1.5z" fill="#34A853"/><path d="M7.5 8.86a6.23 6.23 0 00-4.28 10.96l3.17-3.17a2.69 2.69 0 011.11-5.13 2.69 2.69 0 012.7 2.69l3.17-3.17A6.23 6.23 0 007.5 8.86z" fill="#FBBC05"/></svg><span>Google Cloud</span></div>
         </div>
     </div>
@@ -926,9 +1077,15 @@
 <div class="glow-divider"></div>
 <section class="soluciones" id="soluciones">
     <div class="section-inner">
-        <p class="section-label animate-on-scroll">Soluciones</p>
-        <h2 class="section-title animate-on-scroll delay-1">Lo que construimos para tu institución</h2>
-        <p class="section-subtitle centered animate-on-scroll delay-2">Desarrollo digital a la medida que trabaja en conjunto con tus campañas.</p>
+        <p class="section-label animate-on-scroll">Resultados</p>
+        <h2 class="section-title animate-on-scroll delay-1">Construido, entregado y en producción</h2>
+        <p class="section-subtitle centered animate-on-scroll delay-2">No son maquetas: son sistemas que universidades reales operan hoy, todos los días.</p>
+        <div class="stats-strip animate-on-scroll delay-2">
+            <div class="stat-item"><span class="stat-number" data-target="4">0</span><span class="stat-label">campus operando<br>nuestras plataformas</span></div>
+            <div class="stat-item"><span class="stat-number" data-target="1300" data-prefix="+">0</span><span class="stat-label">clases asignadas<br>por ciclo con IA</span></div>
+            <div class="stat-item"><span class="stat-number" data-target="2000" data-prefix="+">0</span><span class="stat-label">conversaciones de<br>WhatsApp gestionadas</span></div>
+            <div class="stat-item"><span class="stat-number" data-target="13">0</span><span class="stat-label">landings de campaña<br>con atribución real</span></div>
+        </div>
         <div class="soluciones-grid">
             <!-- Landing Pages -->
             <div class="solucion-card animate-on-scroll delay-1">
@@ -951,14 +1108,14 @@
                     </svg>
                 </div>
                 <div class="solucion-body">
-                    <span class="solucion-tag">Captación</span>
-                    <h3>Landing Pages</h3>
-                    <p>Páginas de aterrizaje optimizadas para conversión, diseñadas específicamente para cada carrera o programa educativo.</p>
+                    <span class="solucion-tag">Campañas</span>
+                    <h3>Landings con atribución real</h3>
+                    <p>Landing pages por carrera conectadas a tu pauta: cada lead llega al CRM con su anuncio, campaña y UTMs. Sin doble conteo, sin leads perdidos.</p>
                     <div class="solucion-features">
-                        <span class="solucion-feat">Alta conversión</span>
-                        <span class="solucion-feat">Responsive</span>
-                        <span class="solucion-feat">A/B Testing</span>
-                        <span class="solucion-feat">Formularios</span>
+                        <span class="solucion-feat">Meta Pixel</span>
+                        <span class="solucion-feat">UTMs</span>
+                        <span class="solucion-feat">Cupones</span>
+                        <span class="solucion-feat">Test vocacional</span>
                     </div>
                 </div>
             </div>
@@ -986,13 +1143,13 @@
                     </svg>
                 </div>
                 <div class="solucion-body">
-                    <span class="solucion-tag">Presencia</span>
-                    <h3>Sitios Web Profesionales</h3>
-                    <p>Sitios web modernos que reflejan la identidad de tu institución y están optimizados para posicionamiento y velocidad.</p>
+                    <span class="solucion-tag">Web</span>
+                    <h3>Sitios institucionales con CMS</h3>
+                    <p>Sitios universitarios completos y administrables sin programador: oferta académica, admisiones, becas y noticias siempre al día.</p>
                     <div class="solucion-features">
+                        <span class="solucion-feat">CMS editable</span>
                         <span class="solucion-feat">SEO</span>
                         <span class="solucion-feat">Rápidos</span>
-                        <span class="solucion-feat">Administrables</span>
                         <span class="solucion-feat">Mobile-first</span>
                     </div>
                 </div>
@@ -1039,13 +1196,13 @@
                 </div>
                 <div class="solucion-body">
                     <span class="solucion-tag">Automatización</span>
-                    <h3>Asistentes Virtuales con IA</h3>
-                    <p>Chatbots inteligentes que atienden prospectos por WhatsApp y web las 24 horas, resolviendo dudas y agendando citas.</p>
+                    <h3>Automatización e integraciones</h3>
+                    <p>Conectamos tu sitio, tu CRM y tu sistema escolar: WhatsApp de bienvenida en segundos, sincronización diaria de datos y alertas que llegan solas.</p>
                     <div class="solucion-features">
-                        <span class="solucion-feat">WhatsApp</span>
-                        <span class="solucion-feat">Web chat</span>
-                        <span class="solucion-feat">24/7</span>
-                        <span class="solucion-feat">IA conversacional</span>
+                        <span class="solucion-feat">WhatsApp API</span>
+                        <span class="solucion-feat">Sincronización</span>
+                        <span class="solucion-feat">Alertas</span>
+                        <span class="solucion-feat">Push</span>
                     </div>
                 </div>
             </div>
@@ -1069,8 +1226,8 @@
                     <svg viewBox="0 0 24 24" fill="none"><path d="M15 10l-4 4-2-2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="4" width="18" height="16" rx="3" stroke="#FFFFFF" stroke-width="2" fill="none"/><path d="M8 2v4M16 2v4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>
                 </div>
                 <div class="journey-step-tag">Paso 1 — Gratis</div>
-                <h3>Diagnóstico por videollamada</h3>
-                <p>Agenda una llamada sin costo. Analizamos tu situación actual, tu competencia y las oportunidades digitales para tu institución.</p>
+                <h3>Diagnóstico de tu operación</h3>
+                <p>Agenda una llamada sin costo. Revisamos cómo captas, inscribes y retienes alumnos hoy — y dónde se está fugando tiempo y matrícula.</p>
             </div>
 
             <div class="journey-step" data-step="1">
@@ -1078,8 +1235,8 @@
                     <svg viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="#FFFFFF" stroke-width="2" fill="none"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#FFFFFF" stroke-width="2" fill="none"/><path d="M9 12h6M9 16h4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>
                 </div>
                 <div class="journey-step-tag">Paso 2</div>
-                <h3>Propuesta estratégica</h3>
-                <p>Te presentamos un plan personalizado con canales recomendados, presupuesto sugerido y proyección de resultados para tu próximo ciclo.</p>
+                <h3>Propuesta y diseño</h3>
+                <p>Te presentamos la solución con pantallas reales de cómo se verá tu plataforma, alcance claro y fechas de entrega definidas.</p>
             </div>
 
             <div class="journey-step" data-step="2">
@@ -1087,8 +1244,8 @@
                     <svg viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#FFFFFF" stroke-width="2" fill="none"/></svg>
                 </div>
                 <div class="journey-step-tag">Paso 3</div>
-                <h3>Implementación</h3>
-                <p>Configuramos todo: campañas publicitarias, landing pages, CRM, automatizaciones y asistentes virtuales. Tú no tocas nada.</p>
+                <h3>Piloto en semanas</h3>
+                <p>Construimos un piloto con tus datos reales en un campus o área. Lo pruebas y lo ajustamos antes del despliegue completo.</p>
             </div>
 
             <div class="journey-step" data-step="3">
@@ -1096,8 +1253,8 @@
                     <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <div class="journey-step-tag">Paso 4</div>
-                <h3>Lanzamiento</h3>
-                <p>Activamos las campañas y empezamos a generar prospectos calificados desde el primer día. Tú ves los resultados en tiempo real.</p>
+                <h3>Puesta en producción</h3>
+                <p>Desplegamos en todos tus campus, migramos tu información y capacitamos a tu equipo. La decisión final siempre es de las personas.</p>
             </div>
 
             <div class="journey-step" data-step="4">
@@ -1105,12 +1262,12 @@
                     <svg viewBox="0 0 24 24" fill="none"><polyline points="4 16 8 12 12 14 16 8 20 10" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><polyline points="16 8 20 8 20 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <div class="journey-step-tag">Paso 5 — Continuo</div>
-                <h3>Reportes y optimización</h3>
-                <p>Cada semana recibes reportes claros con métricas reales. Optimizamos campañas en tiempo real para mejorar resultados ciclo a ciclo.</p>
+                <h3>Operación y mejora continua</h3>
+                <p>Monitoreamos la plataforma, la sincronizamos con tus sistemas y la evolucionamos ciclo a ciclo junto con tu operación real.</p>
             </div>
         </div>
         <div style="text-align:center; margin-top:3rem;">
-            <a href="https://wa.me/526632308574?text=Hola%2C%20quiero%20agendar%20una%20reunión%20para%20conocer%20sus%20servicios" target="_blank" rel="noopener" class="btn-primary">Quiero agendar una reunión</a>
+            <a href="https://wa.me/526632308574?text=Hola%2C%20quiero%20agendar%20una%20reuni%C3%B3n%20para%20ver%20una%20demo%20de%20sus%20plataformas" target="_blank" rel="noopener" class="btn-primary">Quiero agendar una reunión</a>
         </div>
     </div>
 </section>
@@ -1121,8 +1278,17 @@
 
 <!-- WHATSAPP WIDGET -->
 <div class="wa-widget">
+    <div class="wa-sim" id="waSim" hidden>
+        <div class="wa-sim-header">
+            <span class="wa-sim-avatar">S</span>
+            <div><b>SOF-IA</b><small>responde en minutos</small></div>
+            <button class="wa-sim-close" id="waSimClose" aria-label="Cerrar">&times;</button>
+        </div>
+        <div class="wa-sim-body" id="waSimBody"></div>
+        <a class="wa-sim-cta" id="waSimCta" href="https://wa.me/526632308574?text=Hola%2C%20quiero%20una%20plataforma%20para%20mi%20instituci%C3%B3n%20educativa" target="_blank" rel="noopener" hidden>Continuar en WhatsApp</a>
+    </div>
     <div class="wa-tooltip">Escríbenos por WhatsApp</div>
-    <a href="https://wa.me/526632308574?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios" target="_blank" rel="noopener" class="wa-btn" aria-label="WhatsApp">
+    <a href="https://wa.me/526632308574?text=Hola%2C%20me%20interesa%20una%20plataforma%20para%20mi%20instituci%C3%B3n%20educativa" target="_blank" rel="noopener" class="wa-btn" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24" fill="none"><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.27-.1-.46-.15-.66.14-.2.29-.76.93-.93 1.12-.17.2-.34.22-.63.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.49.1-.19.05-.37-.02-.51-.08-.15-.66-1.58-.9-2.16-.24-.57-.48-.49-.66-.5h-.56a1.07 1.07 0 00-.78.37c-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.19 3.01c.15.2 2.06 3.14 4.99 4.41.7.3 1.24.48 1.66.61.7.22 1.34.19 1.84.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.08-.12-.27-.19-.56-.34z" fill="white"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.23-1.37A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18.15a8.13 8.13 0 01-4.15-1.13l-.3-.18-3.1.81.83-3.02-.19-.31A8.13 8.13 0 0112 3.85a8.15 8.15 0 010 16.3z" fill="white"/></svg>
     </a>
 </div>
@@ -1186,7 +1352,7 @@
                         current = target;
                         clearInterval(counter);
                     }
-                    el.textContent = prefix + Math.floor(current) + suffix;
+                    el.textContent = prefix + Math.floor(current).toLocaleString('en-US') + suffix;
                 }, 16);
                 counterObserver.unobserve(el);
             }
@@ -1199,7 +1365,7 @@
     const stickyFeatures = document.querySelectorAll('.sticky-feature');
     const stickyDots = document.querySelectorAll('.sticky-dot');
     const stickySlides = document.querySelectorAll('.sticky-mockup-slide');
-    const totalFeatures = 6;
+    const totalFeatures = 4;
 
     window.addEventListener('scroll', () => {
         if (!serviciosSection) return;
@@ -1249,14 +1415,14 @@
 
     // Toast notifications
     const toastData = [
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 14l9-5-9-5-9 5 9 5z" fill="#FFFFFF"/><path d="M12 14l6.16-3.42a12 12 0 01.84 6.42c-2 2-4.33 3-7 3s-5-1-7-3a12 12 0 01.84-6.42L12 14z" fill="#9E9E9E"/></svg>', bg: 'var(--w1)', title: 'Nueva inscripción desde Google Ads', desc: 'Medicina — Universidad del Norte', time: 'hace 2 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="12" width="4" height="8" rx="1" fill="#D6D6D6"/><rect x="10" y="8" width="4" height="12" rx="1" fill="#D6D6D6"/><rect x="17" y="4" width="4" height="16" rx="1" fill="#D6D6D6"/></svg>', bg: 'var(--w1)', title: '+23 prospectos hoy', desc: 'Campaña Meta Ads — Psicología', time: 'hace 5 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2a7 7 0 017 7v3l2 2v1H3v-1l2-2V9a7 7 0 017-7z" fill="#FFFFFF"/><circle cx="12" cy="9" r="2.5" fill="#0F0F0F"/><path d="M9.5 9h5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/><path d="M9 21a3 3 0 006 0" stroke="#FFFFFF" stroke-width="2" fill="none"/></svg>', bg: 'var(--w1)', title: 'Chatbot atendió 47 consultas', desc: 'WhatsApp Business — turno nocturno', time: 'hace 12 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="#C9C9C9" stroke-width="2" fill="none"/><path d="M2 8l10 5 10-5" stroke="#C9C9C9" stroke-width="2"/></svg>', bg: 'var(--w1)', title: 'Secuencia de email completada', desc: '68% tasa de apertura — Ingeniería', time: 'hace 18 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="6" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="2" fill="#E8E8E8"/></svg>', bg: 'var(--w1)', title: 'Costo por lead: $32 MXN', desc: 'Google Ads — Admisiones Enero', time: 'hace 25 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="#DADADA" stroke-width="2" fill="none"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#DADADA" stroke-width="2" fill="none"/><path d="M9 14l2 2 4-4" stroke="#DADADA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>', bg: 'var(--w1)', title: 'Lead calificado automáticamente', desc: 'HubSpot — Score: 92/100', time: 'hace 31 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#9E9E9E" stroke-width="2" fill="none"/><path d="M8 12h8M12 8v8" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"/></svg>', bg: 'var(--w1)', title: 'Formulario inteligente completado', desc: 'Landing Derecho — prospecto calificado', time: 'hace 38 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="4 16 8 12 12 14 16 8 20 10" stroke="#D6D6D6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><polyline points="16 8 20 8 20 12" stroke="#D6D6D6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>', bg: 'var(--w1)', title: 'ROAS de campaña: 4.8x', desc: 'Google Ads — Ciclo Febrero', time: 'hace 45 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2a7 7 0 017 7v3l2 2v1H3v-1l2-2V9a7 7 0 017-7z" fill="#FFFFFF"/><path d="M9 21a3 3 0 006 0" stroke="#FFFFFF" stroke-width="2" fill="none"/></svg>', bg: 'var(--w1)', title: 'SOFIA atendió 47 consultas', desc: 'WhatsApp — turno nocturno, sin intervención humana', time: 'hace 2 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>', bg: 'var(--w1)', title: 'Chat transferido a asesora en turno', desc: 'Motivo: quiere agendar una cita', time: 'hace 5 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#FFFFFF" stroke-width="2" fill="none"/><path d="M12 6v6l4 2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>', bg: 'var(--w1)', title: 'Alumno en riesgo contactado a tiempo', desc: 'Retención — se compromete a regresar', time: 'hace 9 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 10l-4 4-2-2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="4" width="18" height="16" rx="3" stroke="#FFFFFF" stroke-width="2" fill="none"/></svg>', bg: 'var(--w1)', title: 'Asignación docente completada', desc: '+1,300 clases · 4 campus · en minutos', time: 'hace 14 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 9v4M12 17h.01" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/><path d="M10.3 3.6L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.6a2 2 0 00-3.4 0z" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>', bg: 'var(--w1)', title: 'Alerta resuelta: choque de horario', desc: 'Ing. Industrial — detectada antes de publicar', time: 'hace 21 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="4 16 8 12 12 14 16 8 20 10" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><polyline points="16 8 20 8 20 12" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>', bg: 'var(--w1)', title: 'Lead consolidado desde Meta Ads', desc: 'WhatsApp de bienvenida enviado en segundos', time: 'hace 26 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="#FFFFFF" stroke-width="2" fill="none"/><path d="M9 9h2v2H9zM13 9h2v2h-2zM9 13h2v2H9zM13 13h2v2h-2z" fill="#FFFFFF"/></svg>', bg: 'var(--w1)', title: 'Cita agendada desde QR del plantel', desc: 'Visita a campus — mañana 10:00', time: 'hace 33 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="#FFFFFF" stroke-width="2" fill="none"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#FFFFFF" stroke-width="2" fill="none"/><path d="M9 12h6M9 16h4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>', bg: 'var(--w1)', title: 'Reporte del día generado solo', desc: 'Inscritos, citas y ranking de asesores — listo', time: 'hace 40 min' }
     ];
     let toastIndex = 0;
     const toastContainer = document.getElementById('toastContainer');
@@ -1287,6 +1453,48 @@
         showToast();
         setInterval(showToast, 8000);
     }, 5000);
+
+    // ── WhatsApp simulado al hacer scroll ──
+    (function(){
+        const sim = document.getElementById('waSim');
+        const body = document.getElementById('waSimBody');
+        const cta = document.getElementById('waSimCta');
+        if (!sim) return;
+        let shown = false;
+        try { shown = sessionStorage.getItem('sofia-wasim') === '1'; } catch(e){}
+
+        function bubble(cls, html) {
+            const el = document.createElement('div');
+            el.className = 'wa-sim-bubble ' + cls;
+            el.innerHTML = html;
+            body.appendChild(el);
+            body.scrollTop = body.scrollHeight;
+            return el;
+        }
+        function typing() { return bubble('wa-sim-in wa-sim-typing', '<i></i><i></i><i></i>'); }
+
+        function playSim() {
+            sim.hidden = false;
+            const pasos = [
+                [600,  () => { const ty = typing(); setTimeout(() => { ty.remove(); bubble('wa-sim-in', 'Hola 👋 ¿tienen una plataforma para medir la <b>retención y deserción</b> de alumnos?'); }, 1300); }],
+                [2600, () => { const ty = typing(); setTimeout(() => { ty.remove(); bubble('wa-sim-in', 'Seguimos usando <b>Excel</b> para los reportes y la asignación docente 😅'); }, 1300); }],
+                [4800, () => { const ty = typing(); setTimeout(() => { ty.remove(); bubble('wa-sim-out', '¡Justo eso construimos! 🙌 Cuéntanos de tu institución y te mostramos una <b>demo en vivo</b>.'); cta.hidden = false; }, 1400); }]
+            ];
+            pasos.forEach(([d, fn]) => setTimeout(fn, d));
+        }
+
+        function onScroll() {
+            if (shown) return;
+            if (window.scrollY > window.innerHeight * 1.3) {
+                shown = true;
+                try { sessionStorage.setItem('sofia-wasim', '1'); } catch(e){}
+                window.removeEventListener('scroll', onScroll);
+                playSim();
+            }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        document.getElementById('waSimClose').addEventListener('click', () => { sim.hidden = true; });
+    })();
 </script>
 
 </body>
