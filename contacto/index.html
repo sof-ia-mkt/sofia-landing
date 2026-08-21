@@ -18,15 +18,15 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --navy: #0A0A0A; --purple: #FFFFFF; --purple-light: #D4D4D4; --white: #FFFFFF; --gray-400: #86868B; }
+        :root { --navy: #0A0A0A; --purple: #FFFFFF; --purple-light: #D4D4D4; --white: #FFFFFF; --gray-400: #86868B;  --accent-contrast: #0A0A0A; --nav-bg: rgba(10,10,10,.8); --nav-bg-solid: rgba(10,10,10,.98); --hero-overlay: rgba(0,0,0,.8); --toast-bg: rgba(18,18,18,.95); --grad-a: #FFFFFF; --grad-b: #9C9C9C; --w03: rgba(255,255,255,.03); --w06: rgba(255,255,255,.06); }
         body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--white); -webkit-font-smoothing: antialiased; }
-        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,.06); }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--nav-bg); backdrop-filter: blur(20px); border-bottom: 1px solid var(--w06); }
         .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
         .nav-logo { height: 36px; width: auto; }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a { color: #E8E8ED; text-decoration: none; font-size: .875rem; font-weight: 400; transition: color .2s; }
         .nav-links a:hover { color: var(--white); }
-        .nav-cta { background: var(--purple); color: var(--white) !important; padding: .6rem 1.5rem; border-radius: 980px; font-size: .875rem; font-weight: 500; transition: background .2s; }
+        .nav-cta { background: var(--purple); color: var(--accent-contrast) !important; padding: .6rem 1.5rem; border-radius: 980px; font-size: .875rem; font-weight: 500; transition: background .2s; }
         .nav-cta:hover { background: var(--purple-light); }
         .hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
         .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
@@ -34,11 +34,11 @@
         .page-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; }
         .page-hero p { color: var(--gray-400); font-size: 1.1rem; font-weight: 300; max-width: 500px; margin: 0 auto; }
         .coming-soon { text-align: center; padding: 4rem 2rem 8rem; }
-        .coming-soon-box { max-width: 500px; margin: 0 auto; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 20px; padding: 3rem; }
+        .coming-soon-box { max-width: 500px; margin: 0 auto; background: var(--w03); border: 1px solid var(--w06); border-radius: 20px; padding: 3rem; }
         .coming-soon-box p { color: var(--gray-400); font-size: .95rem; line-height: 1.6; }
         .back-link { display: inline-block; margin-top: 1.5rem; color: var(--purple-light); text-decoration: none; font-size: .9rem; font-weight: 500; }
         .back-link:hover { text-decoration: underline; }
-        footer { padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,.06); }
+        footer { padding: 3rem 2rem; border-top: 1px solid var(--w06); }
         .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
         .footer-logo { height: 28px; opacity: .6; }
         footer p { font-size: .8rem; color: var(--gray-400); }
@@ -48,7 +48,43 @@
             .nav-links { display: none; }
             .hamburger { display: flex; }
         }
-    </style>
+    
+        html[data-theme="light"] { --navy: #FFFFFF; --purple: #0A0A0A; --purple-light: #55555A; --white: #0A0A0A; --gray-100: #1D1D1F; --gray-200: #3A3A3E; --gray-400: #6E6E73; --gray-600: #C7C7CC; --gray-800: #F2F2F5; --accent-contrast: #FFFFFF; --nav-bg: rgba(255,255,255,.85); --nav-bg-solid: rgba(255,255,255,.98); --hero-overlay: rgba(255,255,255,.88); --toast-bg: rgba(255,255,255,.97); --grad-a: #0A0A0A; --grad-b: #5E5E5E; --w03: rgba(0,0,0,.04); --w06: rgba(0,0,0,.08); }
+
+        /* ── LIGHT MODE: componentes ── */
+        html[data-theme="light"] .nav-logo,
+        html[data-theme="light"] .footer-logo { filter: invert(1); }
+        html[data-theme="light"] img[src$=".svg"]:not(.nav-logo):not(.footer-logo) { filter: invert(1); }
+        html[data-theme="light"] svg.post-art, html[data-theme="light"] .post-image svg,
+        html[data-theme="light"] .post-card svg { filter: invert(1); }
+
+        /* ── THEME TOGGLE ── */
+        .nav-inner { gap: 1rem; }
+        .nav-links { margin-left: auto; }
+        .theme-toggle {
+            background: none; border: 1px solid var(--w15, rgba(128,128,128,.35)); border-radius: 50%;
+            width: 36px; height: 36px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; color: var(--white); padding: 0;
+            transition: border-color .2s;
+        }
+        .theme-toggle:hover { border-color: var(--w3, rgba(128,128,128,.6)); }
+        .theme-toggle svg { width: 16px; height: 16px; }
+        .icon-moon { display: none; }
+        html[data-theme="light"] .icon-sun { display: none; }
+        html[data-theme="light"] .icon-moon { display: block; }
+</style>
+    <script>
+        (function(){ try { if (localStorage.getItem('sofia-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch(e){} })();
+        function toggleTheme(){
+            var el = document.documentElement;
+            var next = el.dataset.theme === 'light' ? 'dark' : 'light';
+            el.dataset.theme = next;
+            try { localStorage.setItem('sofia-theme', next); } catch(e){}
+            var m = document.querySelector('meta[name="theme-color"]');
+            if (m) m.content = next === 'light' ? '#FFFFFF' : '#0A0A0A';
+        }
+    </script>
 </head>
 <body>
 <nav>
@@ -61,6 +97,10 @@
             <a href="../blog/">Blog</a>
             <a href="./" class="nav-cta">Contacto</a>
         </div>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
         <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
     </div>
 </nav>

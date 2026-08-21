@@ -68,7 +68,7 @@
             --gray-400: #86868B;
             --gray-600: #424245;
             --gray-800: #1D1D1F;
-        }
+         --accent-contrast: #0A0A0A; --nav-bg: rgba(10,10,10,.8); --nav-bg-solid: rgba(10,10,10,.98); --hero-overlay: rgba(0,0,0,.8); --toast-bg: rgba(18,18,18,.95); --grad-a: #FFFFFF; --grad-b: #9C9C9C; --w02: rgba(255,255,255,.02); --w03: rgba(255,255,255,.03); --w04: rgba(255,255,255,.04); --w05: rgba(255,255,255,.05); --w06: rgba(255,255,255,.06); --w07: rgba(255,255,255,.07); --w08: rgba(255,255,255,.08); --w1: rgba(255,255,255,.1); --w12: rgba(255,255,255,.12); --w15: rgba(255,255,255,.15); --w2: rgba(255,255,255,.2); --w25: rgba(255,255,255,.25); --w3: rgba(255,255,255,.3); --w4: rgba(255,255,255,.4); --w5: rgba(255,255,255,.5); --w6: rgba(255,255,255,.6); --w7: rgba(255,255,255,.7); }
 
         html { scroll-behavior: smooth; }
 
@@ -83,9 +83,9 @@
         /* ── NAV ── */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            background: rgba(10, 10, 10, .8);
+            background: var(--nav-bg);
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,.06);
+            border-bottom: 1px solid var(--w06);
         }
         .nav-inner {
             max-width: 1200px; margin: 0 auto;
@@ -101,7 +101,7 @@
         }
         .nav-links a:hover { color: var(--white); }
         .nav-links a.nav-cta, a.nav-cta {
-            background: var(--purple); color: #0A0A0A;
+            background: var(--purple); color: var(--accent-contrast);
             padding: .6rem 1.5rem; border-radius: 980px;
             font-size: .875rem; font-weight: 500;
             text-decoration: none; transition: background .2s, transform .2s;
@@ -135,7 +135,7 @@
         }
         .hero-overlay {
             position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, .8);
+            background: var(--hero-overlay);
             z-index: 1;
         }
         .hero-content { position: relative; z-index: 2; max-width: 800px; }
@@ -145,18 +145,18 @@
             margin: 0 auto 2.5rem;
             opacity: 0;
             animation: logoReveal 1.2s cubic-bezier(.16,1,.3,1) .2s forwards;
-            filter: drop-shadow(0 0 40px rgba(255,255,255,.12));
+            filter: drop-shadow(0 0 40px var(--w12));
         }
         @keyframes logoReveal {
             0% { opacity: 0; transform: scale(.85) translateY(20px); filter: drop-shadow(0 0 0 rgba(255,255,255,0)); }
             60% { opacity: 1; transform: scale(1.02) translateY(-2px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); filter: drop-shadow(0 0 40px rgba(255,255,255,.12)); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: drop-shadow(0 0 40px var(--w12)); }
         }
         .hero-badge {
             display: inline-block;
             padding: .4rem 1rem; border-radius: 980px;
-            background: rgba(255,255,255,.05);
-            border: 1px solid rgba(255,255,255,.15);
+            background: var(--w05);
+            border: 1px solid var(--w15);
             font-size: .8rem; font-weight: 500; color: var(--purple-light);
             margin-bottom: 2rem; letter-spacing: .5px;
             opacity: 0; animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .6s forwards;
@@ -173,7 +173,7 @@
             opacity: 0; animation: fadeUp .8s cubic-bezier(.16,1,.3,1) .8s forwards;
         }
         .hero h1 .gradient {
-            background: linear-gradient(135deg, #FFFFFF, #9C9C9C);
+            background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
         }
@@ -189,7 +189,7 @@
         }
         .btn-primary {
             display: inline-block; text-align: center;
-            background: var(--purple); color: #0A0A0A;
+            background: var(--purple); color: var(--accent-contrast);
             padding: .9rem 2.5rem; border-radius: 980px;
             font-size: 1rem; font-weight: 500;
             text-decoration: none; border: none; cursor: pointer;
@@ -201,21 +201,21 @@
             background: transparent; color: var(--white);
             padding: .9rem 2.5rem; border-radius: 980px;
             font-size: 1rem; font-weight: 500;
-            text-decoration: none; border: 1px solid rgba(255,255,255,.2);
+            text-decoration: none; border: 1px solid var(--w2);
             transition: border-color .2s, transform .2s;
         }
-        .btn-secondary:hover { border-color: rgba(255,255,255,.5); transform: scale(1.03); }
+        .btn-secondary:hover { border-color: var(--w5); transform: scale(1.03); }
 
         /* ── SEPARADORES ── */
         .glow-divider {
             width: 100%; height: 1px; position: relative;
-            background: rgba(255,255,255,.04);
+            background: var(--w04);
         }
         .glow-divider::after {
             content: '';
             position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
             width: 300px; height: 3px;
-            background: radial-gradient(ellipse, rgba(255,255,255,.4) 0%, transparent 70%);
+            background: radial-gradient(ellipse, var(--w4) 0%, transparent 70%);
             filter: blur(2px);
         }
 
@@ -283,11 +283,11 @@
         }
         .sticky-dot {
             width: 8px; height: 8px; border-radius: 50%;
-            background: rgba(255,255,255,.15); transition: all .3s;
+            background: var(--w15); transition: all .3s;
         }
         .sticky-dot.active {
             background: var(--white);
-            box-shadow: 0 0 10px rgba(255,255,255,.3);
+            box-shadow: 0 0 10px var(--w3);
         }
         .sticky-mockup { position: relative; min-height: 420px; }
         .sticky-mockup-slide {
@@ -315,16 +315,16 @@
         /* ── TECNOLOGÍAS (Marquee) ── */
         .tech-section {
             padding: 6rem 2rem;
-            background: rgba(255,255,255,.02);
-            border-top: 1px solid rgba(255,255,255,.04);
-            border-bottom: 1px solid rgba(255,255,255,.04);
+            background: var(--w02);
+            border-top: 1px solid var(--w04);
+            border-bottom: 1px solid var(--w04);
             overflow: hidden;
         }
         .tech-section .section-title {
             text-align: center; max-width: 700px; margin: 0 auto 1rem;
         }
         .tech-section .section-title .gradient {
-            background: linear-gradient(135deg, #FFFFFF, #9C9C9C);
+            background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
         }
@@ -350,17 +350,17 @@
         .tech-item {
             display: flex; align-items: center; gap: .6rem;
             flex-shrink: 0; padding: .75rem 1.5rem;
-            background: rgba(255,255,255,.04);
-            border: 1px solid rgba(255,255,255,.06);
+            background: var(--w04);
+            border: 1px solid var(--w06);
             border-radius: 12px;
             transition: background .3s, border-color .3s;
         }
         .tech-item:hover {
-            background: rgba(255,255,255,.06);
-            border-color: rgba(255,255,255,.2);
+            background: var(--w06);
+            border-color: var(--w2);
         }
         .tech-item span {
-            font-size: .95rem; font-weight: 500; color: rgba(255,255,255,.7);
+            font-size: .95rem; font-weight: 500; color: var(--w7);
             white-space: nowrap;
         }
         .tech-logo {
@@ -379,8 +379,8 @@
             pointer-events: none;
         }
         .toast {
-            background: rgba(18, 18, 18, .95);
-            border: 1px solid rgba(255,255,255,.08);
+            background: var(--toast-bg);
+            border: 1px solid var(--w08);
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border-radius: 14px; padding: 1rem 1.25rem;
             display: flex; align-items: center; gap: .75rem;
@@ -411,7 +411,7 @@
             font-size: .7rem; color: var(--gray-400); font-weight: 300;
         }
         .toast-time {
-            font-size: .6rem; color: rgba(255,255,255,.2); flex-shrink: 0;
+            font-size: .6rem; color: var(--w2); flex-shrink: 0;
             align-self: flex-start; margin-top: 2px;
         }
         @media (max-width: 768px) {
@@ -431,14 +431,14 @@
             gap: 2rem; margin-top: 4rem;
         }
         .solucion-card {
-            background: rgba(255,255,255,.03);
-            border: 1px solid rgba(255,255,255,.06);
+            background: var(--w03);
+            border: 1px solid var(--w06);
             border-radius: 24px; padding: 0;
             overflow: hidden;
             transition: border-color .3s, transform .3s;
         }
         .solucion-card:hover {
-            border-color: rgba(255,255,255,.25);
+            border-color: var(--w25);
             transform: translateY(-6px);
         }
         .solucion-preview {
@@ -450,13 +450,13 @@
             width: 80%; height: 80%; opacity: .85;
         }
         .solucion-card:nth-child(1) .solucion-preview {
-            background: linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+            background: linear-gradient(135deg, var(--w07), var(--w02));
         }
         .solucion-card:nth-child(2) .solucion-preview {
-            background: linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+            background: linear-gradient(135deg, var(--w07), var(--w02));
         }
         .solucion-card:nth-child(3) .solucion-preview {
-            background: linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+            background: linear-gradient(135deg, var(--w07), var(--w02));
         }
         .solucion-body { padding: 2rem; }
         .solucion-tag {
@@ -465,9 +465,9 @@
             text-transform: uppercase; letter-spacing: 1px;
             margin-bottom: 1rem;
         }
-        .solucion-card:nth-child(1) .solucion-tag { background: rgba(255,255,255,.08); color: var(--gray-200); }
-        .solucion-card:nth-child(2) .solucion-tag { background: rgba(255,255,255,.08); color: var(--gray-200); }
-        .solucion-card:nth-child(3) .solucion-tag { background: rgba(255,255,255,.08); color: var(--gray-200); }
+        .solucion-card:nth-child(1) .solucion-tag { background: var(--w08); color: var(--gray-200); }
+        .solucion-card:nth-child(2) .solucion-tag { background: var(--w08); color: var(--gray-200); }
+        .solucion-card:nth-child(3) .solucion-tag { background: var(--w08); color: var(--gray-200); }
         .solucion-body h3 {
             font-size: 1.3rem; font-weight: 600; margin-bottom: .75rem;
         }
@@ -479,16 +479,16 @@
         }
         .solucion-feat {
             font-size: .7rem; padding: .3rem .7rem;
-            border-radius: 6px; background: rgba(255,255,255,.04);
-            border: 1px solid rgba(255,255,255,.06);
-            color: rgba(255,255,255,.5); font-weight: 400;
+            border-radius: 6px; background: var(--w04);
+            border: 1px solid var(--w06);
+            color: var(--w5); font-weight: 400;
         }
         @media (max-width: 968px) {
             .soluciones-grid { grid-template-columns: 1fr; max-width: 500px; margin: 4rem auto 0; }
         }
 
         /* ── JOURNEY ── */
-        .journey { background: rgba(255,255,255,.02); overflow: hidden; }
+        .journey { background: var(--w02); overflow: hidden; }
         .journey .section-inner > .section-label,
         .journey .section-inner > .section-title,
         .journey .section-inner > .section-subtitle {
@@ -501,15 +501,15 @@
         /* Línea de fondo (gris) */
         .journey-line {
             position: absolute; left: 19px; top: 0; bottom: 0;
-            width: 2px; background: rgba(255,255,255,.06);
+            width: 2px; background: var(--w06);
         }
         /* Línea de progreso (púrpura, crece con scroll) */
         .journey-progress {
             position: absolute; left: 19px; top: 0;
             width: 2px; height: 0;
-            background: linear-gradient(180deg, #FFFFFF, #7A7A7A);
+            background: linear-gradient(180deg, var(--grad-a), var(--grad-b));
             transition: height .1s linear;
-            box-shadow: 0 0 12px rgba(255,255,255,.25);
+            box-shadow: 0 0 12px var(--w25);
         }
         .journey-step {
             position: relative; padding: 0 0 3.5rem 40px;
@@ -523,16 +523,16 @@
         .journey-node {
             position: absolute; left: -40px; top: 2px;
             width: 40px; height: 40px; border-radius: 50%;
-            background: rgba(255,255,255,.04);
-            border: 2px solid rgba(255,255,255,.08);
+            background: var(--w04);
+            border: 2px solid var(--w08);
             display: flex; align-items: center; justify-content: center;
             transition: all .4s ease;
             z-index: 2;
         }
         .journey-step.active .journey-node {
-            background: rgba(255,255,255,.08);
+            background: var(--w08);
             border-color: var(--white);
-            box-shadow: 0 0 20px rgba(255,255,255,.15);
+            box-shadow: 0 0 20px var(--w15);
         }
         .journey-node svg { width: 18px; height: 18px; }
         .journey-step-tag {
@@ -567,20 +567,20 @@
             font-size: .9rem; color: var(--gray-400);
         }
         .contacto-form {
-            background: rgba(255,255,255,.03);
-            border: 1px solid rgba(255,255,255,.06);
+            background: var(--w03);
+            border: 1px solid var(--w06);
             border-radius: 20px; padding: 2.5rem;
         }
         .form-group { margin-bottom: 1.25rem; }
         .form-group label {
             display: block; font-size: .8rem; font-weight: 500;
-            color: rgba(255,255,255,.6); margin-bottom: .4rem;
+            color: var(--w6); margin-bottom: .4rem;
         }
         .form-group input,
         .form-group textarea {
             width: 100%; padding: .8rem 1rem;
-            background: rgba(255,255,255,.04);
-            border: 1px solid rgba(255,255,255,.08);
+            background: var(--w04);
+            border: 1px solid var(--w08);
             border-radius: 10px; color: var(--white);
             font-family: inherit; font-size: .9rem;
             transition: border-color .2s;
@@ -588,11 +588,11 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none; border-color: var(--purple);
-            box-shadow: 0 0 0 3px rgba(255,255,255,.1);
+            box-shadow: 0 0 0 3px var(--w1);
         }
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: rgba(255,255,255,.2);
+            color: var(--w2);
         }
         .form-group textarea { resize: vertical; min-height: 100px; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -611,7 +611,7 @@
         }
         .wa-btn {
             width: 60px; height: 60px; border-radius: 50%;
-            background: #FFFFFF; border: none; cursor: pointer;
+            background: var(--purple); border: none; cursor: pointer;
             display: flex; align-items: center; justify-content: center;
             box-shadow: 0 4px 20px rgba(0,0,0,.35);
             transition: transform .2s, box-shadow .2s;
@@ -622,11 +622,11 @@
             box-shadow: 0 6px 30px rgba(0,0,0,.45);
         }
         @keyframes waPulse {
-            0%, 100% { box-shadow: 0 4px 20px rgba(255,255,255,.2); }
-            50% { box-shadow: 0 4px 20px rgba(255,255,255,.12), 0 0 0 10px rgba(255,255,255,.06); }
+            0%, 100% { box-shadow: 0 4px 20px var(--w2); }
+            50% { box-shadow: 0 4px 20px var(--w12), 0 0 0 10px var(--w06); }
         }
         .wa-btn svg { width: 32px; height: 32px; }
-        .wa-btn svg path { fill: #0A0A0A; }
+        .wa-btn svg path { fill: var(--accent-contrast); }
         .wa-tooltip {
             position: absolute; bottom: 70px; right: 0;
             background: white; color: #1A1A1A;
@@ -652,7 +652,7 @@
         /* ── FOOTER ── */
         footer {
             padding: 3rem 2rem;
-            border-top: 1px solid rgba(255,255,255,.06);
+            border-top: 1px solid var(--w06);
         }
         .footer-inner {
             max-width: 1200px; margin: 0 auto;
@@ -680,16 +680,64 @@
             .nav-links.active {
                 display: flex; flex-direction: column;
                 position: absolute; top: 64px; left: 0; right: 0;
-                background: rgba(10,10,10,.98);
+                background: var(--nav-bg-solid);
                 backdrop-filter: blur(20px);
                 padding: 2rem;
-                border-bottom: 1px solid rgba(255,255,255,.06);
+                border-bottom: 1px solid var(--w06);
             }
             .servicios-grid { grid-template-columns: 1fr; }
             .proceso-steps { grid-template-columns: 1fr; gap: 3rem; }
             section { padding: 5rem 1.5rem; }
         }
-    </style>
+    
+        html[data-theme="light"] { --navy: #FFFFFF; --purple: #0A0A0A; --purple-light: #55555A; --white: #0A0A0A; --gray-100: #1D1D1F; --gray-200: #3A3A3E; --gray-400: #6E6E73; --gray-600: #C7C7CC; --gray-800: #F2F2F5; --accent-contrast: #FFFFFF; --nav-bg: rgba(255,255,255,.85); --nav-bg-solid: rgba(255,255,255,.98); --hero-overlay: rgba(255,255,255,.88); --toast-bg: rgba(255,255,255,.97); --grad-a: #0A0A0A; --grad-b: #5E5E5E; --w02: rgba(0,0,0,.03); --w03: rgba(0,0,0,.04); --w04: rgba(0,0,0,.05); --w05: rgba(0,0,0,.05); --w06: rgba(0,0,0,.08); --w07: rgba(0,0,0,.04); --w08: rgba(0,0,0,.1); --w1: rgba(0,0,0,.07); --w12: rgba(0,0,0,.09); --w15: rgba(0,0,0,.13); --w2: rgba(0,0,0,.3); --w25: rgba(0,0,0,.3); --w3: rgba(0,0,0,.25); --w4: rgba(0,0,0,.3); --w5: rgba(0,0,0,.55); --w6: rgba(0,0,0,.65); --w7: rgba(0,0,0,.75); }
+
+        /* ── LIGHT MODE: componentes ── */
+        html[data-theme="light"] .nav-logo,
+        html[data-theme="light"] .footer-logo { filter: invert(1); }
+        html[data-theme="light"] .hero-logo {
+            filter: invert(1) drop-shadow(0 0 40px rgba(0,0,0,.08)) !important;
+        }
+        html[data-theme="light"] .journey-node svg,
+        html[data-theme="light"] .solucion-preview svg,
+        html[data-theme="light"] .toast-icon svg { filter: invert(1); }
+        html[data-theme="light"] .sticky-mockup-slide img {
+            filter: invert(1) drop-shadow(0 20px 60px rgba(0,0,0,.12));
+        }
+        html[data-theme="light"] .tech-logo { filter: grayscale(1) brightness(.4); opacity: .8; }
+        html[data-theme="light"] .wa-tooltip {
+            border: 1px solid rgba(0,0,0,.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,.15);
+        }
+        html[data-theme="light"] .toast { box-shadow: 0 8px 32px rgba(0,0,0,.12); }
+
+        /* ── THEME TOGGLE ── */
+        .nav-inner { gap: 1rem; }
+        .nav-links { margin-left: auto; }
+        .theme-toggle {
+            background: none; border: 1px solid var(--w15, rgba(128,128,128,.35)); border-radius: 50%;
+            width: 36px; height: 36px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; color: var(--white); padding: 0;
+            transition: border-color .2s;
+        }
+        .theme-toggle:hover { border-color: var(--w3, rgba(128,128,128,.6)); }
+        .theme-toggle svg { width: 16px; height: 16px; }
+        .icon-moon { display: none; }
+        html[data-theme="light"] .icon-sun { display: none; }
+        html[data-theme="light"] .icon-moon { display: block; }
+</style>
+    <script>
+        (function(){ try { if (localStorage.getItem('sofia-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch(e){} })();
+        function toggleTheme(){
+            var el = document.documentElement;
+            var next = el.dataset.theme === 'light' ? 'dark' : 'light';
+            el.dataset.theme = next;
+            try { localStorage.setItem('sofia-theme', next); } catch(e){}
+            var m = document.querySelector('meta[name="theme-color"]');
+            if (m) m.content = next === 'light' ? '#FFFFFF' : '#0A0A0A';
+        }
+    </script>
 </head>
 <body>
 
@@ -704,6 +752,10 @@
             <a href="blog/">Blog</a>
             <a href="https://wa.me/526632308574?text=Hola%2C%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios" target="_blank" rel="noopener" class="nav-cta">Contáctanos</a>
         </div>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
         <button class="hamburger" id="hamburger" aria-label="Menú">
             <span></span><span></span><span></span>
         </button>
@@ -914,9 +966,9 @@
                         <circle cx="48" cy="25" r="4" fill="#7E7E7E"/>
                         <circle cx="61" cy="25" r="4" fill="#D6D6D6"/>
                         <rect x="35" y="50" width="40" height="6" rx="2" fill="rgba(255,255,255,.4)"/>
-                        <rect x="140" y="50" width="30" height="6" rx="2" fill="rgba(255,255,255,.1)"/>
-                        <rect x="180" y="50" width="30" height="6" rx="2" fill="rgba(255,255,255,.1)"/>
-                        <rect x="220" y="50" width="40" height="6" rx="2" fill="rgba(255,255,255,.1)"/>
+                        <rect x="140" y="50" width="30" height="6" rx="2" fill="var(--w1)"/>
+                        <rect x="180" y="50" width="30" height="6" rx="2" fill="var(--w1)"/>
+                        <rect x="220" y="50" width="40" height="6" rx="2" fill="var(--w1)"/>
                         <rect x="35" y="70" width="230" height="60" rx="8" fill="rgba(255,255,255,.08)"/>
                         <rect x="50" y="82" width="130" height="8" rx="3" fill="rgba(255,255,255,.2)"/>
                         <rect x="50" y="96" width="100" height="6" rx="2" fill="rgba(255,255,255,.08)"/>
@@ -950,14 +1002,14 @@
                         <!-- Chat bubbles -->
                         <rect x="106" y="34" width="70" height="22" rx="8" fill="rgba(255,255,255,.25)"/>
                         <rect x="110" y="40" width="45" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
-                        <rect x="110" y="48" width="30" height="3" rx="1.5" fill="rgba(255,255,255,.1)"/>
+                        <rect x="110" y="48" width="30" height="3" rx="1.5" fill="var(--w1)"/>
                         <rect x="132" y="64" width="62" height="22" rx="8" fill="rgba(255,255,255,.06)"/>
                         <rect x="136" y="70" width="40" height="4" rx="2" fill="rgba(255,255,255,.2)"/>
                         <rect x="136" y="78" width="28" height="3" rx="1.5" fill="rgba(255,255,255,.08)"/>
                         <rect x="106" y="94" width="80" height="28" rx="8" fill="rgba(255,255,255,.25)"/>
                         <rect x="110" y="100" width="55" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
                         <rect x="110" y="108" width="65" height="4" rx="2" fill="rgba(255,255,255,.2)"/>
-                        <rect x="110" y="116" width="35" height="3" rx="1.5" fill="rgba(255,255,255,.1)"/>
+                        <rect x="110" y="116" width="35" height="3" rx="1.5" fill="var(--w1)"/>
                         <!-- Typing indicator -->
                         <rect x="106" y="130" width="40" height="16" rx="8" fill="rgba(255,255,255,.15)"/>
                         <circle cx="116" cy="138" r="2.5" fill="rgba(255,255,255,.5)"/>
@@ -965,17 +1017,17 @@
                         <circle cx="136" cy="138" r="2.5" fill="rgba(255,255,255,.3)"/>
                         <!-- Input bar -->
                         <rect x="104" y="155" width="76" height="22" rx="11" fill="#1A1A1A"/>
-                        <rect x="112" y="163" width="40" height="4" rx="2" fill="rgba(255,255,255,.1)"/>
+                        <rect x="112" y="163" width="40" height="4" rx="2" fill="var(--w1)"/>
                         <circle cx="188" cy="166" r="8" fill="#9E9E9E"/>
                         <!-- AI badge -->
                         <rect x="30" y="70" width="55" height="24" rx="12" fill="rgba(255,255,255,.15)"/>
                         <rect x="31" y="71" width="53" height="22" rx="11" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
                         <text x="57" y="86" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#C9C9C9" font-weight="600">IA 24/7</text>
                         <!-- Status -->
-                        <rect x="215" y="90" width="65" height="30" rx="10" fill="rgba(255,255,255,.1)"/>
+                        <rect x="215" y="90" width="65" height="30" rx="10" fill="var(--w1)"/>
                         <circle cx="228" cy="105" r="4" fill="#D6D6D6"/>
                         <rect x="236" y="100" width="35" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
-                        <rect x="236" y="108" width="25" height="3" rx="1.5" fill="rgba(255,255,255,.1)"/>
+                        <rect x="236" y="108" width="25" height="3" rx="1.5" fill="var(--w1)"/>
                     </svg>
                 </div>
                 <div class="solucion-body">
@@ -1189,14 +1241,14 @@
 
     // Toast notifications
     const toastData = [
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 14l9-5-9-5-9 5 9 5z" fill="#FFFFFF"/><path d="M12 14l6.16-3.42a12 12 0 01.84 6.42c-2 2-4.33 3-7 3s-5-1-7-3a12 12 0 01.84-6.42L12 14z" fill="#9E9E9E"/></svg>', bg: 'rgba(255,255,255,.1)', title: 'Nueva inscripción desde Google Ads', desc: 'Medicina — Universidad del Norte', time: 'hace 2 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="12" width="4" height="8" rx="1" fill="#D6D6D6"/><rect x="10" y="8" width="4" height="12" rx="1" fill="#D6D6D6"/><rect x="17" y="4" width="4" height="16" rx="1" fill="#D6D6D6"/></svg>', bg: 'rgba(255,255,255,.1)', title: '+23 prospectos hoy', desc: 'Campaña Meta Ads — Psicología', time: 'hace 5 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2a7 7 0 017 7v3l2 2v1H3v-1l2-2V9a7 7 0 017-7z" fill="#FFFFFF"/><circle cx="12" cy="9" r="2.5" fill="#0F0F0F"/><path d="M9.5 9h5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/><path d="M9 21a3 3 0 006 0" stroke="#FFFFFF" stroke-width="2" fill="none"/></svg>', bg: 'rgba(255,255,255,.1)', title: 'Chatbot atendió 47 consultas', desc: 'WhatsApp Business — turno nocturno', time: 'hace 12 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="#C9C9C9" stroke-width="2" fill="none"/><path d="M2 8l10 5 10-5" stroke="#C9C9C9" stroke-width="2"/></svg>', bg: 'rgba(255,255,255,.1)', title: 'Secuencia de email completada', desc: '68% tasa de apertura — Ingeniería', time: 'hace 18 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="6" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="2" fill="#E8E8E8"/></svg>', bg: 'rgba(255,255,255,.1)', title: 'Costo por lead: $32 MXN', desc: 'Google Ads — Admisiones Enero', time: 'hace 25 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="#DADADA" stroke-width="2" fill="none"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#DADADA" stroke-width="2" fill="none"/><path d="M9 14l2 2 4-4" stroke="#DADADA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>', bg: 'rgba(255,255,255,.1)', title: 'Lead calificado automáticamente', desc: 'HubSpot — Score: 92/100', time: 'hace 31 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#9E9E9E" stroke-width="2" fill="none"/><path d="M8 12h8M12 8v8" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"/></svg>', bg: 'rgba(255,255,255,.1)', title: 'Formulario inteligente completado', desc: 'Landing Derecho — prospecto calificado', time: 'hace 38 min' },
-        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="4 16 8 12 12 14 16 8 20 10" stroke="#D6D6D6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><polyline points="16 8 20 8 20 12" stroke="#D6D6D6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>', bg: 'rgba(255,255,255,.1)', title: 'ROAS de campaña: 4.8x', desc: 'Google Ads — Ciclo Febrero', time: 'hace 45 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 14l9-5-9-5-9 5 9 5z" fill="#FFFFFF"/><path d="M12 14l6.16-3.42a12 12 0 01.84 6.42c-2 2-4.33 3-7 3s-5-1-7-3a12 12 0 01.84-6.42L12 14z" fill="#9E9E9E"/></svg>', bg: 'var(--w1)', title: 'Nueva inscripción desde Google Ads', desc: 'Medicina — Universidad del Norte', time: 'hace 2 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="12" width="4" height="8" rx="1" fill="#D6D6D6"/><rect x="10" y="8" width="4" height="12" rx="1" fill="#D6D6D6"/><rect x="17" y="4" width="4" height="16" rx="1" fill="#D6D6D6"/></svg>', bg: 'var(--w1)', title: '+23 prospectos hoy', desc: 'Campaña Meta Ads — Psicología', time: 'hace 5 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2a7 7 0 017 7v3l2 2v1H3v-1l2-2V9a7 7 0 017-7z" fill="#FFFFFF"/><circle cx="12" cy="9" r="2.5" fill="#0F0F0F"/><path d="M9.5 9h5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/><path d="M9 21a3 3 0 006 0" stroke="#FFFFFF" stroke-width="2" fill="none"/></svg>', bg: 'var(--w1)', title: 'Chatbot atendió 47 consultas', desc: 'WhatsApp Business — turno nocturno', time: 'hace 12 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="#C9C9C9" stroke-width="2" fill="none"/><path d="M2 8l10 5 10-5" stroke="#C9C9C9" stroke-width="2"/></svg>', bg: 'var(--w1)', title: 'Secuencia de email completada', desc: '68% tasa de apertura — Ingeniería', time: 'hace 18 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="6" stroke="#E8E8E8" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="2" fill="#E8E8E8"/></svg>', bg: 'var(--w1)', title: 'Costo por lead: $32 MXN', desc: 'Google Ads — Admisiones Enero', time: 'hace 25 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" stroke="#DADADA" stroke-width="2" fill="none"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="#DADADA" stroke-width="2" fill="none"/><path d="M9 14l2 2 4-4" stroke="#DADADA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>', bg: 'var(--w1)', title: 'Lead calificado automáticamente', desc: 'HubSpot — Score: 92/100', time: 'hace 31 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#9E9E9E" stroke-width="2" fill="none"/><path d="M8 12h8M12 8v8" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"/></svg>', bg: 'var(--w1)', title: 'Formulario inteligente completado', desc: 'Landing Derecho — prospecto calificado', time: 'hace 38 min' },
+        { icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="4 16 8 12 12 14 16 8 20 10" stroke="#D6D6D6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><polyline points="16 8 20 8 20 12" stroke="#D6D6D6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>', bg: 'var(--w1)', title: 'ROAS de campaña: 4.8x', desc: 'Google Ads — Ciclo Febrero', time: 'hace 45 min' },
     ];
     let toastIndex = 0;
     const toastContainer = document.getElementById('toastContainer');
