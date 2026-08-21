@@ -68,7 +68,7 @@
             --gray-400: #86868B;
             --gray-600: #424245;
             --gray-800: #1D1D1F;
-         --accent-contrast: #0A0A0A; --nav-bg: rgba(10,10,10,.8); --nav-bg-solid: rgba(10,10,10,.98); --hero-overlay: rgba(0,0,0,.8); --toast-bg: rgba(18,18,18,.95); --grad-a: #FFFFFF; --grad-b: #9C9C9C; --w02: rgba(255,255,255,.02); --w03: rgba(255,255,255,.03); --w04: rgba(255,255,255,.04); --w05: rgba(255,255,255,.05); --w06: rgba(255,255,255,.06); --w07: rgba(255,255,255,.07); --w08: rgba(255,255,255,.08); --w1: rgba(255,255,255,.1); --w12: rgba(255,255,255,.12); --w15: rgba(255,255,255,.15); --w2: rgba(255,255,255,.2); --w25: rgba(255,255,255,.25); --w3: rgba(255,255,255,.3); --w4: rgba(255,255,255,.4); --w5: rgba(255,255,255,.5); --w6: rgba(255,255,255,.6); --w7: rgba(255,255,255,.7); }
+         --accent-contrast: #0A0A0A; --nav-bg: rgba(10,10,10,.8); --nav-bg-solid: rgba(10,10,10,.98); --hero-overlay: rgba(0,0,0,.8); --toast-bg: rgba(18,18,18,.95); --grad-a: #FFFFFF; --grad-b: #9C9C9C; --divider-bright: rgba(255,255,255,.5); --divider-glow: rgba(255,255,255,.3); --w02: rgba(255,255,255,.02); --w03: rgba(255,255,255,.03); --w04: rgba(255,255,255,.04); --w05: rgba(255,255,255,.05); --w06: rgba(255,255,255,.06); --w07: rgba(255,255,255,.07); --w08: rgba(255,255,255,.08); --w1: rgba(255,255,255,.1); --w12: rgba(255,255,255,.12); --w15: rgba(255,255,255,.15); --w2: rgba(255,255,255,.2); --w25: rgba(255,255,255,.25); --w3: rgba(255,255,255,.3); --w4: rgba(255,255,255,.4); --w5: rgba(255,255,255,.5); --w6: rgba(255,255,255,.6); --w7: rgba(255,255,255,.7); }
 
         html { scroll-behavior: smooth; }
 
@@ -209,14 +209,20 @@
         /* ── SEPARADORES ── */
         .glow-divider {
             width: 100%; height: 1px; position: relative;
-            background: var(--w04);
+            background: linear-gradient(90deg, transparent, var(--w12) 18%, var(--w12) 82%, transparent);
+        }
+        .glow-divider::before {
+            content: '';
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: min(480px, 60%); height: 1px;
+            background: linear-gradient(90deg, transparent, var(--divider-bright), transparent);
         }
         .glow-divider::after {
             content: '';
-            position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
-            width: 300px; height: 3px;
-            background: radial-gradient(ellipse, var(--w4) 0%, transparent 70%);
-            filter: blur(2px);
+            position: absolute; top: -2px; left: 50%; transform: translateX(-50%);
+            width: min(320px, 40%); height: 5px;
+            background: radial-gradient(ellipse, var(--divider-glow) 0%, transparent 70%);
+            filter: blur(3px);
         }
 
         /* ── SCROLL ANIMATIONS ── */
@@ -652,7 +658,6 @@
         /* ── FOOTER ── */
         footer {
             padding: 3rem 2rem;
-            border-top: 1px solid var(--w06);
         }
         .footer-inner {
             max-width: 1200px; margin: 0 auto;
@@ -690,7 +695,7 @@
             section { padding: 5rem 1.5rem; }
         }
     
-        html[data-theme="light"] { --navy: #FFFFFF; --purple: #0A0A0A; --purple-light: #55555A; --white: #0A0A0A; --gray-100: #1D1D1F; --gray-200: #3A3A3E; --gray-400: #6E6E73; --gray-600: #C7C7CC; --gray-800: #F2F2F5; --accent-contrast: #FFFFFF; --nav-bg: rgba(255,255,255,.85); --nav-bg-solid: rgba(255,255,255,.98); --hero-overlay: rgba(255,255,255,.88); --toast-bg: rgba(255,255,255,.97); --grad-a: #0A0A0A; --grad-b: #5E5E5E; --w02: rgba(0,0,0,.03); --w03: rgba(0,0,0,.04); --w04: rgba(0,0,0,.05); --w05: rgba(0,0,0,.05); --w06: rgba(0,0,0,.08); --w07: rgba(0,0,0,.04); --w08: rgba(0,0,0,.1); --w1: rgba(0,0,0,.07); --w12: rgba(0,0,0,.09); --w15: rgba(0,0,0,.13); --w2: rgba(0,0,0,.3); --w25: rgba(0,0,0,.3); --w3: rgba(0,0,0,.25); --w4: rgba(0,0,0,.3); --w5: rgba(0,0,0,.55); --w6: rgba(0,0,0,.65); --w7: rgba(0,0,0,.75); }
+        html[data-theme="light"] { --navy: #FFFFFF; --purple: #0A0A0A; --purple-light: #55555A; --white: #0A0A0A; --gray-100: #1D1D1F; --gray-200: #3A3A3E; --gray-400: #6E6E73; --gray-600: #C7C7CC; --gray-800: #F2F2F5; --accent-contrast: #FFFFFF; --nav-bg: rgba(255,255,255,.85); --nav-bg-solid: rgba(255,255,255,.98); --hero-overlay: rgba(255,255,255,.88); --toast-bg: rgba(255,255,255,.97); --grad-a: #0A0A0A; --grad-b: #5E5E5E; --divider-bright: rgba(0,0,0,.45); --divider-glow: rgba(0,0,0,.18); --w02: rgba(0,0,0,.03); --w03: rgba(0,0,0,.04); --w04: rgba(0,0,0,.05); --w05: rgba(0,0,0,.05); --w06: rgba(0,0,0,.08); --w07: rgba(0,0,0,.04); --w08: rgba(0,0,0,.1); --w1: rgba(0,0,0,.07); --w12: rgba(0,0,0,.09); --w15: rgba(0,0,0,.13); --w2: rgba(0,0,0,.3); --w25: rgba(0,0,0,.3); --w3: rgba(0,0,0,.25); --w4: rgba(0,0,0,.3); --w5: rgba(0,0,0,.55); --w6: rgba(0,0,0,.65); --w7: rgba(0,0,0,.75); }
 
         /* ── LIGHT MODE: componentes ── */
         html[data-theme="light"] .nav-logo,
@@ -778,6 +783,8 @@
         </div>
     </div>
 </section>
+
+<div class="glow-divider"></div>
 
 <!-- SERVICIOS (Sticky Scroll) -->
 <section class="servicios" id="servicios">
@@ -1121,6 +1128,7 @@
 </div>
 
 <!-- FOOTER -->
+<div class="glow-divider"></div>
 <footer>
     <div class="footer-inner">
         <img src="logo_blanco.svg" alt="SOF-IA" class="footer-logo">
